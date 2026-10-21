@@ -37,6 +37,6 @@ Self-hosted API + database + object storage gives more control but requires the 
 
 ## External setup and publication gate
 
-The owner must choose a Supabase project and authenticate one owner UUID; configure Auth, Storage, function secrets, GitHub Action secrets, and Pages source. Prices and plan limits require checking at setup time. No public deployment or migration of real posts occurs until separately requested. The cloned GitHub connection currently permits reading but not writing, and the local GitHub CLI credential is invalid; source remains local until access is resolved.
+The owner must choose a Supabase project and authenticate one owner UUID; configure Auth, Storage, function secrets, GitHub Action secrets, and Pages source. Prices and plan limits require checking at setup time. No public deployment or migration of real posts occurs until separately requested. Source is available on the review branch `codex/dorami-blog`; `main` and the live Pages site remain unchanged.
 
 Official references: [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages), [Actions publishing](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [Supabase RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [Storage access](https://supabase.com/docs/guides/storage/security/access-control), [Edge Function auth](https://supabase.com/docs/guides/functions/auth).

@@ -2,7 +2,7 @@
 
 Dorami is Clotilde's personal security blog. The intended public address is [clotilde030603.github.io](https://clotilde030603.github.io). This repository contains the public reading site and a separate owner workspace for writing and managing content.
 
-**Current state:** the implementation is being verified locally. The existing GitHub repository has not been pushed or publicly deployed by this work, and no Tistory or Notion posts have been migrated or published.
+**Current state:** the implementation is on the review branch `codex/dorami-blog` in the existing GitHub repository. GitHub Pages has not been deployed by this work, and no Tistory or Notion posts have been migrated or published.
 
 ## How it is built
 

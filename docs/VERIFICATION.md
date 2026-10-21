@@ -47,8 +47,8 @@ Synthetic visual fixtures live only in `tests/fixtures/`. They are not included 
 ## External prerequisites
 
 1. A hosted Supabase project, region and plan selection, plus one owner Auth UUID and secrets.
-2. GitHub repository write access, Actions secrets, and Pages publishing source setup.
+2. GitHub Actions secrets and Pages publishing source setup. Source branch access is verified.
 3. A real Notion export ZIP and Tistory backup or representative HTML for migration fidelity checks.
 4. A separate explicit request before live deployment or real post publication.
 
-Current GitHub connector access to `Clotilde030603/clotilde030603.github.io` is read-only, and the local GitHub CLI credential for that account is invalid. The code remains on the local `codex/dorami-blog` branch until access and the separate publication decision are resolved.
+The review branch `codex/dorami-blog` is pushed to `Clotilde030603/clotilde030603.github.io`. The repository's `main` branch and GitHub Pages deployment remain unchanged. Hosted service setup, real migration, and the separate publication decision remain pending.
