@@ -2,14 +2,14 @@
 
 Dorami is Clotilde's personal security blog. The intended public address is [clotilde030603.github.io](https://clotilde030603.github.io). This repository contains the public reading site and a separate owner workspace for writing and managing content.
 
-**Current state:** the implementation is on the review branch `codex/dorami-blog` in the existing GitHub repository. GitHub Pages has not been deployed by this work, and no Tistory or Notion posts have been migrated or published.
+The initial public site can be deployed from `main` with the manual `bootstrap-pages.yml` workflow. It shows an empty post list until the protected service and a real publication are configured. No Tistory or Notion posts are migrated or published by the starter deployment.
 
 ## How it is built
 
 - Astro builds public articles, categories, search, RSS, sitemap, and the `/admin/` shell for GitHub Pages.
 - React and Tiptap provide the owner editor and management screens.
 - Supabase Auth, Postgres, Storage, and Edge Functions hold private drafts, immutable published revisions, media, comments, and owner-only analytics. GitHub Pages alone does not store protected data.
-- A manual `workflow_dispatch` GitHub Action can build one immutable public manifest and deploy it to Pages after the protected service is configured. Pushing source alone does not trigger that workflow.
+- The manual `bootstrap-pages.yml` workflow deploys the initial empty public site without private credentials. After the protected service is configured, a separate manual `pages.yml` workflow builds one immutable publication manifest and deploys it to Pages. Pushing source alone triggers neither workflow.
 
 The approved appearance uses SUIT, a light matcha palette, the supplied rabbit identity, and a reduced-motion option. The current public snapshot is empty until a real publication is explicitly made. Synthetic example content exists only under `tests/fixtures/` for local visual checks.
 
@@ -39,4 +39,4 @@ The browser UI and Edge Functions also require the local stack and an owner test
 
 ## Publication boundary
 
-The live blog and the original Tistory site remain untouched. Hosted Supabase project setup, GitHub secrets, Pages configuration, and real post migration require a separate owner decision. The workflow is manual so no source push can silently publish content.
+The starter deployment contains no imported or real posts. Hosted Supabase project setup, GitHub secrets, and real post migration remain separate setup work. Both workflows are manual so a source push cannot silently publish content.
