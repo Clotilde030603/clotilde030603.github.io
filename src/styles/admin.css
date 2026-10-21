@@ -21,3 +21,6 @@
 @media(max-width:760px){.post-table{margin-top:16px}.post-row.post-row--actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px;padding:18px 4px}.post-title-button{grid-column:1/-1;width:100%;min-width:0}.post-title-button strong{font-size:16px;line-height:1.55;word-break:keep-all;overflow-wrap:anywhere}.post-title-button small{line-height:1.55;white-space:normal;word-break:keep-all;overflow-wrap:anywhere}.post-row--actions>.plain-status{grid-column:1;white-space:nowrap}.post-row--actions>time{display:block;grid-column:2;white-space:nowrap;font-size:11px;color:var(--muted)}.post-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px 14px;padding-top:8px}.post-actions button{white-space:nowrap}.workspace-topbar__actions{flex-wrap:wrap;overflow:visible}.document-title{font-size:24px}.editor-toolbar{position:relative;top:auto}.editor-toolbar button{min-height:32px}.document-properties input,.document-properties select{font-size:16px}.admin-gate__panel,.admin-gate__panel>*{min-width:0;max-width:100%}}
 
 .admin-brand img,.admin-gate__brand img,.loading-mark img{mix-blend-mode:multiply}
+.admin-brand,.admin-gate__brand{font-weight:650;letter-spacing:-.035em}
+.admin-brand img{width:34px;height:40px}
+.admin-gate__brand img{width:46px;height:55px}
