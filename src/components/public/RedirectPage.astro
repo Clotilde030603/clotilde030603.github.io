@@ -1,0 +1,25 @@
+---
+interface Props {
+  targetPath: string;
+}
+
+const { targetPath } = Astro.props;
+const targetUrl = new URL(targetPath, Astro.site ?? Astro.url.origin);
+---
+
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,follow" />
+    <meta http-equiv="refresh" content={`0;url=${targetUrl.toString()}`} />
+    <link rel="canonical" href={targetUrl} />
+    <title>글 주소 이동 · Dorami</title>
+  </head>
+  <body>
+    <p>글 주소가 바뀌었습니다. <a href={targetUrl}>새 주소로 이동하기</a></p>
+    <script is:inline define:vars={{ target: targetUrl.toString() }}>
+      window.location.replace(target);
+    </script>
+  </body>
+</html>

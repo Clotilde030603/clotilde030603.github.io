@@ -1,0 +1,59 @@
+---
+import type { CategoryTreeNode } from '../../lib/public/category-tree';
+import { containsCategory } from '../../lib/public/category-tree';
+import { postsInCategory } from '../../lib/public/content';
+import CategoryBranch from './CategoryBranch.astro';
+
+interface Props {
+  node: CategoryTreeNode;
+  activeCategoryId: string | null;
+  instanceId: string;
+  depth?: number;
+}
+
+const { node, activeCategoryId, instanceId, depth = 0 } = Astro.props;
+const hasChildren = node.children.length > 0;
+const expanded = hasChildren && containsCategory(node, activeCategoryId);
+const controlId = `${instanceId}-${node.id.replace(/[^a-zA-Z0-9_-]/g, '-')}-children`;
+---
+
+<div class="category-node" style={`--category-depth:${depth}`}>
+  <div class="category-row">
+    {
+      hasChildren ? (
+        <button
+          class="category-toggle"
+          type="button"
+          aria-label={`${node.name} 하위 카테고리 ${expanded ? '접기' : '펼치기'}`}
+          aria-expanded={expanded}
+          aria-controls={controlId}
+          data-category-toggle
+        >
+          <svg viewBox="0 0 12 12" aria-hidden="true"><path d="m4 2.5 3.5 3.5L4 9.5"></path></svg>
+        </button>
+      ) : (
+        <span class="category-toggle-spacer" aria-hidden="true"></span>
+      )
+    }
+    <a
+      class:list={["category-link", { active: activeCategoryId === node.id }]}
+      href={`/category/${encodeURIComponent(node.slug)}/`}
+    >
+      <span>{node.name}</span><span class="category-count">{postsInCategory(node.id).length}</span>
+    </a>
+  </div>
+  {
+    hasChildren && (
+      <div class="category-children" id={controlId} hidden={!expanded}>
+        {node.children.map((child) => (
+          <CategoryBranch
+            node={child}
+            activeCategoryId={activeCategoryId}
+            instanceId={instanceId}
+            depth={depth + 1}
+          />
+        ))}
+      </div>
+    )
+  }
+</div>

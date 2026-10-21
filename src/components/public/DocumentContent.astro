@@ -1,0 +1,46 @@
+---
+import type { DoramiDocument } from '../../lib/types';
+import { renderDocument } from '../../lib/public/render-document';
+
+interface Props { document: DoramiDocument }
+const { document } = Astro.props;
+const rendered = renderDocument(document);
+---
+
+<div class="article-prose" set:html={rendered.html}></div>
+
+<dialog class="image-dialog" data-image-dialog aria-label="확대 이미지">
+  <button type="button" class="image-dialog-close" data-close-image aria-label="이미지 닫기">닫기</button>
+  <img src="" alt="" data-dialog-image />
+</dialog>
+
+<script>
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-copy-code]')) {
+    button.addEventListener('click', async () => {
+      const code = button.closest('.code-block')?.querySelector('code')?.textContent ?? '';
+      try {
+        await navigator.clipboard.writeText(code);
+        button.textContent = '복사됨';
+        window.setTimeout(() => (button.textContent = '복사'), 1400);
+      } catch {
+        button.textContent = '복사 실패';
+      }
+    });
+  }
+
+  const dialog = document.querySelector<HTMLDialogElement>('[data-image-dialog]');
+  const dialogImage = dialog?.querySelector<HTMLImageElement>('[data-dialog-image]');
+  for (const button of document.querySelectorAll<HTMLButtonElement>('[data-expand-image]')) {
+    button.addEventListener('click', () => {
+      const image = button.querySelector('img');
+      if (!dialog || !dialogImage || !image) return;
+      dialogImage.src = image.currentSrc || image.src;
+      dialogImage.alt = image.alt;
+      dialog.showModal();
+    });
+  }
+  dialog?.querySelector('[data-close-image]')?.addEventListener('click', () => dialog.close());
+  dialog?.addEventListener('click', (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+</script>

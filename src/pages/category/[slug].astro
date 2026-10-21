@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from 'astro';
+import PublicLayout from '../../layouts/PublicLayout.astro';
+import ListingPage from '../../components/public/ListingPage.astro';
+import { categories, postsInCategory } from '../../lib/public/content';
+import type { Category, PublishedPost } from '../../lib/types';
+
+export const getStaticPaths = (() =>
+  categories.map((category) => ({
+    params: { slug: category.slug },
+    props: { category, categoryPosts: postsInCategory(category.id) },
+  }))) satisfies GetStaticPaths;
+
+interface Props { category: Category; categoryPosts: PublishedPost[] }
+const { category, categoryPosts } = Astro.props;
+---
+
+<PublicLayout
+  title={category.name}
+  categories={categories}
+  activeCategoryId={category.id}
+  canonicalPath={`/category/${category.slug}/`}
+>
+  <ListingPage
+    title={category.name}
+    eyebrow="카테고리"
+    posts={categoryPosts}
+    emptyTitle="이 카테고리에는 아직 발행된 글이 없습니다."
+  />
+</PublicLayout>

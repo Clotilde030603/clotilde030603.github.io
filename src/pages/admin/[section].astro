@@ -1,0 +1,14 @@
+---
+import { AdminApp } from '../../components/admin/AdminApp';
+import type { AdminSection } from '../../lib/admin/types';
+import '../../styles/admin.css';
+export function getStaticPaths() {
+  return ['about','categories','media','templates','comments','analytics','deployments','import','backup','trash'].map((section) => ({ params:{ section }, props:{ section } }));
+}
+const section = Astro.props.section as AdminSection;
+---
+<!doctype html>
+<html lang="ko">
+  <head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width" /><meta name="robots" content="noindex,nofollow" /><link rel="icon" href="/rabbit-mark.svg" /><title>Dorami 관리자</title></head>
+  <body><AdminApp client:only="react" initialSection={section} /></body>
+</html>

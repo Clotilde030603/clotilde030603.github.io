@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 112" role="img" aria-labelledby="rabbit-mark-title">
+  <title id="rabbit-mark-title">Dorami rabbit mark</title>
+  <g fill="none" stroke="#697D4F" stroke-linecap="round" stroke-linejoin="round">
+    <path
+      fill="#FEFEFC"
+      stroke-width="5.5"
+      d="M39 46c-6-9-10-20-9-31 .6-8 3.8-12 7-12 5 0 12 9 15 18 2 6 2 13 1 20 4-1 8-2 12-2 3 0 6 .2 9 .9 3-8 9-15 15-19 8-5 17-4 23 2 5 5 7 14 3 19-5 7-18 4-27-4l-2 7c9 5 16 13 18 23 1 5 .2 9-2 13-4 8-17 14-36 14S30 88 26 80c-3-6-2-13 2-19 2-4 6-8 11-11Z"
+    />
+    <path stroke-width="4" d="M38 10c5 6 8 15 9 26" />
+    <path fill="#697D4F" stroke="none" d="M39 14c5 4 8 11 8 19-5-4-8-11-8-19Z" />
+    <path stroke-width="4" d="M88 27c6 7 13 10 22 10" />
+  </g>
+  <g fill="#30352F">
+    <ellipse cx="48" cy="66" rx="4" ry="5" />
+    <ellipse cx="81" cy="66" rx="4" ry="5" />
+    <path d="M60 73c0-1.6 1.6-2.7 4-2.7s4 1.1 4 2.7c0 1.2-1 2.4-2.7 3.1v2.6c0 2.5 1.9 4.2 4.6 4.2 2.1 0 3.8-.9 5-2.8a2 2 0 0 1 3.3 2.2 9.6 9.6 0 0 1-8.3 4.5c-2.6 0-4.7-.8-6.3-2.3a8.8 8.8 0 0 1-6.5 2.3 9.4 9.4 0 0 1-8-4.4 2 2 0 1 1 3.4-2.1 5.4 5.4 0 0 0 4.6 2.6c2.7 0 4.7-1.8 4.7-4.2V76c-1.2-.7-1.8-1.7-1.8-3Z" />
+  </g>
+</svg>
