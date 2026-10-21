@@ -1,0 +1,203 @@
+---
+interface Props {
+  postId: string;
+  enabled: boolean;
+  visible: boolean;
+}
+
+const { postId, enabled, visible } = Astro.props;
+const apiBase = import.meta.env.PUBLIC_SUPABASE_URL
+  ? `${import.meta.env.PUBLIC_SUPABASE_URL}/functions/v1`
+  : '';
+const apiKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? '';
+---
+
+<section
+  class="comments"
+  aria-labelledby="comments-title"
+  data-comments
+  data-post-id={postId}
+  data-api-base={apiBase}
+  data-api-key={apiKey}
+  data-initial-enabled={String(enabled)}
+  data-initial-visible={String(visible)}
+>
+  <header class="comments-heading">
+    <h2 id="comments-title">댓글</h2>
+    <p>댓글은 검토 후 공개됩니다.</p>
+  </header>
+
+  <p class="comment-status" data-comment-status aria-live="polite">
+    {apiBase ? '댓글을 불러오는 중입니다.' : '댓글 기능은 서버 연결 후 사용할 수 있습니다.'}
+  </p>
+  <ol class="comment-list" data-comment-list hidden></ol>
+
+  <form class="comment-form" data-comment-form hidden>
+    <div class="reply-context" data-reply-context hidden>
+      <span data-reply-label></span>
+      <button type="button" data-cancel-reply>답글 취소</button>
+    </div>
+    <input type="hidden" name="parentId" value="" />
+    <div class="comment-fields">
+      <label>
+        <span>이름</span>
+        <input name="nickname" required minlength="2" maxlength="30" autocomplete="nickname" />
+      </label>
+      <label class="comment-website" aria-hidden="true">
+        <span>웹사이트</span>
+        <input name="website" tabindex="-1" autocomplete="off" />
+      </label>
+    </div>
+    <label>
+      <span>댓글</span>
+      <textarea name="body" required minlength="2" maxlength="1200" rows="5"></textarea>
+    </label>
+    <div class="comment-submit-row">
+      <p>링크와 개인정보를 포함하지 않는 것을 권장합니다.</p>
+      <button type="submit">댓글 보내기</button>
+    </div>
+  </form>
+</section>
+
+<script>
+  import {
+    buildCommentTree,
+    formatCommentDate,
+    type PublicCommentView,
+    type RawPublicComment,
+  } from '../../lib/public/comments';
+
+  const root = document.querySelector<HTMLElement>('[data-comments]');
+  if (root) {
+    const apiBase = root.dataset.apiBase ?? '';
+    const apiKey = root.dataset.apiKey ?? '';
+    const postId = root.dataset.postId ?? '';
+    const status = root.querySelector<HTMLElement>('[data-comment-status]');
+    const list = root.querySelector<HTMLOListElement>('[data-comment-list]');
+    const form = root.querySelector<HTMLFormElement>('[data-comment-form]');
+    const replyContext = root.querySelector<HTMLElement>('[data-reply-context]');
+    const replyLabel = root.querySelector<HTMLElement>('[data-reply-label]');
+    const parentInput = form?.elements.namedItem('parentId') as HTMLInputElement | null;
+    const bodyInput = form?.elements.namedItem('body') as HTMLTextAreaElement | null;
+    const headers: Record<string, string> = apiKey ? { apikey: apiKey } : {};
+    let commentsEnabled = root.dataset.initialEnabled === 'true';
+
+    const clearReply = () => {
+      if (parentInput) parentInput.value = '';
+      if (replyContext) replyContext.hidden = true;
+      if (replyLabel) replyLabel.textContent = '';
+    };
+
+    const beginReply = (comment: PublicCommentView) => {
+      if (!commentsEnabled || !parentInput || !replyContext || !replyLabel) return;
+      parentInput.value = comment.id;
+      replyLabel.textContent = `${comment.nickname}님에게 답글 작성 중`;
+      replyContext.hidden = false;
+      bodyInput?.focus();
+    };
+
+    root.querySelector('[data-cancel-reply]')?.addEventListener('click', () => {
+      clearReply();
+      bodyInput?.focus();
+    });
+
+    const showComments = (rawComments: RawPublicComment[], allowReplies: boolean) => {
+      if (!list) return;
+      list.replaceChildren();
+      const renderComment = (comment: PublicCommentView, seen: Set<string>): HTMLLIElement => {
+        const item = document.createElement('li');
+        if (seen.has(comment.id)) return item;
+        const nextSeen = new Set(seen).add(comment.id);
+        const meta = document.createElement('p');
+        meta.className = 'comment-meta';
+        const author = document.createElement('span');
+        author.textContent = comment.nickname;
+        const time = document.createElement('time');
+        if (comment.createdAt) time.dateTime = comment.createdAt;
+        time.textContent = formatCommentDate(comment.createdAt);
+        meta.append(author, time);
+        const body = document.createElement('p');
+        body.className = 'comment-body';
+        body.textContent = comment.body;
+        item.append(meta, body);
+        if (allowReplies) {
+          const replyButton = document.createElement('button');
+          replyButton.type = 'button';
+          replyButton.className = 'comment-reply-button';
+          replyButton.textContent = '답글';
+          replyButton.addEventListener('click', () => beginReply(comment));
+          item.append(replyButton);
+        }
+        if (comment.replies.length) {
+          const replies = document.createElement('ol');
+          replies.className = 'comment-replies';
+          replies.setAttribute('aria-label', `${comment.nickname}님의 댓글에 달린 답글`);
+          for (const reply of comment.replies) replies.append(renderComment(reply, nextSeen));
+          item.append(replies);
+        }
+        return item;
+      }
+      for (const comment of buildCommentTree(rawComments)) list.append(renderComment(comment, new Set()));
+      list.hidden = false;
+    };
+
+    const load = async () => {
+      if (!apiBase || !status || !list || !form) return;
+      try {
+        const response = await fetch(
+          `${apiBase}/public-comments?postId=${encodeURIComponent(postId)}`,
+          { headers },
+        );
+        if (!response.ok) throw new Error('comment request failed');
+        const payload = await response.json() as {
+          enabled: boolean;
+          visible: boolean;
+          comments: RawPublicComment[];
+        };
+        commentsEnabled = payload.enabled;
+        if (payload.visible) showComments(payload.comments ?? [], payload.enabled);
+        if (!payload.enabled) {
+          clearReply();
+          status.textContent = payload.visible
+            ? '이 글은 새 댓글을 받지 않습니다.'
+            : '이 글의 댓글은 비공개입니다.';
+          return;
+        }
+        status.textContent = payload.comments?.length ? '' : '아직 공개된 댓글이 없습니다.';
+        form.hidden = false;
+      } catch {
+        status.textContent = '댓글을 불러오지 못했습니다. 글은 계속 읽을 수 있습니다.';
+      }
+    };
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!apiBase || !status || !form) return;
+      const submit = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      const data = new FormData(form);
+      const body = String(data.get('body') ?? '');
+      const nickname = String(data.get('nickname') ?? '');
+      const website = String(data.get('website') ?? '');
+      const parentId = String(data.get('parentId') ?? '') || undefined;
+      submit?.setAttribute('disabled', '');
+      status.textContent = '댓글을 보내는 중입니다.';
+      try {
+        const response = await fetch(`${apiBase}/public-comments`, {
+          method: 'POST',
+          headers: { ...headers, 'content-type': 'application/json' },
+          body: JSON.stringify({ postId, parentId, nickname, body, website }),
+        });
+        if (!response.ok) throw new Error('comment submission failed');
+        form.reset();
+        clearReply();
+        status.textContent = '댓글을 보냈습니다. 검토 후 공개됩니다.';
+      } catch {
+        status.textContent = '댓글을 보내지 못했습니다. 입력 내용은 그대로 보존됩니다.';
+      } finally {
+        submit?.removeAttribute('disabled');
+      }
+    });
+
+    void load();
+  }
+</script>

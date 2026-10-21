@@ -1,0 +1,89 @@
+---
+import type { PublishedPost } from '../../lib/types';
+import PostList from './PostList.astro';
+
+interface Props {
+  title: string;
+  posts: PublishedPost[];
+  eyebrow?: string;
+  emptyTitle?: string;
+  emptyDescription?: string;
+}
+
+const { title, posts, eyebrow, emptyTitle, emptyDescription } = Astro.props;
+---
+
+<section class="listing" data-listing>
+  {eyebrow && <p class="listing-eyebrow">{eyebrow}</p>}
+  <div class="listing-heading">
+    <h1>{title}</h1>
+    {posts.length > 1 && (
+      <label class="sort-control">
+        <span class="sr-only">글 정렬</span>
+        <select data-sort-posts>
+          <option value="latest">최신순</option>
+          <option value="oldest">오래된순</option>
+          <option value="curated">정해진 순서</option>
+        </select>
+      </label>
+    )}
+  </div>
+  <PostList posts={posts} emptyTitle={emptyTitle} emptyDescription={emptyDescription} />
+  <nav class="pagination" aria-label="글 목록 페이지" data-pagination hidden></nav>
+</section>
+
+<script>
+  const PAGE_SIZE = 8;
+  for (const listing of document.querySelectorAll<HTMLElement>('[data-listing]')) {
+    const list = listing.querySelector<HTMLOListElement>('[data-post-list]');
+    const select = listing.querySelector<HTMLSelectElement>('[data-sort-posts]');
+    const pagination = listing.querySelector<HTMLElement>('[data-pagination]');
+    if (!list || !pagination) continue;
+    const items = [...list.querySelectorAll<HTMLElement>('[data-post-item]')];
+    let currentPage = 1;
+
+    const renderPage = () => {
+      const pages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+      currentPage = Math.min(currentPage, pages);
+      items.forEach((item, index) => {
+        item.hidden = index < (currentPage - 1) * PAGE_SIZE || index >= currentPage * PAGE_SIZE;
+      });
+      pagination.replaceChildren();
+      if (pages <= 1) {
+        pagination.hidden = true;
+        return;
+      }
+      pagination.hidden = false;
+      for (let page = 1; page <= pages; page += 1) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = String(page);
+        button.setAttribute('aria-current', page === currentPage ? 'page' : 'false');
+        button.addEventListener('click', () => {
+          currentPage = page;
+          renderPage();
+          listing.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        pagination.append(button);
+      }
+    };
+
+    select?.addEventListener('change', () => {
+      const direction = select.value;
+      items.sort((left, right) => {
+        const pinDifference = Number(right.dataset.pinned === 'true') - Number(left.dataset.pinned === 'true');
+        if (pinDifference) return pinDifference;
+        const difference = Date.parse(left.dataset.published ?? '') - Date.parse(right.dataset.published ?? '');
+        if (direction === 'curated') {
+          const categoryDifference = (left.dataset.categoryOrder ?? '').localeCompare(right.dataset.categoryOrder ?? '');
+          return categoryDifference || Number(left.dataset.order) - Number(right.dataset.order) || -difference;
+        }
+        return direction === 'oldest' ? difference : -difference;
+      });
+      list.replaceChildren(...items);
+      currentPage = 1;
+      renderPage();
+    });
+    renderPage();
+  }
+</script>

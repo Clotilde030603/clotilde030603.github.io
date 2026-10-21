@@ -1,0 +1,45 @@
+---
+import type { PublishedPost } from '../../lib/types';
+import { categoryById, categoryPath, formatDate } from '../../lib/public/content';
+
+interface Props {
+  posts: PublishedPost[];
+  emptyTitle?: string;
+  emptyDescription?: string;
+}
+
+const {
+  posts,
+  emptyTitle = '아직 발행된 글이 없습니다.',
+  emptyDescription = '첫 글이 발행되면 이곳에서 바로 읽을 수 있습니다.',
+} = Astro.props;
+---
+
+{
+  posts.length === 0 ? (
+    <section class="empty-state" aria-live="polite">
+      <p class="empty-title">{emptyTitle}</p>
+      <p>{emptyDescription}</p>
+    </section>
+  ) : (
+    <ol class="post-list" data-post-list>
+      {posts.map((post, index) => {
+        const category = post.categoryId ? categoryById.get(post.categoryId) : undefined;
+        const categoryOrder = categoryPath(post.categoryId).map((item) => String(item.position).padStart(6, '0')).join('.') || 'zzzz';
+        return (
+          <li class="post-list-item" data-post-item data-published={post.publishedAt} data-order={post.position ?? index} data-category-order={categoryOrder} data-pinned={post.pinned ? 'true' : 'false'}>
+            <div class="post-meta">
+              {post.pinned && <span class="post-pinned">고정</span>}
+              {post.pinned && <span aria-hidden="true">|</span>}
+              {category && <a href={`/category/${encodeURIComponent(category.slug)}/`}>{category.name}</a>}
+              {category && <span aria-hidden="true">|</span>}
+              <time datetime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
+            </div>
+            <h2><a href={`/posts/${encodeURIComponent(post.slug)}/`}>{post.title}</a></h2>
+            {post.summary && <p>{post.summary}</p>}
+          </li>
+        );
+      })}
+    </ol>
+  )
+}

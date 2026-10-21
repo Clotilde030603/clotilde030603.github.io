@@ -1,0 +1,19 @@
+---
+import PublicLayout from '../layouts/PublicLayout.astro';
+import ListingPage from '../components/public/ListingPage.astro';
+import { allTags, categories, posts } from '../lib/public/content';
+---
+
+<PublicLayout categories={categories}>
+  <ListingPage title="전체 글" posts={posts} />
+  {
+    allTags.length > 0 && (
+      <section class="topic-links" aria-labelledby="topics-title">
+        <h2 id="topics-title">주제별 모아보기</h2>
+        <div>
+          {allTags.map((tag) => <a href={`/tag/${encodeURIComponent(tag)}/`}>{tag}</a>)}
+        </div>
+      </section>
+    )
+  }
+</PublicLayout>

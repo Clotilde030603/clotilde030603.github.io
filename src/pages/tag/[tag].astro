@@ -1,0 +1,20 @@
+---
+import type { GetStaticPaths } from 'astro';
+import PublicLayout from '../../layouts/PublicLayout.astro';
+import ListingPage from '../../components/public/ListingPage.astro';
+import { allTags, categories, posts } from '../../lib/public/content';
+import type { PublishedPost } from '../../lib/types';
+
+export const getStaticPaths = (() =>
+  allTags.map((tag) => ({
+    params: { tag },
+    props: { tag, taggedPosts: posts.filter((post) => post.tags.includes(tag)) },
+  }))) satisfies GetStaticPaths;
+
+interface Props { tag: string; taggedPosts: PublishedPost[] }
+const { tag, taggedPosts } = Astro.props;
+---
+
+<PublicLayout title={tag} categories={categories} canonicalPath={`/tag/${tag}/`}>
+  <ListingPage title={`#${tag}`} eyebrow="태그" posts={taggedPosts} />
+</PublicLayout>

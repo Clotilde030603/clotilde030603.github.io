@@ -1,0 +1,46 @@
+---
+import type { Category } from '../../lib/types';
+import { buildCategoryTree } from '../../lib/public/category-tree';
+import { posts } from '../../lib/public/content';
+import CategoryBranch from './CategoryBranch.astro';
+
+interface Props {
+  categories: Category[];
+  activeCategoryId?: string | null;
+  instanceId?: string;
+}
+
+const { categories, activeCategoryId = null, instanceId = 'category-tree' } = Astro.props;
+const roots = buildCategoryTree(categories);
+---
+
+<nav class="category-nav" aria-label="카테고리">
+  <h2>카테고리</h2>
+  <a class:list={["category-link", { active: activeCategoryId === null }]} href="/">
+    <span>전체 글</span><span class="category-count">{posts.length}</span>
+  </a>
+  {
+    roots.map((root) => (
+      <CategoryBranch node={root} activeCategoryId={activeCategoryId} instanceId={instanceId} />
+    ))
+  }
+</nav>
+
+<script>
+  for (const toggle of document.querySelectorAll<HTMLButtonElement>('[data-category-toggle]')) {
+    if (toggle.dataset.bound === 'true') continue;
+    toggle.dataset.bound = 'true';
+    toggle.addEventListener('click', () => {
+      const controlId = toggle.getAttribute('aria-controls');
+      const children = controlId ? document.getElementById(controlId) : null;
+      if (!children) return;
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      toggle.setAttribute(
+        'aria-label',
+        (toggle.getAttribute('aria-label') ?? '').replace(expanded ? '접기' : '펼치기', expanded ? '펼치기' : '접기'),
+      );
+      children.hidden = expanded;
+    });
+  }
+</script>

@@ -1,0 +1,77 @@
+---
+import PublicLayout from '../layouts/PublicLayout.astro';
+import { categories, categoryById, formatDate, plainText, posts } from '../lib/public/content';
+
+const searchIndex = posts.map((post) => ({
+  title: post.title,
+  summary: post.summary,
+  slug: post.slug,
+  category: post.categoryId ? categoryById.get(post.categoryId)?.name ?? '' : '',
+  publishedAt: formatDate(post.publishedAt),
+  text: plainText(post).toLocaleLowerCase('ko'),
+}));
+---
+
+<PublicLayout title="검색" categories={categories} canonicalPath="/search/">
+  <section class="search-page">
+    <header><p class="listing-eyebrow">Search</p><h1>글 검색</h1></header>
+    <form class="search-form" role="search" data-search-form>
+      <label for="search-input">제목, 요약과 본문에서 검색합니다.</label>
+      <div>
+        <input id="search-input" name="q" type="search" autocomplete="off" maxlength="100" />
+        <button type="submit">검색</button>
+      </div>
+    </form>
+    <p class="search-status" data-search-status aria-live="polite">
+      {posts.length > 0 ? '검색어를 입력해 주세요.' : '검색할 수 있는 발행 글이 없습니다.'}
+    </p>
+    <ol class="post-list search-results" data-search-results></ol>
+  </section>
+</PublicLayout>
+
+<script define:vars={{ searchIndex }}>
+  const form = document.querySelector('[data-search-form]');
+  const input = document.querySelector('#search-input');
+  const status = document.querySelector('[data-search-status]');
+  const results = document.querySelector('[data-search-results]');
+
+  const render = (query) => {
+    const normalized = query.trim().toLocaleLowerCase('ko');
+    const matches = normalized ? searchIndex.filter((post) => post.text.includes(normalized)) : [];
+    results.replaceChildren();
+    for (const post of matches) {
+      const item = document.createElement('li');
+      item.className = 'post-list-item';
+      const meta = document.createElement('div');
+      meta.className = 'post-meta';
+      meta.textContent = [post.category, post.publishedAt].filter(Boolean).join('  |  ');
+      const heading = document.createElement('h2');
+      const link = document.createElement('a');
+      link.href = `/posts/${encodeURIComponent(post.slug)}/`;
+      link.textContent = post.title;
+      heading.append(link);
+      const summary = document.createElement('p');
+      summary.textContent = post.summary;
+      item.append(meta, heading, summary);
+      results.append(item);
+    }
+    status.textContent = !normalized
+      ? '검색어를 입력해 주세요.'
+      : matches.length
+        ? `${matches.length}개의 글을 찾았습니다.`
+        : '검색 결과가 없습니다.';
+    const url = new URL(window.location.href);
+    normalized ? url.searchParams.set('q', query.trim()) : url.searchParams.delete('q');
+    history.replaceState({}, '', url);
+  };
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    render(input.value);
+  });
+  const initial = new URL(window.location.href).searchParams.get('q') ?? '';
+  if (input && initial) {
+    input.value = initial;
+    render(initial);
+  }
+</script>

@@ -1,0 +1,21 @@
+<div class="rabbit-companion" data-rabbit-companion>
+  <div class="rabbit-stage" aria-label="노트북으로 글을 쓰는 Dorami 토끼" role="img">
+    <img class="rabbit-scene" src="/dorami-rabbit-laptop.png" alt="" width="366" height="350" />
+  </div>
+  <button type="button" class="motion-toggle" aria-pressed="false" data-motion-toggle>
+    움직임 멈춤
+  </button>
+</div>
+
+<script>
+  for (const companion of document.querySelectorAll<HTMLElement>('[data-rabbit-companion]')) {
+    const toggle = companion.querySelector<HTMLButtonElement>('[data-motion-toggle]');
+    if (!toggle || toggle.dataset.bound === 'true') continue;
+    toggle.dataset.bound = 'true';
+    toggle.addEventListener('click', () => {
+      const paused = companion.classList.toggle('motion-paused');
+      toggle.setAttribute('aria-pressed', String(paused));
+      toggle.textContent = paused ? '움직임 재생' : '움직임 멈춤';
+    });
+  }
+</script>
