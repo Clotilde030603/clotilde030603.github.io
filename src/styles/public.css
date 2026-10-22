@@ -150,7 +150,7 @@ main { min-width: 0; }
 .about-profile-links a { color: var(--matcha-strong); text-decoration: none; }
 .about-profile-links a span { margin-left: 2px; font-size: 11px; }
 .about-sections { display: grid; gap: 14px; margin-top: 22px; }
-.about-resume-section { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 18px; padding: 14px 0; }
+.about-resume-section { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 18px; padding: 20px 0; border-top: 1px solid var(--divider); }
 .about-section-number { margin: 4px 0 0; color: var(--matcha); font-size: 12px; font-variant-numeric: tabular-nums; }
 .about-section-content h2 { margin: 0 0 12px; font-size: 17px; font-weight: 500; line-height: 1.5; }
 .about-section-content ol { display: grid; gap: 8px; list-style: none; margin: 0; padding: 0; }
@@ -267,7 +267,7 @@ main { min-width: 0; }
   .about-profile > img { width: 84px; height: 84px; padding: 6px; }
   .about-profile-nickname { font-size: 22px; }
   .about-sections { gap: 8px; margin-top: 16px; }
-  .about-resume-section { grid-template-columns: 26px minmax(0, 1fr); gap: 10px; padding: 14px 0; }
+  .about-resume-section { grid-template-columns: 26px minmax(0, 1fr); gap: 10px; padding: 16px 0; }
   .about-resume-item { grid-template-columns: 1fr; gap: 3px; padding: 6px 0; }
   .home-page { grid-template-columns: minmax(0, 1fr); gap: 4px; min-height: auto; padding: 12px 0 32px; }
   .home-character { width: min(100%, 380px); }
