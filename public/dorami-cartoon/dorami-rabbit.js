@@ -72,6 +72,7 @@ class DoramiRabbit extends HTMLElement {
       nav{display:flex;gap:12px;justify-content:center}
       nav{align-items:center}
       button{display:grid;place-items:center;width:32px;height:32px;color:#526b3f;border:0;border-radius:50%;background:transparent;padding:6px;cursor:pointer}
+      button[hidden]{display:none}
       button:hover{background:#f0f3eb}
       button svg{width:18px;height:18px;display:block;fill:currentColor}
       button:focus-visible{outline:2px solid #526b3f;outline-offset:2px}
@@ -93,6 +94,7 @@ class DoramiRabbit extends HTMLElement {
     replay.dataset.replay = '';
     replay.setAttribute('aria-label', '다시 재생');
     replay.title = '다시 재생';
+    replay.hidden = this.hasAttribute('hide-replay');
     replay.append(this.createIcon('replay'));
     nav.append(pause, replay);
     this.shadowRoot.replaceChildren(style, canvas, nav);
