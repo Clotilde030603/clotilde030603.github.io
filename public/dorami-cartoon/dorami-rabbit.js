@@ -1,4 +1,4 @@
-import { createPlayer } from './player-core.js';
+import { createPlayer } from './player-core.js?v=two-hop-sequence-2';
 
 const FRAME_COUNT = 24;
 const FRAME_SIZE = 280;
@@ -126,6 +126,7 @@ class DoramiRabbit extends HTMLElement {
     const base = new URL('./', import.meta.url);
     try {
       const configUrl = new URL('animation.json', base);
+      configUrl.searchParams.set('v', 'two-hop-sequence-2');
       if (configUrl.origin !== base.origin) throw new Error('설정 경로가 올바르지 않습니다.');
       const response = await fetch(configUrl, { credentials: 'omit', cache: 'force-cache' });
       if (!response.ok) throw new Error('설정 파일을 불러오지 못했습니다.');
