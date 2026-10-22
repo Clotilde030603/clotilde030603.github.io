@@ -245,6 +245,16 @@ main { min-width: 0; }
   .search-form > div { display: grid; grid-template-columns: 1fr auto; }
 }
 
+@media (max-width: 380px) {
+  .header-inner { width: calc(100% - 20px); }
+  .brand { gap: 5px; }
+  .brand img { width: 32px; height: 32px; }
+  .brand span { font-size: 17px; }
+  .top-nav { gap: 4px; font-size: 10px; }
+  .search-link { width: 22px; height: 24px; }
+  .search-link svg { width: 16px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

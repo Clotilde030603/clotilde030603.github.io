@@ -5,15 +5,16 @@ import PostList from './PostList.astro';
 interface Props {
   title: string;
   posts: PublishedPost[];
+  sectionId?: string;
   eyebrow?: string;
   emptyTitle?: string;
   emptyDescription?: string;
 }
 
-const { title, posts, eyebrow, emptyTitle, emptyDescription } = Astro.props;
+const { title, posts, sectionId, eyebrow, emptyTitle, emptyDescription } = Astro.props;
 ---
 
-<section class="listing" data-listing>
+<section id={sectionId} class="listing" data-listing>
   {eyebrow && <p class="listing-eyebrow">{eyebrow}</p>}
   <div class="listing-heading">
     <h1>{title}</h1>

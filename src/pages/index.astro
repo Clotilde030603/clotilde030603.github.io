@@ -7,7 +7,7 @@ const { allTags, categories, posts } = await getBlogContent();
 ---
 
 <PublicLayout categories={categories} posts={posts}>
-  <ListingPage title="전체 글" posts={posts} />
+  <ListingPage title="전체 글" posts={posts} sectionId="posts" />
   {
     allTags.length > 0 && (
       <section class="topic-links" aria-labelledby="topics-title">
