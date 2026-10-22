@@ -110,10 +110,21 @@ main { min-width: 0; }
 .home-posts-link { display: inline-flex; align-items: center; gap: 10px; color: var(--matcha-strong); font-size: 14px; font-weight: 500; text-decoration: none; }
 .home-posts-link span { font-size: 18px; transition: transform .16s ease; }
 .home-posts-link:hover span { transform: translateX(3px); }
-.home-recent { max-width: 780px; padding-top: 24px; border-top: 1px solid var(--divider); }
+.home-recent { max-width: 1060px; padding-top: 24px; border-top: 1px solid var(--divider); }
 .home-recent > header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .home-recent h2 { margin: 0; font-size: 17px; font-weight: 500; }
 .home-recent > header a { color: var(--muted); font-size: 12px; text-decoration: none; }
+.home-recent-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; list-style: none; margin: 18px 0 0; padding: 0; }
+.home-recent-card { position: relative; min-width: 0; min-height: 178px; padding: 18px 18px 40px; border: 1px solid var(--divider); background: color-mix(in srgb, var(--background) 80%, var(--matcha-soft)); }
+.home-recent-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.home-recent-meta a { color: var(--matcha-strong); text-decoration: none; }
+.home-recent-index { color: var(--matcha-strong); font-variant-numeric: tabular-nums; }
+.home-recent-meta time::before { content: '·'; margin-right: 8px; color: var(--divider); }
+.home-recent-card h3 { margin: 16px 0 6px; font-size: 16px; font-weight: 500; line-height: 1.5; letter-spacing: -.015em; }
+.home-recent-card h3 a { color: inherit; text-decoration: none; }
+.home-recent-card h3 a:hover { color: var(--matcha-strong); }
+.home-recent-card p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.home-recent-open { position: absolute; right: 18px; bottom: 14px; color: var(--matcha-strong); font-size: 16px; text-decoration: none; }
 .listing { max-width: 780px; }
 .listing-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--divider); }
 .listing-heading h1, .about-page h1, .search-page h1 { margin: 0; font-size: 22px; font-weight: 500; line-height: 1.4; letter-spacing: -.02em; }
@@ -273,6 +284,8 @@ main { min-width: 0; }
   .home-character { width: min(100%, 380px); }
   .home-copy { text-align: center; }
   .home-description { margin-inline: auto; }
+  .home-recent-grid { grid-template-columns: 1fr; gap: 10px; }
+  .home-recent-card { min-height: auto; padding: 16px 16px 38px; }
   .post-list-item { padding: 20px 0; }
   .article-header { margin-top: 16px; }
   .article-prose { font-size: 16px; line-height: 1.82; word-break: normal; }
