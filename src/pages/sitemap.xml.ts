@@ -1,8 +1,9 @@
 import type { APIRoute } from 'astro';
-import { allTags, categories, posts } from '../lib/public/content';
+import { getBlogContent } from '../lib/public/load-content';
 import { escapeXml } from '../lib/public/render-document';
 
-export const GET: APIRoute = ({ site }) => {
+export const GET: APIRoute = async ({ site }) => {
+  const { allTags, categories, posts } = await getBlogContent();
   const base = site ?? new URL('https://clotilde030603.github.io');
   const paths = [
     '/',

@@ -1,8 +1,6 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import type { DoramiDocument } from '../types';
 import { renderDocument, safeHref } from './render-document';
-
-afterEach(() => vi.unstubAllEnvs());
 
 describe('renderDocument', () => {
   it('escapes text and blocks executable URLs', () => {
@@ -64,9 +62,8 @@ describe('safeHref', () => {
   });
 });
 
-it('renders image caption and alignment without accepting arbitrary style', () => {
-  vi.stubEnv('PUBLIC_SUPABASE_URL', 'https://dorami.supabase.co');
-  const src = 'https://dorami.supabase.co/storage/v1/object/public/published-media/post/photo.png';
+it('renders local image captions and alignment without accepting arbitrary style', () => {
+  const src = '/assets/posts/photo.png';
   const document: DoramiDocument = { schemaVersion: 1, content: { type: 'doc', content: [
     { type: 'image', attrs: { src, alt: '토끼', caption: '<설명>', width: '80%', alignment: 'right', style: 'position:fixed' } },
   ] } };
@@ -77,8 +74,7 @@ it('renders image caption and alignment without accepting arbitrary style', () =
   expect(html).not.toContain('position:fixed');
 });
 
-it('does not fetch a reader-tracking image from another host', () => {
-  vi.stubEnv('PUBLIC_SUPABASE_URL', 'https://dorami.supabase.co');
+it('does not fetch reader-tracking images from another host', () => {
   const document: DoramiDocument = { schemaVersion: 1, content: { type: 'doc', content: [
     { type: 'image', attrs: { src: 'https://tracker.example/pixel.png' } },
   ] } };

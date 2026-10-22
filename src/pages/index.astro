@@ -1,10 +1,12 @@
 ---
 import PublicLayout from '../layouts/PublicLayout.astro';
 import ListingPage from '../components/public/ListingPage.astro';
-import { allTags, categories, posts } from '../lib/public/content';
+import { getBlogContent } from '../lib/public/load-content';
+
+const { allTags, categories, posts } = await getBlogContent();
 ---
 
-<PublicLayout categories={categories}>
+<PublicLayout categories={categories} posts={posts}>
   <ListingPage title="전체 글" posts={posts} />
   {
     allTags.length > 0 && (

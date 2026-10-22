@@ -1,15 +1,17 @@
 ---
 import PublicLayout from '../layouts/PublicLayout.astro';
 import DocumentContent from '../components/public/DocumentContent.astro';
-import { categories, snapshot } from '../lib/public/content';
+import { getBlogContent } from '../lib/public/load-content';
+
+const { categories, posts, about } = await getBlogContent();
 ---
 
-<PublicLayout title="소개" categories={categories} canonicalPath="/about/">
+<PublicLayout title="소개" categories={categories} posts={posts} canonicalPath="/about/">
   <article class="about-page">
     <header><p class="listing-eyebrow">About</p><h1>소개</h1></header>
     {
-      snapshot.about ? (
-        <DocumentContent document={snapshot.about} />
+      about ? (
+        <DocumentContent document={about} />
       ) : (
         <section class="empty-state">
           <p class="empty-title">소개 글을 준비하고 있습니다.</p>

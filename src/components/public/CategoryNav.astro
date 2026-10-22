@@ -1,17 +1,19 @@
 ---
-import type { Category } from '../../lib/types';
+import type { Category, PublishedPost } from '../../lib/types';
 import { buildCategoryTree } from '../../lib/public/category-tree';
-import { posts } from '../../lib/public/content';
+import { postsInCategory } from '../../lib/public/content';
 import CategoryBranch from './CategoryBranch.astro';
 
 interface Props {
   categories: Category[];
+  posts: PublishedPost[];
   activeCategoryId?: string | null;
   instanceId?: string;
 }
 
-const { categories, activeCategoryId = null, instanceId = 'category-tree' } = Astro.props;
+const { categories, posts, activeCategoryId = null, instanceId = 'category-tree' } = Astro.props;
 const roots = buildCategoryTree(categories);
+const categoryCounts = new Map(categories.map((category) => [category.id, postsInCategory(category.id, categories, posts).length]));
 ---
 
 <nav class="category-nav" aria-label="카테고리">
@@ -21,7 +23,7 @@ const roots = buildCategoryTree(categories);
   </a>
   {
     roots.map((root) => (
-      <CategoryBranch node={root} activeCategoryId={activeCategoryId} instanceId={instanceId} />
+      <CategoryBranch node={root} activeCategoryId={activeCategoryId} instanceId={instanceId} categoryCounts={categoryCounts} />
     ))
   }
 </nav>

@@ -2,39 +2,37 @@
 import type { GetStaticPaths } from 'astro';
 import PublicLayout from '../../layouts/PublicLayout.astro';
 import DocumentContent from '../../components/public/DocumentContent.astro';
-import Comments from '../../components/public/Comments.astro';
-import RedirectPage from '../../components/public/RedirectPage.astro';
-import { categories, categoryById, categoryPath, formatDate, posts, slugAliases } from '../../lib/public/content';
-import { buildPublicPostPaths } from '../../lib/public/post-paths';
+import { categoryPath, formatDate } from '../../lib/public/content';
+import { getBlogContent } from '../../lib/public/load-content';
 import { renderDocument, safeHref } from '../../lib/public/render-document';
+import type { BlogContent } from '../../lib/public/content';
 import type { PublishedPost } from '../../lib/types';
 
-export const getStaticPaths = (() => buildPublicPostPaths(posts, slugAliases)) satisfies GetStaticPaths;
+export const getStaticPaths = (async () => {
+  const content = await getBlogContent();
+  return content.posts.map((post) => ({ params: { slug: post.slug }, props: { post, content } }));
+}) satisfies GetStaticPaths;
 
-interface Props { post: PublishedPost; redirectTo: string | null }
-const { post, redirectTo } = Astro.props;
-const category = post.categoryId ? categoryById.get(post.categoryId) : undefined;
-const breadcrumbs = categoryPath(post.categoryId);
+interface Props { post: PublishedPost; content: BlogContent }
+const { post, content } = Astro.props;
+const breadcrumbs = categoryPath(post.categoryId, content.categories);
 const { headings } = renderDocument(post.document);
-const postIndex = posts.findIndex((item) => item.id === post.id);
-const newerPost = postIndex > 0 ? posts[postIndex - 1] : null;
-const olderPost = postIndex >= 0 && postIndex < posts.length - 1 ? posts[postIndex + 1] : null;
-const apiBase = import.meta.env.PUBLIC_SUPABASE_URL
-  ? `${import.meta.env.PUBLIC_SUPABASE_URL}/functions/v1`
-  : '';
-const apiKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? '';
+const postIndex = content.posts.findIndex((item) => item.id === post.id);
+const newerPost = postIndex > 0 ? content.posts[postIndex - 1] : null;
+const olderPost = postIndex >= 0 && postIndex < content.posts.length - 1 ? content.posts[postIndex + 1] : null;
 const sourceUrl = safeHref(post.sourceUrl);
 ---
 
-{redirectTo ? <RedirectPage targetPath={redirectTo} /> : <PublicLayout
+<PublicLayout
   title={post.title}
   description={post.summary}
-  categories={categories}
+  categories={content.categories}
+  posts={content.posts}
   activeCategoryId={post.categoryId}
   canonicalPath={`/posts/${post.slug}/`}
   articlePublishedAt={post.publishedAt}
 >
-  <article class="article" data-public-post-id={post.id} data-view-api={apiBase} data-api-key={apiKey}>
+  <article class="article">
     {
       breadcrumbs.length > 0 && (
         <nav class="breadcrumbs" aria-label="글 위치">
@@ -50,7 +48,7 @@ const sourceUrl = safeHref(post.sourceUrl);
     <header class="article-header">
       <h1>{post.title}</h1>
       <div class="article-meta">
-        {category && <span>{category.name}</span>}
+        {post.categoryName && <span>{post.categoryName}</span>}
         <time datetime={post.publishedAt}>작성 {formatDate(post.publishedAt)}</time>
         {post.updatedAt && <time datetime={post.updatedAt}>수정 {formatDate(post.updatedAt)}</time>}
       </div>
@@ -65,9 +63,7 @@ const sourceUrl = safeHref(post.sourceUrl);
       <div class="article-body">
         {post.summary && <p class="article-lead">{post.summary}</p>}
         <DocumentContent document={post.document} />
-        {sourceUrl && (
-          <p class="source-link"><a href={sourceUrl} rel="noreferrer">원문 출처 보기</a></p>
-        )}
+        {sourceUrl && <p class="source-link"><a href={sourceUrl} rel="noreferrer">원문 출처 보기</a></p>}
       </div>
       {
         headings.length > 1 && (
@@ -87,33 +83,5 @@ const sourceUrl = safeHref(post.sourceUrl);
       {olderPost ? <a href={`/posts/${encodeURIComponent(olderPost.slug)}/`}><span>이전 글</span>{olderPost.title}</a> : <span></span>}
       {newerPost ? <a class="next" href={`/posts/${encodeURIComponent(newerPost.slug)}/`}><span>다음 글</span>{newerPost.title}</a> : <span></span>}
     </nav>
-    <Comments postId={post.id} enabled={post.commentsEnabled} visible={post.commentsVisible} />
   </article>
-</PublicLayout>}
-
-<script>
-  const article = document.querySelector<HTMLElement>('[data-public-post-id]');
-  if (article?.dataset.viewApi) {
-    const storageKey = 'dorami-session-id';
-    let sessionId = '';
-    try {
-      sessionId = sessionStorage.getItem(storageKey) ?? '';
-      if (!sessionId) {
-        sessionId = crypto.randomUUID?.() ?? `${Date.now()}-${Math.random()}`;
-        sessionStorage.setItem(storageKey, sessionId);
-      }
-    } catch {
-      sessionId = crypto.randomUUID?.() ?? `${Date.now()}-${Math.random()}`;
-    }
-    const apiKey = article.dataset.apiKey ?? '';
-    void fetch(`${article.dataset.viewApi}/record-view`, {
-      method: 'POST',
-      keepalive: true,
-      headers: {
-        ...(apiKey ? { apikey: apiKey } : {}),
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({ postId: article.dataset.publicPostId, sessionId }),
-    }).catch(() => undefined);
-  }
-</script>
+</PublicLayout>

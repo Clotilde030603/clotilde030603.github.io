@@ -4,7 +4,6 @@ dist/
 .astro/
 .env
 .env.*
-!.env.example
 .envrc
 *.pem
 *.key
@@ -12,10 +11,6 @@ dist/
 *.p12
 *.pfx
 *.jks
-.supabase/
-supabase/.branches/
-supabase/.profiles/
-supabase/.temp/
 coverage/
 playwright-report/
 .playwright-cli/
@@ -24,3 +19,8 @@ test-results/
 output/
 *.log
 .DS_Store
+# Local-only Supabase CLI data from the former backend must not be committed.
+.supabase/
+supabase/.branches/
+supabase/.profiles/
+supabase/.temp/

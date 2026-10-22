@@ -1,6 +1,6 @@
 ---
 import type { PublishedPost } from '../../lib/types';
-import { categoryById, categoryPath, formatDate } from '../../lib/public/content';
+import { formatDate } from '../../lib/public/content';
 
 interface Props {
   posts: PublishedPost[];
@@ -24,15 +24,13 @@ const {
   ) : (
     <ol class="post-list" data-post-list>
       {posts.map((post, index) => {
-        const category = post.categoryId ? categoryById.get(post.categoryId) : undefined;
-        const categoryOrder = categoryPath(post.categoryId).map((item) => String(item.position).padStart(6, '0')).join('.') || 'zzzz';
         return (
-          <li class="post-list-item" data-post-item data-published={post.publishedAt} data-order={post.position ?? index} data-category-order={categoryOrder} data-pinned={post.pinned ? 'true' : 'false'}>
+          <li class="post-list-item" data-post-item data-published={post.publishedAt} data-order={post.position ?? index} data-category-order={post.categoryOrder} data-pinned={post.pinned ? 'true' : 'false'}>
             <div class="post-meta">
               {post.pinned && <span class="post-pinned">고정</span>}
               {post.pinned && <span aria-hidden="true">|</span>}
-              {category && <a href={`/category/${encodeURIComponent(category.slug)}/`}>{category.name}</a>}
-              {category && <span aria-hidden="true">|</span>}
+              {post.categoryName && post.categorySlug && <a href={`/category/${encodeURIComponent(post.categorySlug)}/`}>{post.categoryName}</a>}
+              {post.categoryName && <span aria-hidden="true">|</span>}
               <time datetime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
             </div>
             <h2><a href={`/posts/${encodeURIComponent(post.slug)}/`}>{post.title}</a></h2>

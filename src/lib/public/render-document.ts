@@ -36,13 +36,7 @@ const safeUrl = (value: unknown, image = false): string | null => {
   try {
     const url = new URL(trimmed);
     if (image) {
-      const service = import.meta.env.PUBLIC_SUPABASE_URL;
-      if (!service) return null;
-      const allowed = new URL(service);
-      return url.origin === allowed.origin && url.protocol === allowed.protocol &&
-        url.pathname.startsWith('/storage/v1/object/public/published-media/') &&
-        !/%(?:2f|5c)/i.test(url.pathname) && !url.username && !url.password &&
-        !url.search && !url.hash ? url.toString() : null;
+      return null;
     }
     return ['https:', 'http:', 'mailto:'].includes(url.protocol) ? url.toString() : null;
   } catch {

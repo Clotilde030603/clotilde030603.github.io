@@ -2,19 +2,21 @@
 import type { GetStaticPaths } from 'astro';
 import PublicLayout from '../../layouts/PublicLayout.astro';
 import ListingPage from '../../components/public/ListingPage.astro';
-import { allTags, categories, posts } from '../../lib/public/content';
+import { getBlogContent } from '../../lib/public/load-content';
 import type { PublishedPost } from '../../lib/types';
 
-export const getStaticPaths = (() =>
-  allTags.map((tag) => ({
+export const getStaticPaths = (async () => {
+  const { allTags, categories, posts } = await getBlogContent();
+  return allTags.map((tag) => ({
     params: { tag },
-    props: { tag, taggedPosts: posts.filter((post) => post.tags.includes(tag)) },
-  }))) satisfies GetStaticPaths;
+    props: { tag, taggedPosts: posts.filter((post) => post.tags.includes(tag)), categories, posts },
+  }));
+}) satisfies GetStaticPaths;
 
-interface Props { tag: string; taggedPosts: PublishedPost[] }
-const { tag, taggedPosts } = Astro.props;
+interface Props { tag: string; taggedPosts: PublishedPost[]; categories: Awaited<ReturnType<typeof getBlogContent>>['categories']; posts: Awaited<ReturnType<typeof getBlogContent>>['posts'] }
+const { tag, taggedPosts, categories, posts } = Astro.props;
 ---
 
-<PublicLayout title={tag} categories={categories} canonicalPath={`/tag/${encodeURIComponent(tag)}/`}>
+<PublicLayout title={tag} categories={categories} posts={posts} canonicalPath={`/tag/${encodeURIComponent(tag)}/`}>
   <ListingPage title={`#${tag}`} eyebrow="태그" posts={taggedPosts} />
 </PublicLayout>

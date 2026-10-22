@@ -1,18 +1,21 @@
 ---
 import PublicLayout from '../layouts/PublicLayout.astro';
-import { categories, categoryById, formatDate, plainText, posts } from '../lib/public/content';
+import { formatDate, plainText } from '../lib/public/content';
+import { getBlogContent } from '../lib/public/load-content';
+
+const { categories, posts } = await getBlogContent();
 
 const searchIndex = posts.map((post) => ({
   title: post.title,
   summary: post.summary,
   slug: post.slug,
-  category: post.categoryId ? categoryById.get(post.categoryId)?.name ?? '' : '',
+  category: post.categoryName ?? '',
   publishedAt: formatDate(post.publishedAt),
   text: plainText(post).toLocaleLowerCase('ko'),
 }));
 ---
 
-<PublicLayout title="검색" categories={categories} canonicalPath="/search/">
+<PublicLayout title="검색" categories={categories} posts={posts} canonicalPath="/search/">
   <section class="search-page">
     <header><p class="listing-eyebrow">Search</p><h1>글 검색</h1></header>
     <form class="search-form" role="search" data-search-form>

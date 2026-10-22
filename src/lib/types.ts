@@ -25,23 +25,15 @@ export type PublishedPost = {
   title: string;
   summary: string;
   categoryId: string | null;
+  categoryName: string | null;
+  categorySlug: string | null;
+  categoryPath: Category[];
+  categoryOrder: string;
   tags: string[];
   document: DoramiDocument;
   publishedAt: string;
   updatedAt: string | null;
-  commentsEnabled: boolean;
-  commentsVisible: boolean;
-  pinned?: boolean;
-  position?: number;
-  sourceUrl?: string | null;
-};
-
-export type PublicSnapshot = {
-  schemaVersion: 1;
-  deploymentId: string | null;
-  generatedAt: string | null;
-  categories: Category[];
-  posts: PublishedPost[];
-  slugAliases: Array<{ slug: string; postId: string; targetSlug: string }>;
-  about: DoramiDocument | null;
+  pinned: boolean;
+  position: number;
+  sourceUrl: string | null;
 };

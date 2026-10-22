@@ -1,17 +1,17 @@
 ---
 import type { CategoryTreeNode } from '../../lib/public/category-tree';
 import { containsCategory } from '../../lib/public/category-tree';
-import { postsInCategory } from '../../lib/public/content';
 import CategoryBranch from './CategoryBranch.astro';
 
 interface Props {
   node: CategoryTreeNode;
   activeCategoryId: string | null;
   instanceId: string;
+  categoryCounts: Map<string, number>;
   depth?: number;
 }
 
-const { node, activeCategoryId, instanceId, depth = 0 } = Astro.props;
+const { node, activeCategoryId, instanceId, categoryCounts, depth = 0 } = Astro.props;
 const hasChildren = node.children.length > 0;
 const expanded = hasChildren && containsCategory(node, activeCategoryId);
 const controlId = `${instanceId}-${node.id.replace(/[^a-zA-Z0-9_-]/g, '-')}-children`;
@@ -39,7 +39,7 @@ const controlId = `${instanceId}-${node.id.replace(/[^a-zA-Z0-9_-]/g, '-')}-chil
       class:list={["category-link", { active: activeCategoryId === node.id }]}
       href={`/category/${encodeURIComponent(node.slug)}/`}
     >
-      <span>{node.name}</span><span class="category-count">{postsInCategory(node.id).length}</span>
+      <span>{node.name}</span><span class="category-count">{categoryCounts.get(node.id) ?? 0}</span>
     </a>
   </div>
   {
@@ -50,6 +50,7 @@ const controlId = `${instanceId}-${node.id.replace(/[^a-zA-Z0-9_-]/g, '-')}-chil
             node={child}
             activeCategoryId={activeCategoryId}
             instanceId={instanceId}
+            categoryCounts={categoryCounts}
             depth={depth + 1}
           />
         ))}
