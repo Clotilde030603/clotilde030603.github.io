@@ -152,6 +152,7 @@ const apiKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? '';
         const payload = await response.json() as {
           enabled: boolean;
           visible: boolean;
+          hasMore?: boolean;
           comments: RawPublicComment[];
         };
         commentsEnabled = payload.enabled;
@@ -163,7 +164,9 @@ const apiKey = import.meta.env.PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? '';
             : '이 글의 댓글은 비공개입니다.';
           return;
         }
-        status.textContent = payload.comments?.length ? '' : '아직 공개된 댓글이 없습니다.';
+        status.textContent = payload.hasMore
+          ? '최근 공개된 댓글 200개만 표시하고 있습니다.'
+          : payload.comments?.length ? '' : '아직 공개된 댓글이 없습니다.';
         form.hidden = false;
       } catch {
         status.textContent = '댓글을 불러오지 못했습니다. 글은 계속 읽을 수 있습니다.';

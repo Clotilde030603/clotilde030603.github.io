@@ -17,7 +17,7 @@ export function AdminShell({ section, user, categories, onNavigate, onNewPost, o
   return (
     <div className="admin-shell">
       <aside className="admin-sidebar" aria-label="관리자 메뉴">
-        <a className="admin-brand" href="/" aria-label="Dorami 공개 블로그로 이동"><img src="/rabbit-mark.svg" alt="" /><span>Dorami</span></a>
+        <a className="admin-brand" href="/" aria-label="Dorami 공개 블로그로 이동"><img src="/dorami-cartoon/dorami-rabbit-face.png" alt="" /><span>Dorami</span></a>
         <button className="admin-new" type="button" onClick={onNewPost}><PlusIcon /> 새 글</button>
         <nav>{items.map((item)=><button key={item.section} type="button" className={section===item.section?'nav-item is-active':'nav-item'} onClick={()=>onNavigate(item.section)}>{item.icon}<span>{item.label}</span></button>)}</nav>
         <div className="category-tree"><p>글 분류</p>

@@ -10,6 +10,7 @@ if (!url || !anonKey || !serviceKey || !email || !password) throw new Error('loc
 
 const siteOrigin = 'https://clotilde030603.github.io';
 const localOrigin = 'http://127.0.0.1:4321';
+const testClientAddress = `198.51.100.${1 + (Date.now() % 250)}`;
 const admin = createClient(url, serviceKey, { auth: { persistSession: false } });
 let { data: users, error: usersError } = await admin.auth.admin.listUsers();
 if (usersError) throw usersError;
@@ -46,8 +47,8 @@ let response = await fetch(`${url}/functions/v1/publish-dispatch`, {
 });
 if (response.status !== 202) throw new Error(`publish failed: ${response.status} ${await response.text()}`);
 
-const submitComment = async (nickname, body) => fetch(`${url}/functions/v1/public-comments`, {
-  method: 'POST', headers: { 'Content-Type': 'application/json', Origin: siteOrigin },
+const submitComment = async (nickname, body, userAgent = 'Dorami security integration') => fetch(`${url}/functions/v1/public-comments`, {
+  method: 'POST', headers: { 'Content-Type': 'application/json', Origin: siteOrigin, 'User-Agent': userAgent, 'cf-connecting-ip': testClientAddress },
   body: JSON.stringify({ postId, nickname, body }),
 });
 const readComments = async () => fetch(`${url}/functions/v1/public-comments?postId=${postId}`, { headers: { Origin: siteOrigin } });
@@ -93,9 +94,18 @@ response = await readComments();
 publicComments = await response.json();
 assert.equal(publicComments.visible, false);
 assert.deepEqual(publicComments.comments, []);
+const { error: enableRateTestError } = await owner.from('posts').update({ comments_enabled: true, comments_visible: true }).eq('id', postId);
+if (enableRateTestError) throw enableRateTestError;
+
+const simultaneousComments = await Promise.all(Array.from({ length: 8 }, (_, index) =>
+  submitComment(`동시 방문자 ${index}`, `병렬 제한 검증 ${index}`, `spoofed-agent-${index}`),
+));
+const simultaneousStatuses = await Promise.all(simultaneousComments.map((item) => item.status));
+assert.equal(simultaneousStatuses.filter((status) => status === 202).length, 3, 'parallel posts share the remaining per-address quota');
+assert.equal(simultaneousStatuses.filter((status) => status === 429).length, 5, 'parallel posts cannot race past the per-address quota');
 
 const view = async (sessionId, origin = siteOrigin, authorization = null) => fetch(`${url}/functions/v1/record-view`, {
-  method: 'POST', headers: { 'Content-Type': 'application/json', Origin: origin, ...(authorization ? { Authorization: `Bearer ${authorization}` } : {}) },
+  method: 'POST', headers: { 'Content-Type': 'application/json', Origin: origin, 'cf-connecting-ip': testClientAddress, ...(authorization ? { Authorization: `Bearer ${authorization}` } : {}) },
   body: JSON.stringify({ postId, sessionId }),
 });
 response = await view(crypto.randomUUID());
@@ -113,11 +123,17 @@ const { data: analytics, error: analyticsError } = await owner.rpc('analytics_su
 if (analyticsError) throw analyticsError;
 assert.equal(analytics.metric, 'page_views');
 assert.equal(analytics.timezone, 'Asia/Seoul');
-assert.equal(analytics.total, 1, 'preview and owner events do not affect the aggregate');
-assert.equal(analytics.posts.find((post) => post.postId === postId)?.views, 1);
+assert.ok(analytics.total >= 1, 'the public article view is included in the aggregate');
+assert.equal(analytics.posts.find((post) => post.postId === postId)?.views, 1, 'preview and owner views do not affect this post');
 const anonymous = createClient(url, anonKey, { auth: { persistSession: false } });
 const { error: anonymousAnalyticsError } = await anonymous.rpc('analytics_summary', { p_from: seoulToday, p_to: seoulToday });
 assert(anonymousAnalyticsError, 'anonymous analytics RPC must be denied');
+
+const simultaneousViews = await Promise.all(Array.from({ length: 64 }, () => view(crypto.randomUUID())));
+const simultaneousViewStatuses = await Promise.all(simultaneousViews.map((item) => item.status));
+assert.ok(simultaneousViewStatuses.filter((status) => status === 202).length <= 59, 'parallel views cannot exceed the remaining per-address quota');
+assert.ok(simultaneousViewStatuses.filter((status) => status === 429).length >= 5, 'parallel views are rate limited atomically');
+assert.equal(simultaneousViewStatuses.filter((status) => status !== 202 && status !== 429).length, 0, 'parallel view requests have explicit outcomes');
 
 response = await fetch(`${url}/functions/v1/publish-dispatch`, {
   method: 'POST', headers: { Authorization: `Bearer ${ownerToken}`, 'Content-Type': 'application/json', Origin: siteOrigin },

@@ -26,9 +26,11 @@ Deno.serve(async (request) => {
       if (!post.comments_visible) return json(request, { enabled: post.comments_enabled, visible: false, comments: [] });
       const { data, error } = await db.from('comments')
         .select('id,parent_id,nickname,body,website,created_at')
-        .eq('post_id', postId).eq('status', 'published').order('created_at', { ascending: true });
+        .eq('post_id', postId).eq('status', 'published').order('created_at', { ascending: false }).limit(201);
       if (error) throw error;
-      return json(request, { enabled: post.comments_enabled, visible: true, comments: (data ?? []).map((comment) => ({
+      const rows = data ?? [];
+      const hasMore = rows.length > 200;
+      return json(request, { enabled: post.comments_enabled, visible: true, hasMore, comments: rows.slice(0, 200).reverse().map((comment) => ({
         id: comment.id, parentId: comment.parent_id, nickname: comment.nickname, body: comment.body,
         website: comment.website, createdAt: comment.created_at,
       })) });
@@ -51,17 +53,16 @@ Deno.serve(async (request) => {
       const { data: parent } = await db.from('comments').select('id').eq('id', parentId).eq('post_id', postId).eq('status', 'published').maybeSingle();
       if (!parent) throw new HttpError(400, 'parent comment is not available');
     }
-    const clientAddress = request.headers.get('cf-connecting-ip') ?? request.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
-    const submissionHash = await hmacHex(`${clientAddress}|${request.headers.get('user-agent') ?? ''}`, 'COMMENT_HASH_SECRET');
-    const since = new Date(Date.now() - 10 * 60_000).toISOString();
-    const { count, error: countError } = await db.from('comments').select('id', { count: 'exact', head: true })
-      .eq('submission_hash', submissionHash).gte('created_at', since);
-    if (countError) throw countError;
-    if ((count ?? 0) >= 5) throw new HttpError(429, 'too many comments; try again later');
-    const { data: comment, error } = await db.from('comments')
-      .insert({ post_id: postId, parent_id: parentId, nickname, body: commentBody, website, submission_hash: submissionHash, status: 'pending' })
-      .select('id,status,created_at').single();
+    const clientAddress = request.headers.get('cf-connecting-ip')?.trim().slice(0, 128) || 'unavailable';
+    const submissionHash = await hmacHex(clientAddress, 'COMMENT_HASH_SECRET');
+    const { data, error } = await db.rpc('submit_public_comment', {
+      p_post_id: postId, p_parent_id: parentId, p_nickname: nickname, p_body: commentBody,
+      p_website: website, p_submission_hash: submissionHash,
+    });
     if (error) throw error;
-    return json(request, { comment: { id: comment.id, status: comment.status, createdAt: comment.created_at } }, 202);
+    const result = Array.isArray(data) ? data[0] : data;
+    if (result?.rate_limited) throw new HttpError(429, 'too many comments; try again later');
+    if (!result?.comment_id) throw new Error('comment submission returned no result');
+    return json(request, { comment: { id: result.comment_id, status: result.comment_status, createdAt: result.comment_created_at } }, 202);
   } catch (error) { return errorResponse(request, error); }
 });

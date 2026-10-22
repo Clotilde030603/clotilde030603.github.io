@@ -3,7 +3,15 @@ node_modules/
 dist/
 .astro/
 .env
-.env.*.local
+.env.*
+!.env.example
+.envrc
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.jks
 .supabase/
 supabase/.branches/
 supabase/.profiles/

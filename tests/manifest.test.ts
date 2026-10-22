@@ -57,9 +57,19 @@ describe('public publication manifest', () => {
 
   it('keeps safe image presentation fields and rejects unsafe styling', () => {
     const source = valid() as any;
-    source.posts[0].document.content.content.push({ type: 'image', attrs: { src: 'https://example.com/photo.png', alt: '토끼', caption: '설명', width: '80%', alignment: 'right', style: 'position:fixed' } });
-    const node = sanitizePublicSnapshot(source, deploymentId).posts[0].document.content.content[1];
-    expect(node.attrs).toEqual({ src: 'https://example.com/photo.png', alt: '토끼', title: null, caption: '설명', width: '80%', alignment: 'right' });
+    const previous = process.env.SUPABASE_URL;
+    process.env.SUPABASE_URL = 'https://dorami.supabase.co';
+    try {
+      const src = 'https://dorami.supabase.co/storage/v1/object/public/published-media/post/photo.png';
+      source.posts[0].document.content.content.push({ type: 'image', attrs: { src, alt: '토끼', caption: '설명', width: '80%', alignment: 'right', style: 'position:fixed' } });
+      const node = sanitizePublicSnapshot(source, deploymentId).posts[0].document.content.content[1];
+      expect(node.attrs).toEqual({ src, alt: '토끼', title: null, caption: '설명', width: '80%', alignment: 'right' });
+      source.posts[0].document.content.content[1].attrs.src = 'https://tracker.example/pixel.png';
+      expect(() => sanitizePublicSnapshot(source, deploymentId)).toThrow(/Unsafe image URL/);
+    } finally {
+      if (previous === undefined) delete process.env.SUPABASE_URL;
+      else process.env.SUPABASE_URL = previous;
+    }
   });
 
   it('carries the operator pin and order fields into the public-only snapshot', () => {
@@ -69,5 +79,13 @@ describe('public publication manifest', () => {
     const sanitized = sanitizePublicSnapshot(source, deploymentId);
     expect(sanitized.posts[0].pinned).toBe(true);
     expect(sanitized.posts[0].position).toBe(3);
+  });
+
+  it('rejects tags that would create unexpected static paths', () => {
+    const source = valid() as any;
+    source.posts[0].tags = ['../admin'];
+    expect(() => sanitizePublicSnapshot(source, deploymentId)).toThrow(/Unsafe tag/);
+    source.posts[0].tags = ['웹 보안'];
+    expect(sanitizePublicSnapshot(source, deploymentId).posts[0].tags).toEqual(['웹 보안']);
   });
 });

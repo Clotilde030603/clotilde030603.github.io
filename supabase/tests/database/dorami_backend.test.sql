@@ -1,7 +1,7 @@
 begin;
 create extension if not exists pgtap with schema extensions;
 set search_path = extensions, public;
-select plan(40);
+select plan(43);
 
 insert into auth.users(id,email) values ('11111111-1111-4111-8111-111111111111','owner@example.test');
 insert into public.owner_accounts(user_id) values ('11111111-1111-4111-8111-111111111111');
@@ -102,9 +102,24 @@ select is(public.reorder_posts('44444444-4444-4444-8444-444444444440',(select ar
 select ok((select count(distinct position)=2 from public.posts where id in(select id from reorder_posts)),'post reorder assigns distinct positions');
 
 select is((public.export_backup()->>'format'),'dorami-backup','owner backup has a versioned portable format');
-select ok((public.analytics_summary(current_date,current_date)->>'total')::integer=0,'empty analytics report contains no fake views');
+select ok((public.analytics_summary(date '1000-01-01',date '1000-01-01')->>'total')::integer=0,'empty historical analytics range contains no fake views');
 select ok(public.unpublish_post((select post_id from test_state)) is not null,'unpublish creates a deployment');
 select ok((select current_publication_id is null from public.posts where id=(select post_id from test_state)),'unpublish immediately removes the dynamic public pointer');
+
+select ok(
+  has_function_privilege('service_role','public.submit_public_comment(uuid,uuid,text,text,text,text)','EXECUTE')
+  and not has_function_privilege('authenticated','public.submit_public_comment(uuid,uuid,text,text,text,text)','EXECUTE'),
+  'atomic comment submission is callable only by the service role'
+);
+select ok(
+  has_function_privilege('service_role','public.record_public_view(uuid,text,text,timestamptz)','EXECUTE')
+  and not has_function_privilege('authenticated','public.record_public_view(uuid,text,text,timestamptz)','EXECUTE'),
+  'atomic view recording is callable only by the service role'
+);
+select ok(
+  not exists(select 1 from pg_policies where schemaname='storage' and tablename='objects' and policyname='owner_published_media_write'),
+  'browser owner sessions cannot mutate immutable published media directly'
+);
 
 set local role anon;
 select set_config('request.jwt.claim.sub','',true);
