@@ -59,22 +59,22 @@ const olderPost = postIndex >= 0 && postIndex < content.posts.length - 1 ? conte
     </header>
 
     <div class="article-layout">
-      <div class="article-body">
-        {post.summary && <p class="article-lead">{post.summary}</p>}
-        <DocumentContent document={post.document} />
-      </div>
       {
         headings.length > 1 && (
           <aside class="article-toc" aria-label="목차">
             <p>목차</p>
             <ol>
               {headings.map((heading) => (
-                <li class={`toc-level-${heading.level}`}><a href={`#${heading.id}`}>{heading.text}</a></li>
+                <li class={`toc-level-${heading.level}`}><a href={`#${heading.id}`} title={heading.text}>{heading.text}</a></li>
               ))}
             </ol>
           </aside>
         )
       }
+      <div class="article-body">
+        {post.summary && <p class="article-lead">{post.summary}</p>}
+        <DocumentContent document={post.document} />
+      </div>
     </div>
 
     <nav class="post-neighbors" aria-label="이전 및 다음 글">
