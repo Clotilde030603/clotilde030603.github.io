@@ -17,9 +17,4 @@ const posts = defineCollection({
   }),
 });
 
-const about = defineCollection({
-  loader: glob({ base: './src/content/about', pattern: '*.md' }),
-  schema: z.object({ title: z.string().trim().min(1).default('소개') }),
-});
-
-export const collections = { posts, about };
+export const collections = { posts };

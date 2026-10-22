@@ -9,7 +9,12 @@ const recentPosts = [...posts]
   .slice(0, 3);
 ---
 
-<PublicLayout categories={categories} posts={posts} homePage>
+<PublicLayout
+  categories={categories}
+  posts={posts}
+  homePage
+  description="보안과 개인정보 분야를 공부하면서 배운 내용과 생각을 끄적끄적 기록하는 공간입니다."
+>
   <section class="home-page" aria-labelledby="home-title">
     <div class="home-character" aria-label="Dorami 토끼 애니메이션">
       <dorami-rabbit wide hide-controls></dorami-rabbit>
@@ -17,7 +22,7 @@ const recentPosts = [...posts]
     <div class="home-copy">
       <p class="listing-eyebrow">Welcome to Dorami!</p>
       <h1 id="home-title">Dorami</h1>
-      <p class="home-description">보안과 개인정보 보호를 공부하며, 그 과정과 생각을 끄적끄적 정리해 기록하는 공간입니다.</p>
+      <p class="home-description">보안과 개인정보 분야를 공부하면서 배운 내용과 생각을 끄적끄적 기록하는 공간입니다.</p>
       <p class="home-signature">Dorami, also known as Clotilde.</p>
       <a class="home-posts-link" href="/posts/">Browse Posts <span aria-hidden="true">→</span></a>
     </div>

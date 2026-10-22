@@ -1,15 +1,13 @@
 import type { CollectionEntry } from 'astro:content';
 import { markdownToDocument } from '../markdown/to-document';
-import type { Category, DoramiDocument, PublishedPost } from '../types';
+import type { Category, PublishedPost } from '../types';
 
 type PostEntry = CollectionEntry<'posts'>;
-type AboutEntry = CollectionEntry<'about'>;
 
 export type BlogContent = {
   categories: Category[];
   posts: PublishedPost[];
   allTags: string[];
-  about: DoramiDocument | null;
 };
 
 const categorySlugPart = (value: string) =>
@@ -19,7 +17,7 @@ function categoryNames(value: string | undefined): string[] {
   return (value ?? '').split('/').map((part) => part.trim()).filter(Boolean);
 }
 
-export function buildBlogContent(entries: PostEntry[], aboutEntries: AboutEntry[] = []): BlogContent {
+export function buildBlogContent(entries: PostEntry[]): BlogContent {
   const publishedEntries = entries.filter((entry) => !entry.data.draft);
   const categoryByPath = new Map<string, Omit<Category, 'position'>>();
   for (const entry of publishedEntries) {
@@ -81,9 +79,8 @@ export function buildBlogContent(entries: PostEntry[], aboutEntries: AboutEntry[
   }).sort((left, right) => Number(right.pinned) - Number(left.pinned) || Date.parse(right.publishedAt) - Date.parse(left.publishedAt));
 
   posts.forEach((post, index) => { post.position = index; });
-  const about = aboutEntries[0] ? markdownToDocument(aboutEntries[0].body ?? '') : null;
   const allTags = [...new Set(posts.flatMap((post) => post.tags))].sort((left, right) => left.localeCompare(right, 'ko'));
-  return { categories, posts, allTags, about };
+  return { categories, posts, allTags };
 }
 
 export function postsInCategory(categoryId: string, categories: Category[], posts: PublishedPost[]): PublishedPost[] {

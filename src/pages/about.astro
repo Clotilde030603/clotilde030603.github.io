@@ -1,9 +1,8 @@
 ---
 import PublicLayout from '../layouts/PublicLayout.astro';
-import DocumentContent from '../components/public/DocumentContent.astro';
 import { getBlogContent } from '../lib/public/load-content';
 
-const { categories, posts, about } = await getBlogContent();
+const { categories, posts } = await getBlogContent();
 const sections = [
   {
     number: '01',
@@ -73,16 +72,6 @@ const sections = [
         </nav>
       </div>
     </section>
-    {
-      about ? (
-        <div class="about-intro"><DocumentContent document={about} /></div>
-      ) : (
-        <section class="empty-state">
-          <p class="empty-title">소개 글을 준비하고 있습니다.</p>
-          <p>확인되지 않은 이력이나 자격은 대신 채우지 않습니다.</p>
-        </section>
-      )
-    }
     <div class="about-sections">
       {sections.map((section) => (
         <section class="about-resume-section" aria-labelledby={`about-section-${section.number}`}>

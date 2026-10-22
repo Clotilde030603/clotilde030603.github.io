@@ -148,8 +148,6 @@ main { min-width: 0; }
 .about-profile-links { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; }
 .about-profile-links a { color: var(--matcha-strong); text-decoration: none; }
 .about-profile-links a span { margin-left: 2px; font-size: 11px; }
-.about-intro .article-prose { max-width: 780px; margin: 0 0 12px; }
-.about-intro .article-prose > p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.8; }
 .about-resume-section { display: grid; grid-template-columns: 42px minmax(0, 1fr); gap: 18px; padding: 25px 0; border-bottom: 1px solid var(--divider); }
 .about-section-number { margin: 4px 0 0; color: var(--matcha); font-size: 12px; font-variant-numeric: tabular-nums; }
 .about-section-content h2 { margin: 0 0 12px; font-size: 17px; font-weight: 500; line-height: 1.5; }
