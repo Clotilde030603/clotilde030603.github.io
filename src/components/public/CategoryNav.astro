@@ -16,8 +16,8 @@ const roots = buildCategoryTree(categories);
 const categoryCounts = new Map(categories.map((category) => [category.id, postsInCategory(category.id, categories, posts).length]));
 ---
 
-<nav class="category-nav" aria-label="카테고리">
-  <h2>카테고리</h2>
+<nav class="category-nav" aria-label="Category">
+  <h2>Category</h2>
   <a class:list={["category-link", { active: activeCategoryId === null }]} href="/">
     <span>전체 글</span><span class="category-count">{posts.length}</span>
   </a>
