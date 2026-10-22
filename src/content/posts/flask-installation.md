@@ -2,7 +2,7 @@
 title: "Flask 설치"
 date: 2025-01-22
 summary: "Python 환경에서 Flask를 설치하고 개발 환경을 준비하는 방법입니다."
-category: "개발/웹 서버"
+category: "개발/IoT·Raspberry Pi"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Flask-%EC%84%A4%EC%B9%98"
 draft: false
