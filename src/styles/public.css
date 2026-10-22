@@ -105,6 +105,10 @@ main { min-width: 0; }
 .home-posts-link { display: inline-flex; align-items: center; gap: 10px; color: var(--matcha-strong); font-size: 14px; font-weight: 500; text-decoration: none; }
 .home-posts-link span { font-size: 18px; transition: transform .16s ease; }
 .home-posts-link:hover span { transform: translateX(3px); }
+.home-recent { max-width: 780px; padding-top: 24px; border-top: 1px solid var(--divider); }
+.home-recent > header { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.home-recent h2 { margin: 0; font-size: 17px; font-weight: 500; }
+.home-recent > header a { color: var(--muted); font-size: 12px; text-decoration: none; }
 .listing { max-width: 780px; }
 .listing-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--divider); }
 .listing-heading h1, .about-page h1, .search-page h1 { margin: 0; font-size: 22px; font-weight: 500; line-height: 1.4; letter-spacing: -.02em; }
