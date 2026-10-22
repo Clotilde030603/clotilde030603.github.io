@@ -1,5 +1,13 @@
+---
+interface Props {
+  hideControls?: boolean;
+}
+
+const { hideControls = false } = Astro.props;
+---
+
 <div class="rabbit-companion">
   <div class="rabbit-stage">
-    <dorami-rabbit></dorami-rabbit>
+    {hideControls ? <dorami-rabbit hide-controls></dorami-rabbit> : <dorami-rabbit></dorami-rabbit>}
   </div>
 </div>

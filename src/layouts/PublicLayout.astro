@@ -31,6 +31,7 @@ const {
 const showSidebar = !homePage && !hideSidebar;
 const pageTitle = title ? `${title} · Dorami` : 'Dorami';
 const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
+const hidePostListRabbitControls = Astro.url.pathname === '/posts/';
 ---
 
 <!doctype html>
@@ -80,7 +81,7 @@ const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
       {showSidebar && (
         <aside class="public-sidebar">
           <CategoryNav categories={categories} posts={posts} activeCategoryId={activeCategoryId} instanceId="desktop-category" />
-          <RabbitCompanion />
+          <RabbitCompanion hideControls={hidePostListRabbitControls} />
           <p class="sidebar-signature">Dorami, also known as Clotilde.</p>
         </aside>
       )}
@@ -89,7 +90,7 @@ const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
       </main>
       {showSidebar && (
         <div class="mobile-rabbit" aria-hidden="false">
-          <RabbitCompanion />
+          <RabbitCompanion hideControls={hidePostListRabbitControls} />
           <p class="sidebar-signature">Dorami, also known as Clotilde.</p>
         </div>
       )}
