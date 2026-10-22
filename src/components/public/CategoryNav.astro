@@ -18,7 +18,7 @@ const categoryCounts = new Map(categories.map((category) => [category.id, postsI
 
 <nav class="category-nav" aria-label="Category">
   <h2>Category</h2>
-  <a class:list={["category-link", { active: activeCategoryId === null }]} href="/">
+  <a class:list={["category-link", { active: activeCategoryId === null }]} href="/posts/">
     <span>전체 글</span><span class="category-count">{posts.length}</span>
   </a>
   {
