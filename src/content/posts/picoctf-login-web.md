@@ -13,9 +13,11 @@ draft: false
 ![picoCTF: login(Web) 이미지 1](/assets/posts/picoctf-login-web/image-01.png)
 
 hint 1 : None
+
 ---
 
 ## **Solution**
+
 **1. 문제 사이트 접속.**
 
 ![picoCTF: login(Web) 이미지 2](/assets/posts/picoctf-login-web/image-02.png)
@@ -31,4 +33,5 @@ hint 1 : None
 ---
 
 ## **결론**
+
 - 소스 코드 분석 후, Base64 디코딩을 통해 문제 해결

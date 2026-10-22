@@ -10,9 +10,10 @@ const withMark = (marks: NonNullable<JsonNode['marks']>, type: string, attrs?: R
 function safeLink(raw: string): string | null {
   try {
     const value = raw.trim();
-    if (value.startsWith('#') && /^#[\w\-.:]+$/.test(value)) return value;
+    if (value.startsWith('#') && !/[\s\\<>\u0000-\u001f]/.test(value)) return value;
+    if (value.startsWith('/') && !value.startsWith('//') && !value.includes('\\') && !/(?:^|\/)\.\.(?:\/|$)/.test(value)) return value;
     const url = new URL(value);
-    return ['https:', 'mailto:'].includes(url.protocol) ? url.href : null;
+    return ['https:', 'http:', 'mailto:'].includes(url.protocol) ? url.href : null;
   } catch {
     return null;
   }
@@ -66,6 +67,33 @@ function blocks(tokens: any[]): JsonNode[] {
           const src = safeImage(image.href ?? '');
           if (src) output.push({ type: 'image', attrs: { src, alt: image.text || '', title: image.title || null } });
           else output.push({ type: 'paragraph', content: textNodes(image.text || '[이미지]') });
+        } else if (
+          inlineTokens.length === 1 &&
+          inlineTokens[0].type === 'link' &&
+          inlineTokens[0].tokens?.length === 1 &&
+          inlineTokens[0].tokens[0].type === 'image'
+        ) {
+          const link = inlineTokens[0];
+          const image = link.tokens[0];
+          const href = safeLink(link.href ?? '');
+          const src = safeImage(image.href ?? '');
+          if (href && src) {
+            let title = image.text || '';
+            let description = image.title || '';
+            if (image.title?.startsWith('dorami-card:')) {
+              try {
+                const metadata = JSON.parse(decodeURIComponent(image.title.slice('dorami-card:'.length)));
+                if (typeof metadata.title === 'string') title = metadata.title;
+                if (typeof metadata.description === 'string') description = metadata.description;
+              } catch {
+                // Keep the readable image text and caption if optional card metadata is malformed.
+              }
+            }
+            output.push({
+              type: 'linkCard',
+              attrs: { href, src, title, description },
+            });
+          } else output.push({ type: 'paragraph', content: inline(inlineTokens) });
         } else output.push({ type: 'paragraph', content: inline(inlineTokens) });
         break;
       }

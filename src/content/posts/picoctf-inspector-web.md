@@ -13,10 +13,13 @@ draft: false
 ![picoCTF: Insp3ct0r(Web) 이미지 1](/assets/posts/picoctf-inspector-web/image-01.png)
 
 hint 1 : How do you inspect web code on a browser?
+
 hint 2 : There's 3 parts
+
 ---
 
 ## **Solution**
+
 **1. 문제 링크 접속**
 
 ![picoCTF: Insp3ct0r(Web) 이미지 2](/assets/posts/picoctf-inspector-web/image-02.png)
@@ -38,7 +41,9 @@ hint 2 : There's 3 parts
 ![picoCTF: Insp3ct0r(Web) 이미지 6](/assets/posts/picoctf-inspector-web/image-06.png)
 
 **6. flag : picoCTF{tru3_d3t3ct1ve_0r_ju5t_lucky?832b0699}**
+
 ---
 
 ## **결론**
+
 - 소스 코드 분석으로 문제 해결

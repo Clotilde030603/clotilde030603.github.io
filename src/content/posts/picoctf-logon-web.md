@@ -13,9 +13,11 @@ draft: false
 ![picoCTF: logon(Web) 이미지 1](/assets/posts/picoctf-logon-web/image-01.png)
 
 hint 1 : Hmm it doesn't seem to check anyone's password, except for Joe's?
+
 ---
 
 ## **Solution**
+
 **1. 문제 사이트 접속.**
 
 ![picoCTF: logon(Web) 이미지 2](/assets/posts/picoctf-logon-web/image-02.png)
@@ -25,6 +27,7 @@ hint 1 : Hmm it doesn't seem to check anyone's password, except for Joe's?
 ![picoCTF: logon(Web) 이미지 3](/assets/posts/picoctf-logon-web/image-03.png)
 
 **3. 로그인은 되었지만 flag 값은 X**
+
 **4. 개발자도구 Cookie 값 확인 → “admin” 값이 “False”**
 
 ![picoCTF: logon(Web) 이미지 4](/assets/posts/picoctf-logon-web/image-04.png)
@@ -40,4 +43,5 @@ hint 1 : Hmm it doesn't seem to check anyone's password, except for Joe's?
 ---
 
 ## **결론**
+
 - Cookies 값 변경을 통해 문제 해결

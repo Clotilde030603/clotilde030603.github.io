@@ -13,9 +13,11 @@ draft: false
 ![picoCTF: Some Assembly Required 1(Web) 이미지 1](/assets/posts/picoctf-some-assembly-required-web/image-01.png)
 
 hint : None
+
 ---
 
 ## **Solution**
+
 **1. 문제 사이트 접속.**
 
 ![picoCTF: Some Assembly Required 1(Web) 이미지 2](/assets/posts/picoctf-some-assembly-required-web/image-02.png)
@@ -25,6 +27,7 @@ hint : None
 ![picoCTF: Some Assembly Required 1(Web) 이미지 3](/assets/posts/picoctf-some-assembly-required-web/image-03.png)
 
 **3. “./JIFxzHyW8W” 경로 접속.**
+
 **4. 파일 다운로드 됨.**
 
 ![picoCTF: Some Assembly Required 1(Web) 이미지 4](/assets/posts/picoctf-some-assembly-required-web/image-04.png)
@@ -34,7 +37,9 @@ hint : None
 ![picoCTF: Some Assembly Required 1(Web) 이미지 5](/assets/posts/picoctf-some-assembly-required-web/image-05.png)
 
 **6. flag: picoCTF{a8bae10f4d9544110222c2d639dc6de6}**
+
 ---
 
 ## **결론**
+
 - 소스 코드를 통해 의심스러운 경로 발견 후, 파일 다운로드 받아 헥스 값 확인을 통해 문제 해결

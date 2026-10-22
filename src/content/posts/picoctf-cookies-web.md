@@ -13,9 +13,11 @@ draft: false
 ![picoCTF: Cookies(Web) 이미지 1](/assets/posts/picoctf-cookies-web/image-01.png)
 
 **hint 1 : None**
+
 ---
 
 **Solution**
+
 **1. 문제 링크 접속**
 
 ![picoCTF: Cookies(Web) 이미지 2](/assets/posts/picoctf-cookies-web/image-02.png)
@@ -31,12 +33,15 @@ draft: false
 ![picoCTF: Cookies(Web) 이미지 5](/assets/posts/picoctf-cookies-web/image-05.png)
 
 **4. cookie 값을 1부터 변경 시도**
+
 **5. cookie 값이 18일 때 flag 얻음**
 
 ![picoCTF: Cookies(Web) 이미지 6](/assets/posts/picoctf-cookies-web/image-06.png)
 
 **6. cookie 값이 29부터는 없음을 확인**
+
 ---
 
 ## **결론**
+
 - 쿠키 값 변조로 문제 해결

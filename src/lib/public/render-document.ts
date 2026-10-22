@@ -133,6 +133,16 @@ export function renderDocument(document: DoramiDocument): { html: string; headin
         : escapeHtml(rawCode);
       return `<div class="code-block"><div class="code-meta"><span>${escapeHtml(language)}</span><button type="button" data-copy-code>복사</button></div><pre><code class="language-${escapeHtml(language)}">${code}</code></pre></div>`;
     }
+    if (node.type === 'linkCard') {
+      const href = safeUrl(node.attrs?.href);
+      const src = safeUrl(node.attrs?.src, true);
+      if (!href || !src) return '';
+      const title = escapeHtml(String(node.attrs?.title ?? ''));
+      const description = escapeHtml(String(node.attrs?.description ?? ''));
+      let host = '';
+      try { host = new URL(href).hostname; } catch { /* Local links do not have a host label. */ }
+      return `<a class="article-link-card" href="${escapeHtml(href)}" rel="noreferrer"><img src="${escapeHtml(src)}" alt="" loading="lazy" decoding="async" /><span class="article-link-card-copy"><strong>${title}</strong>${description ? `<span>${description}</span>` : ''}${host ? `<small>${escapeHtml(host)}</small>` : ''}</span></a>`;
+    }
     if (node.type === 'image') {
       const src = safeUrl(node.attrs?.src, true);
       if (!src) return '<p class="media-warning">표시할 수 없는 이미지입니다.</p>';

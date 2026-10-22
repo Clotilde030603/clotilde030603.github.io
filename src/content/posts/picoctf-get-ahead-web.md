@@ -13,11 +13,15 @@ draft: false
 ![picoCTF: GET aHEAD(Web) 이미지 1](/assets/posts/picoctf-get-ahead-web/image-01.png)
 
 hint 1 : Maybe you have more than 2 choices
+
 hint 2 : Check out tools like Burpsuite to modify your requests and look at the responses
+
 ---
 
 ## **Solution**
+
 **1. 문제 링크 접속**
+
 **2. proxy 잡고, “Choose Red” 클릭(아무거나 클릭해도 무방한 듯)**
 
 ![picoCTF: GET aHEAD(Web) 이미지 2](/assets/posts/picoctf-get-ahead-web/image-02.png)
@@ -33,4 +37,5 @@ hint 2 : Check out tools like Burpsuite to modify your requests and look at the 
 ---
 
 ## **결론**
+
 - Method 변경으로 문제 해결

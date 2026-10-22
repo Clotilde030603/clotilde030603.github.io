@@ -13,24 +13,29 @@ draft: false
 ![picoCTF: where are the robots(Web) 이미지 1](/assets/posts/picoctf-where-are-the-robots-web/image-01.png)
 
 hint 1 : What part of the website could tell you where the creator doesn't want you to look?
+
 ---
 
 ## **Solution**
+
 **1. 문제 사이트 접속**
 
 ![picoCTF: where are the robots(Web) 이미지 2](/assets/posts/picoctf-where-are-the-robots-web/image-02.png)
 
 **2. flag가 숨겨져 보이지 않으므로 "robots.txt" 유추**
+
 **3. "robots.txt"에서 "/477ce.html"라는 경로 확인.**
 
 ![picoCTF: where are the robots(Web) 이미지 3](/assets/posts/picoctf-where-are-the-robots-web/image-03.png)
 
-**4."/477ce.html"에서 flag 발견.**
+**4. "/477ce.html"에서 flag 발견.**
 
 ![picoCTF: where are the robots(Web) 이미지 4](/assets/posts/picoctf-where-are-the-robots-web/image-04.png)
 
 **5. flag: picoCTF{ca1cu1at1ng_Mach1n3s_477ce}**
+
 ---
 
 ## **결론**
+
 - robots.txt(검색 엔진이 운영중인 검색 로봇이 사이트 및 웹페이지를 수집할 수 있도록 허용하거나 제한하는 국제 표준 설정)에 접근하여 문제 해결
