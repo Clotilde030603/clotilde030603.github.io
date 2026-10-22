@@ -3,7 +3,10 @@ import PublicLayout from '../layouts/PublicLayout.astro';
 import { getBlogContent } from '../lib/public/load-content';
 
 const { categories, posts } = await getBlogContent();
-const sections = [
+type ResumeItem = { period: string; title: string; detail?: string; link?: string; linkLabel?: string };
+type ResumeSection = { number: string; title: string; items: ResumeItem[] };
+
+const sections: ResumeSection[] = [
   {
     number: '01',
     title: 'Education',
@@ -55,6 +58,16 @@ const sections = [
       { period: '2023.09', title: '호남사이버보안 컨퍼런스 침해 대응·분석 경진대회', detail: '장려상' },
     ],
   },
+  {
+    number: '06',
+    title: 'Publications · Research',
+    items: [
+      { period: '2024.12', title: '금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인', detail: '위키독스 전자책 발간', link: 'https://wikidocs.net/book/16912', linkLabel: '전자책 보기' },
+      { period: '2024.11', title: '생성형 AI의 개인정보 수집에 대한 국제 규제 비교 및 정책 제안', detail: '국내 금융권의 생성형 AI 도입 규제 개선 중심 · 학술대회 채택 · 전문 비공개' },
+      { period: '2024.11', title: 'VDI와 다중보안체계(Multi-level Security)의 해외 사례 분석을 통한 보안성 강화 연구', detail: '학술대회 채택 · 전문 비공개' },
+      { period: '2024.12', title: '제2회 정보보호 정책제안 공모전 수상', detail: '보도 기사', link: 'https://www.dailysecu.com/news/articleView.html?idxno=162219', linkLabel: '기사 보기' },
+    ],
+  },
 ];
 ---
 
@@ -85,6 +98,7 @@ const sections = [
                   <div>
                     <h3>{item.title}</h3>
                     {item.detail && <p>{item.detail}</p>}
+                    {item.link && <a class="about-resume-link" href={item.link} target="_blank" rel="noreferrer">{item.linkLabel ?? '자세히 보기'} <span aria-hidden="true">↗</span></a>}
                   </div>
                 </li>
               ))}
