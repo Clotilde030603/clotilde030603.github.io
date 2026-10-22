@@ -4,10 +4,18 @@ const MARK_TYPES = new Set(['bold', 'italic', 'strike', 'underline', 'code', 'li
 function safeUrl(raw, image = false) {
   const value = String(raw ?? '').trim();
   if (!image && /^#[\w\-.:]+$/.test(value)) return value;
-  if (image && /^\/assets\/[\w\-./%]+$/.test(value) && !value.includes('..')) return value;
+  if (image && /^\/assets\/[A-Za-z0-9_./-]+$/.test(value) && !value.includes('..') && !value.includes('//')) return value;
   try {
     const parsed = new URL(value);
-    if (parsed.protocol === 'https:' || (!image && ['http:', 'mailto:'].includes(parsed.protocol))) return parsed.href;
+    if (image) {
+      const service = process.env.SUPABASE_URL;
+      if (!service) throw new Error('Published media service is not configured.');
+      const allowed = new URL(service);
+      if (parsed.origin === allowed.origin && parsed.protocol === allowed.protocol &&
+          parsed.pathname.startsWith('/storage/v1/object/public/published-media/') &&
+          !/%(?:2f|5c)/i.test(parsed.pathname) && !parsed.username && !parsed.password &&
+          !parsed.search && !parsed.hash) return parsed.href;
+    } else if (parsed.protocol === 'https:' || ['http:', 'mailto:'].includes(parsed.protocol)) return parsed.href;
   } catch { /* invalid URL */ }
   throw new Error(`Unsafe ${image ? 'image' : 'link'} URL in publication.`);
 }
@@ -18,6 +26,14 @@ function imageWidth(raw) {
   if (!match) return null;
   const amount = Number(match[1]);
   return amount > 0 && (match[2] === '%' ? amount <= 100 : amount <= 2000) ? value : null;
+}
+
+function safeTag(raw) {
+  const tag = String(raw ?? '').trim().normalize('NFC');
+  if (!tag || tag.length > 60 || tag === '.' || tag === '..' || /[\u0000-\u001f\u007f/\\?#%]/u.test(tag)) {
+    throw new Error('Unsafe tag in publication.');
+  }
+  return tag;
 }
 
 function cleanMarks(marks) {
@@ -79,7 +95,7 @@ export function sanitizePublicSnapshot(manifest, deploymentId) {
     })),
     posts: manifest.posts.map((item) => ({
       id: String(item.id), slug: String(item.slug), title: String(item.title), summary: String(item.summary ?? ''),
-      categoryId: item.categoryId == null ? null : String(item.categoryId), tags: Array.isArray(item.tags) ? item.tags.map(String) : [],
+      categoryId: item.categoryId == null ? null : String(item.categoryId), tags: Array.isArray(item.tags) ? item.tags.map(safeTag) : [],
       document: cleanDocument(item.document), publishedAt: String(item.publishedAt), updatedAt: item.updatedAt == null ? null : String(item.updatedAt),
       commentsEnabled: Boolean(item.commentsEnabled), commentsVisible: Boolean(item.commentsVisible),
       pinned: Boolean(item.pinned), position: Number.isFinite(Number(item.position)) ? Number(item.position) : 0,

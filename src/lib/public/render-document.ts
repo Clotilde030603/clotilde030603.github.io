@@ -30,12 +30,21 @@ const escapeHtml = (value: string) =>
 const safeUrl = (value: unknown, image = false): string | null => {
   if (typeof value !== 'string') return null;
   const trimmed = value.trim();
-  if (trimmed.startsWith('/') && !trimmed.startsWith('//')) return trimmed;
+  if (image && /^\/assets\/[A-Za-z0-9_./-]+$/.test(trimmed) && !trimmed.includes('..') && !trimmed.includes('//')) return trimmed;
+  if (!image && trimmed.startsWith('/') && !trimmed.startsWith('//') && !trimmed.includes('\\') && !/[\u0000-\u001f]/.test(trimmed)) return trimmed;
   if (!image && trimmed.startsWith('#')) return trimmed;
   try {
     const url = new URL(trimmed);
-    const allowed = image ? ['https:'] : ['https:', 'http:', 'mailto:'];
-    return allowed.includes(url.protocol) ? url.toString() : null;
+    if (image) {
+      const service = import.meta.env.PUBLIC_SUPABASE_URL;
+      if (!service) return null;
+      const allowed = new URL(service);
+      return url.origin === allowed.origin && url.protocol === allowed.protocol &&
+        url.pathname.startsWith('/storage/v1/object/public/published-media/') &&
+        !/%(?:2f|5c)/i.test(url.pathname) && !url.username && !url.password &&
+        !url.search && !url.hash ? url.toString() : null;
+    }
+    return ['https:', 'http:', 'mailto:'].includes(url.protocol) ? url.toString() : null;
   } catch {
     return null;
   }

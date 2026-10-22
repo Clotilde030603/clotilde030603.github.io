@@ -2,16 +2,18 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 
 const functionSource = (name: string) => readFileSync(new URL(`../../supabase/functions/${name}/index.ts`, import.meta.url), 'utf8');
+const migrationSource = (name: string) => readFileSync(new URL(`../../supabase/migrations/${name}`, import.meta.url), 'utf8');
 
 describe('edge function boundaries', () => {
   it('comments verify current publication state and default to moderation', () => {
     const source = functionSource('public-comments');
     expect(source).toContain(".eq('status', 'published')");
     expect(source).toContain(".eq('comments_enabled', true)");
-    expect(source).toContain("status: 'pending'");
+    expect(source).toContain("db.rpc('submit_public_comment'");
     expect(source).toContain('too many comments');
-    expect(source).toContain('createdAt: comment.created_at');
+    expect(source).toContain('createdAt: result.comment_created_at');
     expect(source).toContain('parentId: comment.parent_id');
+    expect(source).not.toContain('x-forwarded-for');
   });
 
   it('view collection rejects non-public IDs and stores only a keyed session hash', () => {
@@ -21,7 +23,20 @@ describe('edge function boundaries', () => {
     expect(source).toContain('isAllowedOrigin(request)');
     expect(source).toContain("hmacHex(`rate:${address}`, 'ANALYTICS_HASH_SECRET')");
     expect(source).toContain('view event rate limit exceeded');
+    expect(source).toContain("db.rpc('record_public_view'");
+    expect(source).not.toContain('x-forwarded-for');
+    expect(source).not.toContain('x-real-ip');
     expect(source).not.toContain('remote_addr');
+  });
+
+  it('serializes public abuse limits and keeps published media immutable to browser sessions', () => {
+    const migration = migrationSource('202610210008_atomic_public_limits.sql');
+    expect(migration).toContain("pg_advisory_xact_lock(hashtextextended('comment:'");
+    expect(migration).toContain("pg_advisory_xact_lock(hashtextextended('view:'");
+    expect(migration).toContain("grant execute on function public.submit_public_comment");
+    expect(migration).toContain("grant execute on function public.record_public_view");
+    expect(migration).toContain('to service_role');
+    expect(migration).toContain('drop policy if exists owner_published_media_write');
   });
 
   it('CI manifests require a separate build token and return stored manifests', () => {

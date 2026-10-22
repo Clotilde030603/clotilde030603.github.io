@@ -23,7 +23,7 @@ assert(token);
 
 const { data: postId, error: createPostError } = await owner.rpc('create_draft_post', { p_title: '미디어 발행 검증', p_category_id: null });
 if (createPostError) throw createPostError;
-const { error: slugError } = await owner.from('posts').update({ slug: 'media-publication-check' }).eq('id', postId);
+const { error: slugError } = await owner.from('posts').update({ slug: `media-publication-check-${Date.now()}` }).eq('id', postId);
 if (slugError) throw slugError;
 
 const placeholder = {
@@ -43,19 +43,19 @@ assert.equal(response.status, 409, 'unresolved import assets must block publicat
 
 const privateId = crypto.randomUUID();
 const missingId = crypto.randomUUID();
-const privatePath = `${postId}/${privateId}/rabbit.png`;
-const missingPath = `${postId}/${missingId}/second.png`;
-const bytes = new TextEncoder().encode('synthetic-image-bytes');
-const { error: uploadError } = await admin.storage.from('draft-media').upload(privatePath, bytes, { contentType: 'image/png' });
+const privatePath = `${postId}/${privateId}/rabbit.gif`;
+const missingPath = `${postId}/${missingId}/second.gif`;
+const bytes = new TextEncoder().encode('GIF89a-synthetic-image-bytes');
+const { error: uploadError } = await admin.storage.from('draft-media').upload(privatePath, bytes, { contentType: 'image/gif' });
 if (uploadError) throw uploadError;
 const { error: metadataError } = await admin.from('media_assets').insert({
   id: privateId, bucket_id: 'draft-media', object_path: privatePath, visibility: 'private',
-  mime_type: 'image/png', byte_size: bytes.byteLength, alt_text: '토끼', width: 32, height: 32,
+  mime_type: 'image/gif', byte_size: bytes.byteLength, alt_text: '토끼', width: 32, height: 32,
 });
 if (metadataError) throw metadataError;
 const { error: missingMetadataError } = await admin.from('media_assets').insert({
   id: missingId, bucket_id: 'draft-media', object_path: missingPath, visibility: 'private',
-  mime_type: 'image/png', byte_size: bytes.byteLength, alt_text: '두 번째', width: 32, height: 32,
+  mime_type: 'image/gif', byte_size: bytes.byteLength, alt_text: '두 번째', width: 32, height: 32,
 });
 if (missingMetadataError) throw missingMetadataError;
 const privateDocument = {
@@ -75,14 +75,14 @@ response = await fetch(`${url}/functions/v1/publish-dispatch`, {
   body: JSON.stringify({ postId, expectedVersion: 3 }),
 });
 assert.equal(response.status, 409, 'a missing second object must stop publication');
-const { count: leakedMedia, error: leakedError } = await admin.from('media_assets').select('id', { count: 'exact', head: true }).eq('bucket_id','published-media');
+const { count: leakedMedia, error: leakedError } = await admin.from('media_assets').select('id', { count: 'exact', head: true }).eq('bucket_id','published-media').like('object_path',`${postId}/${privateId}/%`);
 if (leakedError) throw leakedError;
 assert.equal(leakedMedia, 0, 'promotion failure must remove the first promoted metadata row');
-const expectedLeakedPath = `${postId}/${privateId}/rabbit.png`;
+const expectedLeakedPath = `${postId}/${privateId}/rabbit.gif`;
 const { data: leakedFiles, error: listError } = await admin.storage.from('published-media').list(`${postId}/${privateId}`);
 if (listError) throw listError;
 assert.equal(leakedFiles?.some((file) => `${postId}/${privateId}/${file.name}` === expectedLeakedPath), false, 'promotion failure must remove the first object');
-const { error: secondUploadError } = await admin.storage.from('draft-media').upload(missingPath, bytes, { contentType: 'image/png' });
+const { error: secondUploadError } = await admin.storage.from('draft-media').upload(missingPath, bytes, { contentType: 'image/gif' });
 if (secondUploadError) throw secondUploadError;
 response = await fetch(`${url}/functions/v1/publish-dispatch`, {
   method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
@@ -105,7 +105,7 @@ if (promotedError) throw promotedError;
 assert.deepEqual({ bucket: promoted.bucket_id, visibility: promoted.visibility }, { bucket: 'published-media', visibility: 'public' });
 const { data: downloaded, error: downloadError } = await admin.storage.from('published-media').download(promoted.object_path);
 if (downloadError) throw downloadError;
-assert.equal(await downloaded.text(), 'synthetic-image-bytes');
+assert.equal(await downloaded.text(), 'GIF89a-synthetic-image-bytes');
 response = await fetch(`${url}/functions/v1/restore-publication`, {
   method: 'POST', headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
   body: JSON.stringify({ publicationId: post.current_publication_id, mode: 'new' }),

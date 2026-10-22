@@ -15,6 +15,6 @@ interface Props { tag: string; taggedPosts: PublishedPost[] }
 const { tag, taggedPosts } = Astro.props;
 ---
 
-<PublicLayout title={tag} categories={categories} canonicalPath={`/tag/${tag}/`}>
+<PublicLayout title={tag} categories={categories} canonicalPath={`/tag/${encodeURIComponent(tag)}/`}>
   <ListingPage title={`#${tag}`} eyebrow="태그" posts={taggedPosts} />
 </PublicLayout>

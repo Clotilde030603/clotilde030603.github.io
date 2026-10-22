@@ -13,7 +13,7 @@ export function LoginForm({ client, authorizationError }: { client: SupabaseClie
   }
   return (
     <main className="admin-gate">
-      <div className="admin-gate__brand"><img src="/rabbit-mark.svg" alt="" /><span>Dorami</span></div>
+      <div className="admin-gate__brand"><img src="/dorami-cartoon/dorami-rabbit-face.png" alt="" /><span>Dorami</span></div>
       <section className="admin-gate__panel" aria-labelledby="login-title">
         <p className="admin-eyebrow">운영자 전용</p><h1 id="login-title">관리자 로그인</h1>
         <p>등록된 운영자 이메일로 일회용 로그인 링크를 보냅니다.</p>

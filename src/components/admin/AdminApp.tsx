@@ -76,7 +76,7 @@ export function AdminApp({ initialSection = 'posts', initialPostId = null }: { i
   async function dragReorderPosts(sourceId:string,targetId:string){if(!owner.client)return;const order=reorderWithinGroup(posts,sourceId,targetId,(post)=>{const draft=Array.isArray(post.drafts)?post.drafts[0]:post.drafts;return draft?.category_id??null;});if(!order){setError('같은 카테고리 안에서만 글 순서를 바꿀 수 있습니다.');return;}const target=posts.find((post)=>post.id===targetId);const draft=target&&(Array.isArray(target.drafts)?target.drafts[0]:target.drafts);const result=await owner.client.rpc('reorder_posts',{p_category_id:draft?.category_id??null,p_post_ids:order});if(result.error)setError(result.error.message);else await refreshPosts();}
 
   if (!owner.configured) return <SetupRequired />;
-  if (owner.loading) return <main className="admin-gate"><div className="loading-mark"><img src="/rabbit-mark.svg" alt="" /><span>운영자 세션 확인 중…</span></div></main>;
+  if (owner.loading) return <main className="admin-gate"><div className="loading-mark"><img src="/dorami-cartoon/dorami-rabbit-face.png" alt="" /><span>운영자 세션 확인 중…</span></div></main>;
   if (!owner.session || !owner.isOwner) return <LoginForm client={owner.client!} authorizationError={owner.error} />;
 
   let content;

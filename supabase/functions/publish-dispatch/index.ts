@@ -1,4 +1,5 @@
 import { errorResponse, HttpError, json, preflight, readJson } from '../_shared/http.ts';
+import { validImageMagic } from '../_shared/net.ts';
 import { requireOwner, serviceClient } from '../_shared/supabase.ts';
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -62,6 +63,8 @@ Deno.serve(async (request) => {
           if (!publicAsset) {
             const { data: blob, error: downloadError } = await admin.storage.from('draft-media').download(item.object_path);
             if (downloadError || !blob) throw new HttpError(409, `private media is unavailable: ${item.object_path}`);
+            const signature = new Uint8Array(await blob.slice(0, 12).arrayBuffer());
+            if (!validImageMagic(item.mime_type, signature)) throw new HttpError(415, 'private media content does not match its image type');
             const { error: uploadError } = await admin.storage.from('published-media').upload(publicPath, blob, { contentType: item.mime_type, upsert: false });
             if (uploadError) throw uploadError;
             const publicId = crypto.randomUUID();

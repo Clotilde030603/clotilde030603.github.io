@@ -9,9 +9,9 @@ let {data:users,error:usersError}=await admin.auth.admin.listUsers();if(usersErr
 if(!user){const {data,error}=await admin.auth.admin.createUser({email,password,email_confirm:true});if(error)throw error;user=data.user;}
 await admin.from('owner_accounts').upsert({user_id:user.id});
 const {data:auth,error:authError}=await owner.auth.signInWithPassword({email,password});if(authError)throw authError;const token=auth.session.access_token;
-const mediaId=crypto.randomUUID(),path=`about-test/${mediaId}.png`,bytes=new Uint8Array([0x89,0x50,0x4e,0x47,0x0d,0x0a,0x1a,0x0a]);
-let {error}=await admin.storage.from('draft-media').upload(path,bytes,{contentType:'image/png'});if(error)throw error;
-({error}=await admin.from('media_assets').insert({id:mediaId,bucket_id:'draft-media',object_path:path,visibility:'private',mime_type:'image/png',byte_size:bytes.length,alt_text:'소개'}));if(error)throw error;
+const mediaId=crypto.randomUUID(),path=`about-test/${mediaId}.gif`,bytes=new TextEncoder().encode('GIF89a-about-image');
+let {error}=await admin.storage.from('draft-media').upload(path,bytes,{contentType:'image/gif'});if(error)throw error;
+({error}=await admin.from('media_assets').insert({id:mediaId,bucket_id:'draft-media',object_path:path,visibility:'private',mime_type:'image/gif',byte_size:bytes.length,alt_text:'소개'}));if(error)throw error;
 const draft={schemaVersion:1,content:{type:'doc',content:[{type:'image',attrs:{mediaId,src:'https://private-preview.invalid/about',alt:'소개'}}]}};
 const {data:saved,error:saveError}=await owner.rpc('save_about',{p_expected_version:1,p_document:draft});if(saveError)throw saveError;assert.equal(saved.version,2);
 let response=await fetch(`${url}/functions/v1/publish-dispatch`,{method:'POST',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify({action:'about',expectedVersion:2})});

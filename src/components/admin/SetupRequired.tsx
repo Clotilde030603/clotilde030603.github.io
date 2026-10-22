@@ -1,7 +1,7 @@
 export function SetupRequired() {
   return (
     <main className="admin-gate">
-      <div className="admin-gate__brand"><img src="/rabbit-mark.svg" alt="" /><span>Dorami</span></div>
+      <div className="admin-gate__brand"><img src="/dorami-cartoon/dorami-rabbit-face.png" alt="" /><span>Dorami</span></div>
       <section className="admin-gate__panel" aria-labelledby="setup-title">
         <p className="admin-eyebrow">관리자 연결 대기</p>
         <h1 id="setup-title">보호된 저장소 설정이 필요합니다</h1>

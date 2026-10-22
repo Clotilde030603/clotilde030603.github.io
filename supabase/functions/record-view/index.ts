@@ -29,15 +29,16 @@ Deno.serve(async (request) => {
     if (postError) throw postError;
     if (!post) throw new HttpError(404, 'published post not found');
     const sessionHash = await hmacHex(sessionId, 'ANALYTICS_HASH_SECRET');
-    const address = (request.headers.get('cf-connecting-ip') ?? request.headers.get('x-real-ip') ?? request.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown').trim().slice(0,128);
+    const address = request.headers.get('cf-connecting-ip')?.trim().slice(0, 128) || 'unavailable';
     const requestHash = await hmacHex(`rate:${address}`, 'ANALYTICS_HASH_SECRET');
-    const oneMinuteAgo = new Date(Date.now() - 60_000).toISOString();
-    const { count, error: countError } = await db.from('view_events').select('id', { count: 'exact', head: true }).eq('request_hash', requestHash).gte('occurred_at', oneMinuteAgo);
-    if (countError) throw countError;
-    if ((count ?? 0) >= 60) throw new HttpError(429, 'view event rate limit exceeded');
     const bucketMs = Math.floor(Date.now() / 300_000) * 300_000;
-    const { error } = await db.from('view_events').insert({ post_id: postId, session_hash: sessionHash, request_hash: requestHash, dedupe_bucket: new Date(bucketMs).toISOString() });
-    if (error && error.code !== '23505') throw error;
-    return json(request, { recorded: !error }, 202);
+    const { data, error } = await db.rpc('record_public_view', {
+      p_post_id: postId, p_session_hash: sessionHash, p_request_hash: requestHash,
+      p_dedupe_bucket: new Date(bucketMs).toISOString(),
+    });
+    if (error) throw error;
+    const result = Array.isArray(data) ? data[0] : data;
+    if (result?.rate_limited) throw new HttpError(429, 'view event rate limit exceeded');
+    return json(request, { recorded: Boolean(result?.recorded) }, 202);
   } catch (error) { return errorResponse(request, error); }
 });
