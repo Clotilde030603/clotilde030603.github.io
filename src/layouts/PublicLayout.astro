@@ -31,7 +31,6 @@ const {
 const showSidebar = !homePage && !hideSidebar;
 const pageTitle = title ? `${title} · Dorami` : 'Dorami';
 const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
-const hidePostListRabbitControls = Astro.url.pathname === '/posts/';
 ---
 
 <!doctype html>
@@ -81,7 +80,7 @@ const hidePostListRabbitControls = Astro.url.pathname === '/posts/';
       {showSidebar && (
         <aside class="public-sidebar">
           <CategoryNav categories={categories} posts={posts} activeCategoryId={activeCategoryId} instanceId="desktop-category" />
-          <RabbitCompanion hideControls={hidePostListRabbitControls} />
+          <RabbitCompanion />
           <p class="sidebar-signature">Dorami, also known as Clotilde.</p>
         </aside>
       )}
@@ -90,7 +89,7 @@ const hidePostListRabbitControls = Astro.url.pathname === '/posts/';
       </main>
       {showSidebar && (
         <div class="mobile-rabbit" aria-hidden="false">
-          <RabbitCompanion hideControls={hidePostListRabbitControls} />
+          <RabbitCompanion />
           <p class="sidebar-signature">Dorami, also known as Clotilde.</p>
         </div>
       )}
@@ -99,6 +98,6 @@ const hidePostListRabbitControls = Astro.url.pathname === '/posts/';
     <footer class="site-footer">
       <span>© {new Date().getFullYear()} Dorami</span>
     </footer>
-    <script is:inline type="module" src="/dorami-cartoon/dorami-rabbit.js?v=two-hop-sequence-2"></script>
+    <script is:inline type="module" src="/dorami-cartoon/dorami-rabbit.js?v=two-hop-sequence-3"></script>
   </body>
 </html>

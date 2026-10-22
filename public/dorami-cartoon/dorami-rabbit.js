@@ -69,55 +69,12 @@ class DoramiRabbit extends HTMLElement {
     style.textContent = `
       :host{display:block;width:100%;max-width:100%;font:inherit}
       canvas,.still{width:100%;height:auto;display:block}
-      nav{display:flex;gap:12px;justify-content:center}
-      nav{align-items:center}
-      nav[hidden]{display:none}
-      button{display:grid;place-items:center;width:32px;height:32px;color:#526b3f;border:0;border-radius:50%;background:transparent;padding:6px;cursor:pointer}
-      button:hover{background:#f0f3eb}
-      button svg{width:18px;height:18px;display:block;fill:currentColor}
-      button:focus-visible{outline:2px solid #526b3f;outline-offset:2px}
-      button:disabled{cursor:default;opacity:.7}
     `;
     const canvas = document.createElement('canvas');
     canvas.setAttribute('role', 'img');
     canvas.setAttribute('aria-label', '깡충 뛰어와 앉은 뒤 맥북으로 작업하는 Dorami 토끼');
-    const nav = document.createElement('nav');
-    nav.setAttribute('aria-label', '토끼 애니메이션 제어');
-    const pause = document.createElement('button');
-    pause.type = 'button';
-    pause.dataset.pause = '';
-    pause.setAttribute('aria-label', '일시정지');
-    pause.title = '일시정지';
-    pause.append(this.createIcon('pause'));
-    const replay = document.createElement('button');
-    replay.type = 'button';
-    replay.dataset.replay = '';
-    replay.setAttribute('aria-label', '다시 재생');
-    replay.title = '다시 재생';
-    replay.append(this.createIcon('replay'));
-    nav.append(pause, replay);
-    nav.hidden = this.hasAttribute('hide-controls');
-    this.shadowRoot.replaceChildren(style, canvas, nav);
+    this.shadowRoot.replaceChildren(style, canvas);
     this.canvas = canvas;
-    this.nav = nav;
-    this.pauseButton = pause;
-    this.replayButton = replay;
-  }
-
-  createIcon(name) {
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('viewBox', '0 0 24 24');
-    svg.setAttribute('aria-hidden', 'true');
-    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    if (name === 'pause') {
-      path.setAttribute('d', 'M7 5h4v14H7zM13 5h4v14h-4z');
-    } else if (name === 'play') {
-      path.setAttribute('d', 'M7 4.5v15l12-7.5z');
-    } else {
-      path.setAttribute('d', 'M12 5V2L7.5 6.5 12 11V8a6 6 0 1 1-5.65 8h-2.1A8 8 0 1 0 12 5z');
-    }
-    svg.append(path);
-    return svg;
   }
 
   async loadAnimation() {
@@ -152,8 +109,6 @@ class DoramiRabbit extends HTMLElement {
         return;
       }
       this.player = player;
-      this.pauseButton.addEventListener('click', this.togglePlayback);
-      this.replayButton.addEventListener('click', this.replay);
       if (this.visible) player.play();
     } catch {
       if (this.isConnected) this.showStill();
@@ -162,32 +117,6 @@ class DoramiRabbit extends HTMLElement {
     }
   }
 
-  togglePlayback = () => {
-    if (!this.player || this.motion.matches) return;
-    if (this.player.paused) {
-      this.player.play();
-      this.pauseButton.setAttribute('aria-label', '일시정지');
-      this.pauseButton.title = '일시정지';
-      this.pauseButton.replaceChildren(this.createIcon('pause'));
-      this.pauseButton.setAttribute('aria-pressed', 'false');
-    } else {
-      this.player.pause();
-      this.pauseButton.setAttribute('aria-label', '계속 재생');
-      this.pauseButton.title = '계속 재생';
-      this.pauseButton.replaceChildren(this.createIcon('play'));
-      this.pauseButton.setAttribute('aria-pressed', 'true');
-    }
-  };
-
-  replay = () => {
-    if (!this.player || this.motion.matches) return;
-    this.player.replay();
-    this.pauseButton.setAttribute('aria-label', '일시정지');
-    this.pauseButton.title = '일시정지';
-    this.pauseButton.replaceChildren(this.createIcon('pause'));
-    this.pauseButton.setAttribute('aria-pressed', 'false');
-  };
-
   showStill() {
     if (!this.isConnected || this.shadowRoot.querySelector('.still')) return;
     const still = document.createElement('img');
@@ -195,7 +124,6 @@ class DoramiRabbit extends HTMLElement {
     still.alt = '맥북으로 작업하는 Dorami 토끼';
     still.src = new URL('dorami-cartoon-still.png', new URL('./', import.meta.url)).href;
     if (!this.shadowRoot.querySelector('.still')) this.canvas.replaceWith(still);
-    this.nav.hidden = true;
   }
 
   updateMotionPreference() {
@@ -214,11 +142,6 @@ class DoramiRabbit extends HTMLElement {
       this.showStill();
       return;
     }
-    this.replayButton.disabled = false;
-    this.pauseButton.disabled = false;
-    this.pauseButton.setAttribute('aria-label', '일시정지');
-    this.pauseButton.title = '일시정지';
-    this.pauseButton.replaceChildren(this.createIcon('pause'));
     if (this.visible) this.player.play();
   }
 
