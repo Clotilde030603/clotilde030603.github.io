@@ -9,6 +9,17 @@ const { categories, posts, about } = await getBlogContent();
 <PublicLayout title="About" categories={categories} posts={posts} canonicalPath="/about/" hideSidebar>
   <article class="about-page">
     <header><h1 class="listing-eyebrow">About</h1></header>
+    <section class="about-profile" aria-label="프로필">
+      <img src="/dorami-cartoon/dorami-rabbit-face.png" alt="Dorami 토끼 캐릭터" width="144" height="144" />
+      <div class="about-profile-copy">
+        <p class="about-profile-nickname">Dorami</p>
+        <p class="about-profile-name">이가현 <span aria-hidden="true">·</span> Clotilde</p>
+        <nav class="about-profile-links" aria-label="프로필 링크">
+          <a href="https://low-hare-4b9.notion.site/PORTFOLIO-167fb795d5ab8084b70dfa0fae89a770" target="_blank" rel="noreferrer">Notion Portfolio <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/Clotilde030603" target="_blank" rel="me noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </section>
     {
       about ? (
         <DocumentContent document={about} />

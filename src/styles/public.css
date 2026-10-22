@@ -140,7 +140,14 @@ main { min-width: 0; }
 
 .about-page, .search-page { max-width: 740px; }
 .about-page > header, .search-page > header { padding-bottom: 16px; border-bottom: 1px solid var(--divider); }
-.about-page .article-prose { margin-top: 32px; }
+.about-profile { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: center; gap: 24px; margin: 28px 0; padding: 22px 24px; border: 1px solid var(--divider); border-radius: 4px; background: var(--sidebar); }
+.about-profile > img { width: 112px; height: 112px; padding: 8px; border-radius: 50%; background: var(--matcha-soft); object-fit: contain; }
+.about-profile-nickname { margin: 0; color: var(--foreground); font-size: 25px; font-weight: 600; line-height: 1.3; letter-spacing: -.025em; }
+.about-profile-name { margin: 5px 0 15px; color: var(--muted); font-size: 14px; }
+.about-profile-links { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; }
+.about-profile-links a { color: var(--matcha-strong); text-decoration: none; }
+.about-profile-links a span { margin-left: 2px; font-size: 11px; }
+.about-page .article-prose { margin-top: 0; }
 .search-form { margin-top: 32px; }
 .search-form > label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 13px; }
 .search-form > div { display: flex; }
@@ -244,6 +251,9 @@ main { min-width: 0; }
   .mobile-categories summary { padding: 8px 0; font-size: 13px; cursor: pointer; }
   .mobile-categories .category-nav { padding: 8px 0 16px; }
   .listing-heading h1, .about-page h1, .search-page h1 { font-size: 21px; }
+  .about-profile { grid-template-columns: 84px minmax(0, 1fr); gap: 16px; margin: 22px 0; padding: 16px; }
+  .about-profile > img { width: 84px; height: 84px; padding: 6px; }
+  .about-profile-nickname { font-size: 22px; }
   .home-page { grid-template-columns: minmax(0, 1fr); gap: 4px; min-height: auto; padding: 12px 0 32px; }
   .home-character { width: min(100%, 380px); }
   .home-copy { text-align: center; }
