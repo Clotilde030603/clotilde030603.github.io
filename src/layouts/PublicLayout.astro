@@ -43,7 +43,6 @@ const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
     <meta name="theme-color" content="#FEFEFC" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/png" href="/dorami-cartoon/dorami-rabbit-face.png" />
-    <link rel="alternate" type="application/rss+xml" title="Dorami RSS" href="/rss.xml" />
     <title>{pageTitle}</title>
   </head>
   <body>
@@ -84,7 +83,6 @@ const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
 
     <footer class="site-footer">
       <span>© {new Date().getFullYear()} Dorami</span>
-      <a href="/rss.xml">RSS</a>
     </footer>
     <script is:inline type="module" src="/dorami-cartoon/dorami-rabbit.js"></script>
   </body>
