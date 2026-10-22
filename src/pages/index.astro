@@ -1,21 +1,15 @@
 ---
 import PublicLayout from '../layouts/PublicLayout.astro';
-import ListingPage from '../components/public/ListingPage.astro';
 import { getBlogContent } from '../lib/public/load-content';
 
-const { allTags, categories, posts } = await getBlogContent();
+const { categories, posts } = await getBlogContent();
 ---
 
 <PublicLayout categories={categories} posts={posts}>
-  <ListingPage title="전체 글" posts={posts} sectionId="posts" />
-  {
-    allTags.length > 0 && (
-      <section class="topic-links" aria-labelledby="topics-title">
-        <h2 id="topics-title">주제별 모아보기</h2>
-        <div>
-          {allTags.map((tag) => <a href={`/tag/${encodeURIComponent(tag)}/`}>{tag}</a>)}
-        </div>
-      </section>
-    )
-  }
+  <section class="home-page" aria-labelledby="home-title">
+    <p class="listing-eyebrow">Welcome to Dorami</p>
+    <h1 id="home-title">Dorami</h1>
+    <p class="home-description">보안과 개인정보, 개발하며 배운 것을 차곡차곡 기록하는 공간입니다.</p>
+    <a class="home-posts-link" href="/posts/">글 둘러보기 <span aria-hidden="true">→</span></a>
+  </section>
 </PublicLayout>
