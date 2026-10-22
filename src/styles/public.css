@@ -79,7 +79,7 @@ img { display: block; max-width: 100%; }
   position: relative; display: flex; align-items: center; justify-content: space-between; gap: 8px;
   min-height: 32px; padding: 4px; font-size: 14px; line-height: 1.6; text-decoration: none;
 }
-.category-link.active { color: var(--matcha-strong); font-weight: 500; }
+.category-link.active { padding-left: 8px; color: var(--matcha-strong); font-weight: 500; }
 .category-link.active::before {
   content: ''; position: absolute; left: 0; top: 7px; bottom: 7px; width: 3px; background: var(--matcha);
 }
