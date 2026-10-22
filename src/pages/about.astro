@@ -4,6 +4,59 @@ import DocumentContent from '../components/public/DocumentContent.astro';
 import { getBlogContent } from '../lib/public/load-content';
 
 const { categories, posts, about } = await getBlogContent();
+const sections = [
+  {
+    number: '01',
+    title: 'Education',
+    items: [
+      { period: '2022.03 — 2027.02', title: '조선대학교 AI·SW학부 정보보안전공', detail: '졸업 예정 · 4.13 / 4.5' },
+      { period: '2019.03 — 2022.02', title: '대광여자고등학교', detail: '졸업' },
+    ],
+  },
+  {
+    number: '02',
+    title: 'Training & Certificates',
+    items: [
+      { period: '2024.07 — 2025.03', title: 'Best of the Best 13기', detail: '보안컨설팅 트랙 수료' },
+      { period: '2024.03 — 2024.09', title: 'WhiteHatSchool 2기', detail: '교육과정 수료' },
+      { period: '2026.09', title: '정보처리기사', detail: '한국산업인력공단' },
+      { period: '2025.12', title: 'CPPG 개인정보관리사', detail: '한국CPO포럼' },
+    ],
+  },
+  {
+    number: '03',
+    title: 'Activities',
+    items: [
+      { period: '2026.08', title: '해커스페이스', detail: '광주환경공단 대표 홈페이지 모의해킹 점검' },
+      { period: '2026.07 · 2025.07', title: '조선대학교 부속고등학교', detail: '창의융합캠프 강의' },
+      { period: '2025.07', title: '해커스페이스', detail: '전라남도 출자·출연기관 웹서비스 취약점 점검' },
+      { period: '2024.02 — 현재', title: '해커스페이스 · 국가사이버안보센터', detail: '지역 보안 커뮤니티 활동' },
+      { period: '2023.07 — 현재', title: '조선대학교 CERT Team', detail: '침해사고대응팀 활동 · 2024.08–2025.02 일시 중단' },
+      { period: '2023.03 — 현재', title: 'HackerLogin', detail: '조선대학교 보안 동아리' },
+    ],
+  },
+  {
+    number: '04',
+    title: 'Projects',
+    items: [
+      { period: '01 · BoB 13기', title: '금융권 망분리 규제완화 대비 가이드라인 제안', detail: '금융권 SaaS·생성형 AI 보안대책과 점검 기준 제안' },
+      { period: '02 · BoB 13기', title: '고객사·컨설팅사 역할 기반 가상기업 보안컨설팅', detail: '가상기업 환경을 구성하고 ISMS-P 진단·개선안 작성' },
+    ],
+  },
+  {
+    number: '05',
+    title: 'Awards',
+    items: [
+      { period: '2026.09', title: '전남광주 해킹대회', detail: '우수상' },
+      { period: '2026.07', title: '호남IS해커톤', detail: '우수상' },
+      { period: '2025.12', title: 'TS 보안 허점을 찾아라!', detail: '장려상' },
+      { period: '2025.09', title: '호남 사이버보안 콘퍼런스 웹취약점 경진대회', detail: '장려상' },
+      { period: '2024.12', title: '제2회 정보보호 정책제안 공모전', detail: '최우수상' },
+      { period: '2023.12', title: 'TS 보안 허점을 찾아라!', detail: '우수상' },
+      { period: '2023.09', title: '호남사이버보안 컨퍼런스 침해 대응·분석 경진대회', detail: '장려상' },
+    ],
+  },
+];
 ---
 
 <PublicLayout title="About" categories={categories} posts={posts} canonicalPath="/about/" hideSidebar>
@@ -15,22 +68,14 @@ const { categories, posts, about } = await getBlogContent();
         <p class="about-profile-nickname">Dorami</p>
         <p class="about-profile-name">이가현 <span aria-hidden="true">·</span> Clotilde</p>
         <nav class="about-profile-links" aria-label="프로필 링크">
-          <a href="mailto:kyoungmi1765@gmail.com">Email</a>
-          <a href="https://low-hare-4b9.notion.site/PORTFOLIO-167fb795d5ab8084b70dfa0fae89a770" target="_blank" rel="noreferrer">Notion Portfolio <span aria-hidden="true">↗</span></a>
+          <a href="https://low-hare-4b9.notion.site/PORTFOLIO-167fb795d5ab8084b70dfa0fae89a770" target="_blank" rel="noreferrer">Portfolio <span aria-hidden="true">↗</span></a>
           <a href="https://github.com/Clotilde030603" target="_blank" rel="me noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-          <a href="https://learntoflyclotilde.tistory.com/" target="_blank" rel="noreferrer">Blog <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
     </section>
-    <section class="about-highlights" aria-label="핵심 정보">
-      <div><strong>4.13 / 4.5</strong><span>Academic</span></div>
-      <div><strong>BoB 13기</strong><span>보안컨설팅</span></div>
-      <div><strong>2개</strong><span>자격</span></div>
-      <div><strong>7회</strong><span>수상</span></div>
-    </section>
     {
       about ? (
-        <DocumentContent document={about} />
+        <div class="about-intro"><DocumentContent document={about} /></div>
       ) : (
         <section class="empty-state">
           <p class="empty-title">소개 글을 준비하고 있습니다.</p>
@@ -38,5 +83,26 @@ const { categories, posts, about } = await getBlogContent();
         </section>
       )
     }
+    <div class="about-sections">
+      {sections.map((section) => (
+        <section class="about-resume-section" aria-labelledby={`about-section-${section.number}`}>
+          <p class="about-section-number">{section.number}</p>
+          <div class="about-section-content">
+            <h2 id={`about-section-${section.number}`}>{section.title}</h2>
+            <ol>
+              {section.items.map((item) => (
+                <li class="about-resume-item">
+                  <span class="about-resume-period">{item.period}</span>
+                  <div>
+                    <h3>{item.title}</h3>
+                    {item.detail && <p>{item.detail}</p>}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      ))}
+    </div>
   </article>
 </PublicLayout>
