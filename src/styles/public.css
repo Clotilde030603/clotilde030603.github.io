@@ -86,10 +86,10 @@ img { display: block; max-width: 100%; }
 .category-count { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
 .category-children { padding-left: 12px; }
 .category-children .category-link { font-size: 13px; }
-.rabbit-companion { margin-top: auto; padding-top: 48px; text-align: center; }
-.rabbit-stage { position: relative; width: 168px; max-width: 100%; margin: 0 auto; }
+.rabbit-companion { display: grid; justify-items: center; width: 100%; margin-top: auto; padding-top: 48px; text-align: center; }
+.rabbit-stage { position: relative; width: min(168px, 100%); margin-inline: auto; }
 .rabbit-stage dorami-rabbit { display: block; width: 100%; }
-.sidebar-signature { margin: 20px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.sidebar-signature { width: 100%; margin: 20px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; text-align: center; }
 
 .mobile-categories { display: none; }
 .mobile-categories > summary {

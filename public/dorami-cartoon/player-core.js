@@ -15,10 +15,10 @@ export function poseAt(t,d){
 }
 export function paint(ctx,images,d,t,compact=false){
  const st=poseAt(t,d),m=d.frames[st.frame];
- if(compact)st.x=-90+st.x*.84375;
+ if(compact)st.x=-110+st.x*.84375;
  const spriteSize=280*st.sx;
  const imageLeft=st.x-m.anchorX*st.sx;
- const enteringAlpha=st.frame<8?Math.max(0,Math.min(1,(imageLeft+spriteSize*.65)/(spriteSize*.65))):1;
+ const enteringAlpha=t<d.hopsEnd?Math.max(0,Math.min(1,imageLeft/(spriteSize*.13))):1;
  ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
  ctx.save();ctx.globalAlpha=enteringAlpha;ctx.fillStyle='rgba(67,91,46,.063)';ctx.beginPath();ctx.ellipse(st.x,d.ground+5,47*(1+st.y/110),2.5,0,0,Math.PI*2);ctx.fill();
  ctx.drawImage(images[st.frame],imageLeft,d.ground+st.y-m.anchorY*st.sy,spriteSize,spriteSize);ctx.restore();
