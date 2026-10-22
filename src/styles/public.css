@@ -105,7 +105,8 @@ main { min-width: 0; }
 .home-character dorami-rabbit { display: block; width: 100%; }
 .home-copy { min-width: 0; }
 .home-page h1 { margin: 0; font-size: clamp(34px, 5vw, 48px); font-weight: 500; line-height: 1.2; letter-spacing: -.035em; }
-.home-description { max-width: 520px; margin: 18px 0 26px; color: var(--muted); font-size: 16px; }
+.home-description { max-width: 520px; margin: 18px 0 14px; color: var(--muted); font-size: 16px; }
+.home-signature { margin: 0 0 26px; color: var(--muted); font-size: 14px; line-height: 1.5; letter-spacing: .01em; }
 .home-posts-link { display: inline-flex; align-items: center; gap: 10px; color: var(--matcha-strong); font-size: 14px; font-weight: 500; text-decoration: none; }
 .home-posts-link span { font-size: 18px; transition: transform .16s ease; }
 .home-posts-link:hover span { transform: translateX(3px); }
