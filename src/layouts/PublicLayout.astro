@@ -13,6 +13,7 @@ interface Props {
   activeCategoryId?: string | null;
   canonicalPath?: string;
   articlePublishedAt?: string;
+  homePage?: boolean;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
   activeCategoryId = null,
   canonicalPath = Astro.url.pathname,
   articlePublishedAt,
+  homePage = false,
 } = Astro.props;
 const pageTitle = title ? `${title} · Dorami` : 'Dorami';
 const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
@@ -64,24 +66,30 @@ const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
       </div>
     </header>
 
-    <details class="mobile-categories">
-      <summary><svg class="category-clover" viewBox="0 0 20 20" aria-hidden="true"><path d="m10 10 5.2 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="6.2" cy="6.2" r="4.1"/><circle cx="13.8" cy="6.2" r="4.1"/><circle cx="6.2" cy="13.8" r="4.1"/><circle cx="13.8" cy="13.8" r="4.1"/></svg><span>Category</span></summary>
-      <CategoryNav categories={categories} posts={posts} activeCategoryId={activeCategoryId} instanceId="mobile-category" />
-    </details>
+    {!homePage && (
+      <details class="mobile-categories">
+        <summary><svg class="category-clover" viewBox="0 0 20 20" aria-hidden="true"><path d="m10 10 5.2 7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="6.2" cy="6.2" r="4.1"/><circle cx="13.8" cy="6.2" r="4.1"/><circle cx="6.2" cy="13.8" r="4.1"/><circle cx="13.8" cy="13.8" r="4.1"/></svg><span>Category</span></summary>
+        <CategoryNav categories={categories} posts={posts} activeCategoryId={activeCategoryId} instanceId="mobile-category" />
+      </details>
+    )}
 
-    <div class="public-shell">
-      <aside class="public-sidebar">
-        <CategoryNav categories={categories} posts={posts} activeCategoryId={activeCategoryId} instanceId="desktop-category" />
-        <RabbitCompanion />
-        <p class="sidebar-signature">Dorami, also known as Clotilde.</p>
-      </aside>
+    <div class:list={['public-shell', homePage && 'home-shell']}>
+      {!homePage && (
+        <aside class="public-sidebar">
+          <CategoryNav categories={categories} posts={posts} activeCategoryId={activeCategoryId} instanceId="desktop-category" />
+          <RabbitCompanion />
+          <p class="sidebar-signature">Dorami, also known as Clotilde.</p>
+        </aside>
+      )}
       <main id="main-content" tabindex="-1">
         <slot />
       </main>
-      <div class="mobile-rabbit" aria-hidden="false">
-        <RabbitCompanion />
-        <p class="sidebar-signature">Dorami, also known as Clotilde.</p>
-      </div>
+      {!homePage && (
+        <div class="mobile-rabbit" aria-hidden="false">
+          <RabbitCompanion />
+          <p class="sidebar-signature">Dorami, also known as Clotilde.</p>
+        </div>
+      )}
     </div>
 
     <footer class="site-footer">

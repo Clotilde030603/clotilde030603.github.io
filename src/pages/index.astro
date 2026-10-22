@@ -9,12 +9,17 @@ const recentPosts = [...posts]
   .slice(0, 3);
 ---
 
-<PublicLayout categories={categories} posts={posts}>
+<PublicLayout categories={categories} posts={posts} homePage>
   <section class="home-page" aria-labelledby="home-title">
-    <p class="listing-eyebrow">Welcome to Dorami</p>
-    <h1 id="home-title">Dorami</h1>
-    <p class="home-description">보안과 개인정보, 개발하며 배운 것을 차곡차곡 기록하는 공간입니다.</p>
-    <a class="home-posts-link" href="/posts/">글 둘러보기 <span aria-hidden="true">→</span></a>
+    <div class="home-character" aria-label="Dorami 토끼 애니메이션">
+      <dorami-rabbit wide></dorami-rabbit>
+    </div>
+    <div class="home-copy">
+      <p class="listing-eyebrow">Welcome to Dorami</p>
+      <h1 id="home-title">Dorami</h1>
+      <p class="home-description">보안과 개인정보, 개발하며 배운 것을 차곡차곡 기록하는 공간입니다.</p>
+      <a class="home-posts-link" href="/posts/">글 둘러보기 <span aria-hidden="true">→</span></a>
+    </div>
   </section>
   {
     recentPosts.length > 0 && (

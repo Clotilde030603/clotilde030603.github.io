@@ -1,8 +1,8 @@
 export function poseAt(t,d){
  const smooth=q=>q*q*(3-2*q),clamp=q=>Math.max(0,Math.min(1,q));
  if(t<d.hopsEnd){
-  const h=Math.min(2,Math.floor(t/d.hopDuration)),q=(t-h*d.hopDuration)/d.hopDuration;
-  const starts=[0,140,240],ends=[140,240,320],u=clamp((q-.12)/.77);
+  const h=Math.min(1,Math.floor(t/d.hopDuration)),q=(t-h*d.hopDuration)/d.hopDuration;
+  const starts=[0,160],ends=[160,320],u=clamp((q-.12)/.77);
   const k=Math.max(0,1-Math.abs(q-.93)/.07)*.035;
   return {frame:Math.min(7,Math.floor(q*8)),x:starts[h]+(ends[h]-starts[h])*smooth(u),y:-34*Math.sin(Math.PI*clamp((q-.18)/.57)),sx:d.scale*(1+k),sy:d.scale*(1-k)};
  }
