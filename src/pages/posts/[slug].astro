@@ -4,7 +4,7 @@ import PublicLayout from '../../layouts/PublicLayout.astro';
 import DocumentContent from '../../components/public/DocumentContent.astro';
 import { categoryPath, formatDate } from '../../lib/public/content';
 import { getBlogContent } from '../../lib/public/load-content';
-import { renderDocument, safeHref } from '../../lib/public/render-document';
+import { renderDocument } from '../../lib/public/render-document';
 import type { BlogContent } from '../../lib/public/content';
 import type { PublishedPost } from '../../lib/types';
 
@@ -20,7 +20,6 @@ const { headings } = renderDocument(post.document);
 const postIndex = content.posts.findIndex((item) => item.id === post.id);
 const newerPost = postIndex > 0 ? content.posts[postIndex - 1] : null;
 const olderPost = postIndex >= 0 && postIndex < content.posts.length - 1 ? content.posts[postIndex + 1] : null;
-const sourceUrl = safeHref(post.sourceUrl);
 ---
 
 <PublicLayout
@@ -63,7 +62,6 @@ const sourceUrl = safeHref(post.sourceUrl);
       <div class="article-body">
         {post.summary && <p class="article-lead">{post.summary}</p>}
         <DocumentContent document={post.document} />
-        {sourceUrl && <p class="source-link"><a href={sourceUrl} rel="noreferrer">원문 출처 보기</a></p>}
       </div>
       {
         headings.length > 1 && (

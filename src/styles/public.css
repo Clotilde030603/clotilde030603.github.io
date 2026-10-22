@@ -219,7 +219,6 @@ main { min-width: 0; }
 .task-list { list-style: none; padding-left: 0; }
 .task-item { display: flex; gap: 8px; align-items: flex-start; }
 .task-item input { margin-top: .55em; accent-color: var(--matcha); }
-.source-link { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--divider); font-size: 13px; }
 .image-dialog { width: min(92vw, 1100px); max-height: 92vh; padding: 42px 16px 16px; border: 1px solid var(--divider); background: var(--background); }
 .image-dialog::backdrop { background: rgba(25,29,24,.72); }
 .image-dialog img { max-height: calc(92vh - 60px); margin: auto; }
