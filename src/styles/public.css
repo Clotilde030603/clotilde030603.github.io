@@ -92,6 +92,11 @@ img { display: block; max-width: 100%; }
 .sidebar-signature { margin: 20px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
 
 .mobile-categories { display: none; }
+.mobile-categories > summary {
+  display: flex; align-items: center; gap: 8px; list-style: none; cursor: pointer;
+}
+.mobile-categories > summary::-webkit-details-marker { display: none; }
+.category-clover { width: 16px; height: 16px; fill: var(--matcha); flex: none; }
 .mobile-rabbit { display: none; }
 main { min-width: 0; }
 .listing { max-width: 780px; }

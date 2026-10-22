@@ -16,9 +16,12 @@ export function poseAt(t,d){
 export function paint(ctx,images,d,t,compact=false){
  const st=poseAt(t,d),m=d.frames[st.frame];
  if(compact)st.x=-90+st.x*.84375;
+ const spriteSize=280*st.sx;
+ const imageLeft=st.x-m.anchorX*st.sx;
+ const enteringAlpha=st.frame<8?Math.max(0,Math.min(1,(imageLeft+spriteSize*.65)/(spriteSize*.65))):1;
  ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
- ctx.save();ctx.fillStyle='rgba(67,91,46,.063)';ctx.beginPath();ctx.ellipse(st.x,d.ground+5,47*(1+st.y/110),2.5,0,0,Math.PI*2);ctx.fill();ctx.restore();
- ctx.drawImage(images[st.frame],st.x-m.anchorX*st.sx,d.ground+st.y-m.anchorY*st.sy,280*st.sx,280*st.sy);
+ ctx.save();ctx.globalAlpha=enteringAlpha;ctx.fillStyle='rgba(67,91,46,.063)';ctx.beginPath();ctx.ellipse(st.x,d.ground+5,47*(1+st.y/110),2.5,0,0,Math.PI*2);ctx.fill();
+ ctx.drawImage(images[st.frame],imageLeft,d.ground+st.y-m.anchorY*st.sy,spriteSize,spriteSize);ctx.restore();
 }
 export async function createPlayer(canvas,{data,urls,compact=false,autoplay=true}={}){
  const images=await Promise.all(urls.map(src=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>im.naturalWidth===280&&im.naturalHeight===280?resolve(im):reject(new Error('이미지 크기가 올바르지 않습니다.'));im.onerror=()=>reject(new Error('이미지를 불러오지 못했습니다.'));im.src=src;})));
