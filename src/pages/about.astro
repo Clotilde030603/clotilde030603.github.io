@@ -6,7 +6,7 @@ import { getBlogContent } from '../lib/public/load-content';
 const { categories, posts, about } = await getBlogContent();
 ---
 
-<PublicLayout title="소개" categories={categories} posts={posts} canonicalPath="/about/">
+<PublicLayout title="소개" categories={categories} posts={posts} canonicalPath="/about/" hideSidebar>
   <article class="about-page">
     <header><p class="listing-eyebrow">About</p><h1>소개</h1></header>
     {

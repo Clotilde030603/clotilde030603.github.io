@@ -66,7 +66,7 @@ img { display: block; max-width: 100%; }
   width: min(1160px, calc(100% - 64px)); min-height: calc(100vh - 136px); margin: 0 auto;
   display: grid; grid-template-columns: 196px minmax(0, 1fr); gap: 42px; padding: 42px 0 56px;
 }
-.public-shell.home-shell { display: block; }
+.public-shell.sidebar-hidden { display: block; }
 .public-sidebar { border-right: 1px solid var(--divider); padding-right: 28px; display: flex; flex-direction: column; }
 .category-nav h2 { margin: 0 0 12px; font-size: 14px; font-weight: 500; }
 .category-row { display: grid; grid-template-columns: 16px minmax(0, 1fr); align-items: center; }
