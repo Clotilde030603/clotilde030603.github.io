@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1080" role="img" aria-labelledby="title desc">
+  <title id="title">KT 펨토셀 무단 소액결제 사고 흐름</title>
+  <desc id="desc">분실된 KT 펨토셀 인증서가 복제되어 비인가 장비의 통신망 접속에 사용되고, 통신정보와 ARS·SMS 인증정보 탈취를 거쳐 무단 소액결제로 이어진 과정입니다.</desc>
+  <rect width="720" height="1080" rx="18" fill="#f7f8f4"/>
+  <text x="34" y="52" fill="#30352f" font-family="sans-serif" font-size="29" font-weight="700">펨토셀 인증서 복제가 만든 경로</text>
+  <text x="34" y="86" fill="#676e65" font-family="sans-serif" font-size="20">개인정보위·과기정통부 조사 발표 기준</text>
+  <g font-family="sans-serif">
+    <rect x="32" y="118" width="656" height="112" rx="14" fill="#fff" stroke="#d9ded1" stroke-width="2"/><circle cx="76" cy="174" r="25" fill="#52643c"/><text x="76" y="182" fill="#fff" font-size="21" font-weight="700" text-anchor="middle">1</text><text x="120" y="165" fill="#30352f" font-size="22" font-weight="700">유실된 장비에서 인증서 확보</text><text x="120" y="199" fill="#676e65" font-size="18">펨토셀의 망 접속 자격증명이 유출</text>
+    <line x1="360" y1="232" x2="360" y2="250" stroke="#697d4f" stroke-width="3"/><path d="M352 244 L360 254 L368 244" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="32" y="258" width="656" height="112" rx="14" fill="#e5ebdb"/><circle cx="76" cy="314" r="25" fill="#52643c"/><text x="76" y="322" fill="#fff" font-size="21" font-weight="700" text-anchor="middle">2</text><text x="120" y="305" fill="#30352f" font-size="22" font-weight="700">인증서를 자체 제작 장비에 복제</text><text x="120" y="339" fill="#676e65" font-size="18">공통 인증서·10년 유효기간 등 관리 미흡</text>
+    <line x1="360" y1="372" x2="360" y2="390" stroke="#697d4f" stroke-width="3"/><path d="M352 384 L360 394 L368 384" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="32" y="398" width="656" height="112" rx="14" fill="#fff" stroke="#d9ded1" stroke-width="2"/><circle cx="76" cy="454" r="25" fill="#52643c"/><text x="76" y="462" fill="#fff" font-size="21" font-weight="700" text-anchor="middle">3</text><text x="120" y="445" fill="#30352f" font-size="22" font-weight="700">비인가 펨토셀이 KT 망에 접속</text><text x="120" y="479" fill="#676e65" font-size="18">약 11개월간 접속한 것으로 확인</text>
+    <line x1="360" y1="512" x2="360" y2="530" stroke="#697d4f" stroke-width="3"/><path d="M352 524 L360 534 L368 524" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="32" y="538" width="656" height="112" rx="14" fill="#e5ebdb"/><circle cx="76" cy="594" r="25" fill="#52643c"/><text x="76" y="602" fill="#fff" font-size="21" font-weight="700" text-anchor="middle">4</text><text x="120" y="585" fill="#30352f" font-size="22" font-weight="700">통신정보·ARS·SMS 인증정보 탈취</text><text x="120" y="619" fill="#676e65" font-size="18">종단 간 암호화 해제 사실도 조사에서 확인</text>
+    <line x1="360" y1="652" x2="360" y2="670" stroke="#697d4f" stroke-width="3"/><path d="M352 664 L360 674 L368 664" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="32" y="678" width="656" height="112" rx="14" fill="#fff" stroke="#d9ded1" stroke-width="2"/><circle cx="76" cy="734" r="25" fill="#52643c"/><text x="76" y="742" fill="#fff" font-size="21" font-weight="700" text-anchor="middle">5</text><text x="120" y="725" fill="#30352f" font-size="22" font-weight="700">무단 소액결제로 이어짐</text><text x="120" y="759" fill="#676e65" font-size="18">368명, 약 2억 4천만 원 피해</text>
+    <rect x="32" y="820" width="656" height="150" rx="14" fill="#f3e7e4"/><text x="58" y="860" fill="#a2645a" font-size="21" font-weight="700">개인정보위 최종 집계</text><text x="58" y="902" fill="#30352f" font-size="21">개인정보 유출 16,647명</text><text x="58" y="936" fill="#676e65" font-size="18">유출 인원과 결제 피해자는 다른 수치입니다.</text>
+  </g>
+</svg>

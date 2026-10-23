@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 840" role="img" aria-labelledby="title desc">
+  <title id="title">쿠팡 인증 서명키 악용과 개인정보 접근 흐름</title>
+  <desc id="desc">재직 중 인증 시스템과 서명키에 접근한 개발자가 퇴사 뒤 키를 사용해 전자 출입증을 위조하고, 정상 로그인을 우회해 자동화된 정보 조회를 한 흐름입니다.</desc>
+  <rect width="840" height="840" rx="18" fill="#f7f8f4"/>
+  <text x="42" y="52" fill="#30352f" font-family="sans-serif" font-size="25" font-weight="700">서명키가 로그인 우회로 이어진 경로</text>
+  <text x="42" y="82" fill="#676e65" font-family="sans-serif" font-size="15">과기정통부 조사 결과 기준 · 전자 출입증의 구체 형식은 공개자료에 명시되지 않음</text>
+  <g font-family="sans-serif">
+    <rect x="62" y="112" width="716" height="86" rx="13" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="100" cy="155" r="22" fill="#52643c"/><text x="100" y="162" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">1</text>
+    <text x="138" y="149" fill="#30352f" font-size="18" font-weight="700">재직 중 인증 시스템과 서명키에 접근</text><text x="138" y="176" fill="#676e65" font-size="15">전직 개발자는 인증 시스템 설계·개발을 담당</text>
+    <line x1="420" y1="200" x2="420" y2="218" stroke="#697d4f" stroke-width="3"/><path d="M412 212 L420 222 L428 212" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="62" y="226" width="716" height="86" rx="13" fill="#e5ebdb"/>
+    <circle cx="100" cy="269" r="22" fill="#52643c"/><text x="100" y="276" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">2</text>
+    <text x="138" y="263" fill="#30352f" font-size="18" font-weight="700">퇴사 후에도 서명키가 폐기되지 않음</text><text x="138" y="290" fill="#676e65" font-size="15">키 관리와 퇴사자 권한 회수 절차가 미흡</text>
+    <line x1="420" y1="314" x2="420" y2="332" stroke="#697d4f" stroke-width="3"/><path d="M412 326 L420 336 L428 326" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="62" y="340" width="716" height="86" rx="13" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="100" cy="383" r="22" fill="#52643c"/><text x="100" y="390" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">3</text>
+    <text x="138" y="377" fill="#30352f" font-size="18" font-weight="700">전자 출입증 위조로 정상 로그인 우회</text><text x="138" y="404" fill="#676e65" font-size="15">서버에 정상 인증 경로에서 발급됐는지 검증 절차가 없음</text>
+    <line x1="420" y1="428" x2="420" y2="446" stroke="#697d4f" stroke-width="3"/><path d="M412 440 L420 450 L428 440" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="62" y="454" width="716" height="86" rx="13" fill="#e5ebdb"/>
+    <circle cx="100" cy="497" r="22" fill="#52643c"/><text x="100" y="504" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">4</text>
+    <text x="138" y="491" fill="#30352f" font-size="18" font-weight="700">자동화 도구로 여러 계정 정보 조회</text><text x="138" y="518" fill="#676e65" font-size="15">정부 발표 기준 주요 공격 기간: 2025.04.14–11.08</text>
+    <line x1="420" y1="542" x2="420" y2="560" stroke="#697d4f" stroke-width="3"/><path d="M412 554 L420 564 L428 554" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="62" y="568" width="716" height="86" rx="13" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="100" cy="611" r="22" fill="#52643c"/><text x="100" y="618" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">5</text>
+    <text x="138" y="605" fill="#30352f" font-size="18" font-weight="700">이름·이메일, 배송지, 주문정보 노출</text><text x="138" y="632" fill="#676e65" font-size="15">페이지별 정보와 접근 횟수는 서로 다른 지표</text>
+    <rect x="62" y="684" width="716" height="100" rx="13" fill="#f3e7e4"/>
+    <text x="84" y="719" fill="#a2645a" font-size="16" font-weight="700">규모 인용 시 구분</text><text x="84" y="748" fill="#30352f" font-size="15">과기정통부: 이름·이메일 33,673,817건 · 개인정보위: 약 3,755만 명</text><text x="84" y="770" fill="#676e65" font-size="14">발표 시점과 집계 대상이 달라 동일 지표로 단순 비교하지 않습니다.</text>
+  </g>
+</svg>

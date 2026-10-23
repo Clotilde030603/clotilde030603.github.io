@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 800" role="img" aria-labelledby="title desc">
+  <title id="title">KT 펨토셀 무단 소액결제 사고 흐름</title>
+  <desc id="desc">분실된 KT 펨토셀 인증서가 복제되어 비인가 장비의 통신망 접속에 사용되고, 통신정보와 ARS·SMS 인증정보 탈취를 거쳐 무단 소액결제로 이어진 과정입니다.</desc>
+  <rect width="840" height="800" rx="18" fill="#f7f8f4"/>
+  <text x="42" y="52" fill="#30352f" font-family="sans-serif" font-size="25" font-weight="700">펨토셀 인증서 복제가 만든 공격 경로</text>
+  <text x="42" y="82" fill="#676e65" font-family="sans-serif" font-size="15">개인정보위 2026년 제재 처분과 과기정통부 조사 발표 기준</text>
+  <g font-family="sans-serif">
+    <rect x="62" y="112" width="716" height="82" rx="13" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="100" cy="153" r="22" fill="#52643c"/>
+    <text x="100" y="160" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">1</text>
+    <text x="138" y="147" fill="#30352f" font-size="18" font-weight="700">유실된 KT 펨토셀에서 인증서 확보</text>
+    <text x="138" y="173" fill="#676e65" font-size="15">기지국 장비의 망 접속 자격증명이 외부로 유출</text>
+    <line x1="420" y1="196" x2="420" y2="214" stroke="#697d4f" stroke-width="3"/><path d="M412 208 L420 218 L428 208" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="62" y="222" width="716" height="82" rx="13" fill="#e5ebdb"/>
+    <circle cx="100" cy="263" r="22" fill="#52643c"/><text x="100" y="270" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">2</text>
+    <text x="138" y="257" fill="#30352f" font-size="18" font-weight="700">복제 인증서를 자체 제작 펨토셀에 사용</text>
+    <text x="138" y="283" fill="#676e65" font-size="15">공통 인증서와 10년 유효기간, 접속 통제 미흡</text>
+    <line x1="420" y1="306" x2="420" y2="324" stroke="#697d4f" stroke-width="3"/><path d="M412 318 L420 328 L428 318" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="62" y="332" width="716" height="82" rx="13" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="100" cy="373" r="22" fill="#52643c"/><text x="100" y="380" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">3</text>
+    <text x="138" y="367" fill="#30352f" font-size="18" font-weight="700">비인가 장비가 KT 망에 접속</text>
+    <text x="138" y="393" fill="#676e65" font-size="15">개인정보위는 약 11개월의 비인가 접속을 확인</text>
+    <line x1="420" y1="416" x2="420" y2="434" stroke="#697d4f" stroke-width="3"/><path d="M412 428 L420 438 L428 428" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="62" y="442" width="716" height="82" rx="13" fill="#e5ebdb"/>
+    <circle cx="100" cy="483" r="22" fill="#52643c"/><text x="100" y="490" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">4</text>
+    <text x="138" y="477" fill="#30352f" font-size="18" font-weight="700">통신 식별정보와 결제 인증정보 탈취</text>
+    <text x="138" y="503" fill="#676e65" font-size="15">종단 간 암호화 해제, ARS·SMS 인증정보 노출 확인</text>
+    <line x1="420" y1="526" x2="420" y2="544" stroke="#697d4f" stroke-width="3"/><path d="M412 538 L420 548 L428 538" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="62" y="552" width="716" height="82" rx="13" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="100" cy="593" r="22" fill="#52643c"/><text x="100" y="600" fill="#fff" font-size="18" font-weight="700" text-anchor="middle">5</text>
+    <text x="138" y="587" fill="#30352f" font-size="18" font-weight="700">일부 이용자에게 무단 소액결제 피해</text>
+    <text x="138" y="613" fill="#676e65" font-size="15">368명, 약 2억 4천만 원으로 개인정보위가 집계</text>
+    <rect x="62" y="662" width="716" height="88" rx="13" fill="#f3e7e4"/>
+    <text x="84" y="695" fill="#a2645a" font-size="16" font-weight="700">확인 범위</text>
+    <text x="84" y="722" fill="#30352f" font-size="15">16,647명 개인정보 유출. 유출 인원과 결제 피해자는 서로 다른 수치입니다.</text>
+  </g>
+</svg>
