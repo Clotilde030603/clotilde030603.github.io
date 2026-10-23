@@ -30,7 +30,7 @@ draft: false
 3. [PROXMOX 다운로드 사이트](<https://www.proxmox.com/en/downloads>)에서 `proxmox-ve_8.1-1.iso` 이미지 파일 다운로드\
    {{important}}※ Rufus 버전 1.1.0 이상에서는 ISO 이미지(.iso)로부터 부팅 가능한 USB 드라이브를 만들 수 있음{{/important}}
 
-4. USB를 현재 컴퓨터에 연결 → 설치한 Rufus를 실행
+4. USB를 현재 컴퓨터에 연결 ⟶ 설치한 Rufus를 실행
 
 5. 아래 사진에서 선택
 
