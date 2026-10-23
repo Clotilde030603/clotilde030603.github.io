@@ -8,7 +8,7 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/1-Rufus-%EC%84%A4%EC%B9
 draft: false
 ---
 
-## **Rufus**
+## **{{color:#cb912f}}Rufus{{/color}}**
 
 - Rufus는 USB 메모리 및 플래시 드라이브를 포맷하고 부팅할 수 있도록 만드는 도구
 
@@ -20,14 +20,14 @@ draft: false
 
 ---
 
-## **설치 방법**
+## **{{color:#d9730d}}설치 방법{{/color}}**
 
-1. [Rufus 사이트](<https://rufus.ie/ko/#google_vignette>)에서 rufus-4.3.exe를 다운
+1. [{{color:#c0d1e7}}Rufus 사이트{{/color}}](<https://rufus.ie/ko/#google_vignette>)에서 rufus-4.3.exe를 다운
 (단, Windows 8 이상. 다운로드만 하면 바로 사용할 수 있음)
 
 2. 다운로드한 실행 파일을 설치 → 실행
 
-3. [PROXMOX 다운로드 사이트](<https://www.proxmox.com/en/downloads>)에서 `proxmox-ve_8.1-1.iso` 이미지 파일 다운로드\
+3. [{{color:#c0d1e7}}PROXMOX 다운로드 사이트{{/color}}](<https://www.proxmox.com/en/downloads>)에서 `proxmox-ve_8.1-1.iso` 이미지 파일 다운로드\
    {{important}}※ Rufus 버전 1.1.0 이상에서는 ISO 이미지(.iso)로부터 부팅 가능한 USB 드라이브를 만들 수 있음{{/important}}
 
 4. USB를 현재 컴퓨터에 연결 ⟶ 설치한 Rufus를 실행
@@ -48,7 +48,7 @@ draft: false
 
 ---
 
-## **참고 자료**
+## **{{color:#337ea9}}참고 자료{{/color}}**
 
 [![Link preview](/assets/posts/rufus-bootable-usb/link-preview-01.png "dorami-card:%7B%22title%22%3A%20%22Rufus%20-%20%EA%B0%84%ED%8E%B8%ED%95%98%EA%B2%8C%20%EB%B6%80%ED%8C%85%20%EA%B0%80%EB%8A%A5%ED%95%9C%20USB%20%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%20%EB%A7%8C%EB%93%A4%EA%B8%B0%22%2C%20%22description%22%3A%20%22Rufus%EB%8A%94%20USB%20%EB%A9%94%EB%AA%A8%EB%A6%AC%20%EB%B0%8F%20%ED%94%8C%EB%9E%98%EC%8B%9C%20%EB%93%9C%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%A5%BC%20%ED%8F%AC%EB%A7%B7%ED%95%98%EA%B3%A0%20%EB%B6%80%ED%8C%85%ED%95%A0%20%EC%88%98%20%EC%9E%88%EB%8F%84%EB%A1%9D%20%EB%A7%8C%EB%93%9C%EB%8A%94%20%EB%8F%84%EA%B5%AC%EC%9E%85%EB%8B%88%EB%8B%A4.%20%EC%9D%B4%20%ED%8E%98%EC%9D%B4%EC%A7%80%20%EC%95%84%EB%9E%98%EC%97%90%20%EB%82%98%EC%97%B4%EB%90%9C%20ISO%20%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%9D%B4%EC%99%B8%EC%97%90%EB%8F%84%20Rufus%EB%8A%94%20%EC%97%AC%EB%9F%AC%20%EC%A2%85%EB%A5%98%EC%9D%98%20ISO%20%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A5%BC%20%EC%A7%80%EC%9B%90%ED%95%A9%EB%8B%88%EB%8B%A4.%20%281%29%20Windows%208%20%EC%9D%B4%22%7D")](<https://rufus.ie/ko/#google_vignette>)
 

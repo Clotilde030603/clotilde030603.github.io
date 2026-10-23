@@ -8,17 +8,17 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/picoCTF-GET-aHEADWeb"
 draft: false
 ---
 
-## **Problem**
+## **{{color:#ee2323}}Problem{{/color}}**
 
 ![picoCTF: GET aHEAD(Web) 이미지 1](/assets/posts/picoctf-get-ahead-web/image-01.png)
 
-hint 1 : Maybe you have more than 2 choices
+{{color:#448361}}hint 1 : Maybe you have more than 2 choices{{/color}}
 
-hint 2 : Check out tools like Burpsuite to modify your requests and look at the responses
+{{color:#448361}}hint 2 : Check out tools like Burpsuite to modify your requests and look at the responses{{/color}}
 
 ---
 
-## **Solution**
+## **{{color:#337ea9}}Solution{{/color}}**
 
 **1. 문제 링크 접속**
 
@@ -36,6 +36,6 @@ hint 2 : Check out tools like Burpsuite to modify your requests and look at the 
 
 ---
 
-## **결론**
+## **{{color:#ef6f53}}결론{{/color}}**
 
 - Method 변경으로 문제 해결

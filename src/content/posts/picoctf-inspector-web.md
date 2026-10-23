@@ -8,17 +8,17 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/picoCTF-Insp3ct0rWeb"
 draft: false
 ---
 
-## **Problem**
+## **{{color:#ee2323}}Problem{{/color}}**
 
 ![picoCTF: Insp3ct0r(Web) 이미지 1](/assets/posts/picoctf-inspector-web/image-01.png)
 
-hint 1 : How do you inspect web code on a browser?
+{{color:#448361}}hint 1 : How do you inspect web code on a browser?{{/color}}
 
-hint 2 : There's 3 parts
+{{color:#448361}}hint 2 : There's 3 parts{{/color}}
 
 ---
 
-## **Solution**
+## **{{color:#337ea9}}Solution{{/color}}**
 
 **1. 문제 링크 접속**
 
@@ -44,6 +44,6 @@ hint 2 : There's 3 parts
 
 ---
 
-## **결론**
+## **{{color:#ef6f53}}결론{{/color}}**
 
 - 소스 코드 분석으로 문제 해결

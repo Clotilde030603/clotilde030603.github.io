@@ -8,15 +8,15 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/picoCTF-CookiesWeb"
 draft: false
 ---
 
-## **Problem**
+## **{{color:#ee2323}}Problem{{/color}}**
 
 ![picoCTF: Cookies(Web) 이미지 1](/assets/posts/picoctf-cookies-web/image-01.png)
 
-**hint 1 : None**
+**{{color:#448361}}hint 1 : None{{/color}}**
 
 ---
 
-**Solution**
+**{{color:#337ea9}}Solution{{/color}}**
 
 **1. 문제 링크 접속**
 
@@ -42,6 +42,6 @@ draft: false
 
 ---
 
-## **결론**
+## **{{color:#ef6f53}}결론{{/color}}**
 
 - 쿠키 값 변조로 문제 해결

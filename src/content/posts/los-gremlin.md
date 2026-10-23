@@ -8,15 +8,15 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Lord-of-SQLInjection-gr
 draft: false
 ---
 
-## **Problem**
+## **{{color:#ee2323}}Problem{{/color}}**
 
 ![Lord of SQLInjection: gremlin 이미지 1](/assets/posts/los-gremlin/image-01.png)
 
 ---
 
-## **Solve**
+## **{{color:#337ea9}}Solve{{/color}}**
 
-- **기존 구문 → GET 방식**
+- **기존 구문 → {{bg:#f6e199}}GET 방식{{/bg}}**
 
 ```
 

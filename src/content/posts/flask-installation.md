@@ -8,7 +8,7 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Flask-%EC%84%A4%EC%B9%9
 draft: false
 ---
 
-## **설치 방법**
+## **{{color:#f89009}}설치 방법{{/color}}**
 
 **1. 리눅스 패키지 목록을 갱신하고 설치된 패키지를 업데이트합니다.**
 
@@ -62,11 +62,11 @@ $ sudo apt-get install vim
 
 ---
 
-## **Trouble Shooting**
+## **{{color:#337ea9}}Trouble Shooting{{/color}}**
 
-- Problem : 시스템 Python에 패키지를 직접 설치하려 할 때 `externally-managed-environment` 오류가 발생할 수 있습니다. 운영체제가 관리하는 Python 환경을 보호하기 위한 안내입니다.
+- {{color:#d44c47}}Problem : 시스템 Python에 패키지를 직접 설치하려 할 때{{/color}} `{{color:#d44c47}}externally-managed-environment{{/color}}` {{color:#d44c47}}오류가 발생할 수 있습니다. 운영체제가 관리하는 Python 환경을 보호하기 위한 안내입니다.{{/color}}
 
-- Troubleshooting : `EXTERNALLY-MANAGED` 파일을 삭제하지 말고, 위 설치 방법처럼 프로젝트 가상환경을 만든 뒤 활성화된 상태에서 패키지를 설치합니다. 가상환경을 나갈 때는 다음 명령어를 사용합니다.
+- {{color:#337ea9}}Troubleshooting{{/color}} : `EXTERNALLY-MANAGED` 파일을 삭제하지 말고, 위 설치 방법처럼 프로젝트 가상환경을 만든 뒤 활성화된 상태에서 패키지를 설치합니다. 가상환경을 나갈 때는 다음 명령어를 사용합니다.
 
 ```
 
@@ -75,7 +75,7 @@ $ deactivate
 ```
 ---
 
-## **참고 자료**
+## **{{color:#337ea9}}참고 자료{{/color}}**
 
 [![Link preview](/assets/posts/flask-installation/link-preview-01.png "dorami-card:%7B%22title%22%3A%20%22%EB%A6%AC%EB%88%85%EC%8A%A4%5BLinux%5D%20%EC%9A%B0%EB%B6%84%ED%88%AC%5BUbuntu%5D%20%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C%20%ED%95%98%EA%B8%B0%2Capt-get%20update%EC%99%80%20apt-get%20upgrade%EC%9D%98%20%EC%B0%A8%EC%9D%B4%22%2C%20%22description%22%3A%20%22%EB%A6%AC%EB%88%85%EC%8A%A4%5BLinux%5D%20%EC%9A%B0%EB%B6%84%ED%88%AC%5BUbuntu%5D%20%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C%20%ED%95%98%EA%B8%B0%2C%20update%EC%99%80%20upgrade%EC%9D%98%20%EC%B0%A8%EC%9D%B4%20%EC%9D%B4%EB%B2%88%20%ED%8F%AC%EC%8A%A4%ED%8C%85%EC%9D%80%20%EC%9A%B0%EB%B6%84%ED%88%AC%5BUbuntu%5D%EC%9D%84%20%EC%9E%98%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0%20%EC%9C%84%ED%95%B4%EC%84%9C%20%EC%97%85%EA%B7%B8%EB%A0%88%EC%9D%B4%EB%93%9C%20%ED%95%98%EB%8A%94%20%EB%B0%A9%EB%B2%95%EC%97%90%20%EB%8C%80%ED%95%B4%EC%84%9C%20%EC%84%A4%EB%AA%85%EC%9D%84%20%ED%95%98%EB%8F%84%EB%A1%9D%20%ED%95%98%EA%B2%A0%EC%8A%B5%EB%8B%88%EB%8B%A4.%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20%EC%9A%B0%EB%B6%84%ED%88%AC%5Bu%22%7D")](<https://appia.tistory.com/268>)
 

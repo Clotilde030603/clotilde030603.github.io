@@ -8,13 +8,25 @@ const withMark = (marks: NonNullable<JsonNode['marks']>, type: string, attrs?: R
   [...marks, { type, ...(attrs ? { attrs } : {}) }];
 
 function markedText(raw: string, marks: NonNullable<JsonNode['marks']>): JsonNode[] {
-  return raw.split(/(\{\{important\}\}[\s\S]*?\{\{\/important\}\})/g).flatMap((part) => {
-    if (part.startsWith('{{important}}') && part.endsWith('{{/important}}')) {
-      const text = part.slice('{{important}}'.length, -'{{/important}}'.length);
-      return textNodes(text, withMark(marks, 'textStyle', { color: '#ef5369' }));
+  const output: JsonNode[] = [];
+  const marker = /\{\{(important|color|bg)(?::(#[0-9a-fA-F]{6}))?\}\}([\s\S]*?)\{\{\/\1\}\}/g;
+  let cursor = 0;
+
+  for (const match of raw.matchAll(marker)) {
+    const index = match.index ?? 0;
+    const [, kind, requestedColor, content] = match;
+    const color = kind === 'important' ? '#ef5369' : requestedColor;
+    if (index > cursor) output.push(...textNodes(raw.slice(cursor, index), marks));
+    if (!color) output.push(...textNodes(match[0], marks));
+    else {
+      const style = kind === 'bg' ? { backgroundColor: color } : { color };
+      output.push(...markedText(content, withMark(marks, 'textStyle', style)));
     }
-    return textNodes(part, marks);
-  });
+    cursor = index + match[0].length;
+  }
+
+  if (cursor < raw.length) output.push(...textNodes(raw.slice(cursor), marks));
+  return output;
 }
 
 function safeLink(raw: string): string | null {
@@ -47,7 +59,7 @@ function inline(tokens: any[] = [], marks: NonNullable<JsonNode['marks']> = []):
       case 'strong': output.push(...inline(token.tokens, withMark(marks, 'bold'))); break;
       case 'em': output.push(...inline(token.tokens, withMark(marks, 'italic'))); break;
       case 'del': output.push(...inline(token.tokens, withMark(marks, 'strike'))); break;
-      case 'codespan': output.push(...textNodes(token.text ?? '', withMark(marks, 'code'))); break;
+      case 'codespan': output.push(...markedText(token.text ?? '', withMark(marks, 'code'))); break;
       case 'link': {
         const href = safeLink(token.href ?? '');
         output.push(...inline(token.tokens, href ? withMark(marks, 'link', { href }) : marks));

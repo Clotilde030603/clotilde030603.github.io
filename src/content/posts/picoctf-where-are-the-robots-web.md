@@ -8,15 +8,15 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/picoCTF-where-are-the-r
 draft: false
 ---
 
-## **Problem**
+## **{{color:#ee2323}}Problem{{/color}}**
 
 ![picoCTF: where are the robots(Web) 이미지 1](/assets/posts/picoctf-where-are-the-robots-web/image-01.png)
 
-hint 1 : What part of the website could tell you where the creator doesn't want you to look?
+{{color:#448361}}hint 1 : What part of the website could tell you where the creator doesn't want you to look?{{/color}}
 
 ---
 
-## **Solution**
+## **{{color:#337ea9}}Solution{{/color}}**
 
 **1. 문제 사이트 접속**
 
@@ -36,6 +36,6 @@ hint 1 : What part of the website could tell you where the creator doesn't want 
 
 ---
 
-## **결론**
+## **{{color:#ef6f53}}결론{{/color}}**
 
 - robots.txt(검색 엔진이 운영중인 검색 로봇이 사이트 및 웹페이지를 수집할 수 있도록 허용하거나 제한하는 국제 표준 설정)에 접근하여 문제 해결

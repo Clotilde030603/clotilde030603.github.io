@@ -8,15 +8,15 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/picoCTF-Some-Assembly-R
 draft: false
 ---
 
-## **Problem**
+## **{{color:#ee2323}}Problem{{/color}}**
 
 ![picoCTF: Some Assembly Required 1(Web) 이미지 1](/assets/posts/picoctf-some-assembly-required-web/image-01.png)
 
-hint : None
+{{color:#448361}}hint : None{{/color}}
 
 ---
 
-## **Solution**
+## **{{color:#337ea9}}Solution{{/color}}**
 
 **1. 문제 사이트 접속.**
 
@@ -40,6 +40,6 @@ hint : None
 
 ---
 
-## **결론**
+## **{{color:#ef6f53}}결론{{/color}}**
 
 - 소스 코드를 통해 의심스러운 경로 발견 후, 파일 다운로드 받아 헥스 값 확인을 통해 문제 해결
