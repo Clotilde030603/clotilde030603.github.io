@@ -89,6 +89,7 @@ img { display: block; max-width: 100%; }
   width: min(1160px, calc(100% - 64px)); height: 100%; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
 }
+.brand-group { display: flex; align-items: center; gap: 8px; flex: none; }
 .brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; }
 .brand img { width: 56px; height: 56px; object-fit: contain; }
 .brand span { color: var(--foreground); font-size: 28px; font-weight: 650; line-height: 1; letter-spacing: -.035em; }
@@ -302,6 +303,7 @@ main { min-width: 0; }
   .site-header { height: 68px; }
   .header-inner, .public-shell, .site-footer { width: min(100% - 40px, 680px); }
   .brand { gap: 7px; }
+  .brand-group { gap: 5px; }
   .brand img { width: 48px; height: 48px; }
   .brand span { font-size: 23px; }
   .top-nav { gap: 12px; }
