@@ -125,6 +125,9 @@ function blocks(tokens: any[]): JsonNode[] {
       case 'list':
         output.push({
           type: token.items?.some((item: any) => item.task) ? 'taskList' : token.ordered ? 'orderedList' : 'bulletList',
+          ...(token.ordered && Number.isInteger(Number(token.start)) && Number(token.start) > 1
+            ? { attrs: { start: Number(token.start) } }
+            : {}),
           content: (token.items ?? []).map((item: any) => {
             const itemContent = blocks(item.tokens ?? []);
             return {

@@ -74,4 +74,24 @@ describe('markdownToDocument links', () => {
     expect(rendered).not.toContain('{{color:');
     expect(rendered).toContain('scp [옵션] [파일명]');
   });
+
+  it('preserves ordered numbering when an image or code block splits the list', () => {
+    const document = markdownToDocument([
+      '1. 첫 번째 단계',
+      '',
+      '   ![단계 사진](/assets/posts/example/image-01.png)',
+      '',
+      '2. 두 번째 단계',
+      '',
+      '```sh',
+      'echo done',
+      '```',
+      '',
+      '3. 세 번째 단계',
+    ].join('\n'));
+    const rendered = renderDocument(document).html;
+
+    expect(rendered).toContain('<ol><li><p>첫 번째 단계</p><figure class="image-center">');
+    expect(rendered).toContain('<ol start="3"><li><p>세 번째 단계</p></li></ol>');
+  });
 });

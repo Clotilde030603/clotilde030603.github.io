@@ -122,7 +122,11 @@ export function renderDocument(document: DoramiDocument): { html: string; headin
       return `<h${level} id="${id}">${children()}<a class="heading-anchor" href="#${id}" aria-label="${escapeHtml(text)} 바로가기">#</a></h${level}>`;
     }
     if (node.type === 'bulletList') return `<ul>${children()}</ul>`;
-    if (node.type === 'orderedList') return `<ol>${children()}</ol>`;
+    if (node.type === 'orderedList') {
+      const start = Number(node.attrs?.start);
+      const startAttribute = Number.isInteger(start) && start > 1 && start <= 100_000 ? ` start="${start}"` : '';
+      return `<ol${startAttribute}>${children()}</ol>`;
+    }
     if (node.type === 'listItem') return `<li>${children()}</li>`;
     if (node.type === 'taskList') return `<ul class="task-list">${children()}</ul>`;
     if (node.type === 'taskItem') {

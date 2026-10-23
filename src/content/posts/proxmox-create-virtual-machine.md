@@ -12,27 +12,23 @@ draft: false
 
 1. Proxmox에 접속하여 로그인한 후, \[노드\] - \[우측 상단 shell\] - \[xterms.js\]
 
-![03. Proxmox 가상머신 생성 이미지 1](/assets/posts/proxmox-create-virtual-machine/image-01.png)
+   ![03. Proxmox 가상머신 생성 이미지 1](/assets/posts/proxmox-create-virtual-machine/image-01.png)
 
 2. 아래 명령어 실행 → 현재 proxmox 시스템에 인식된 디스크 확인
 
-```
+   ```
+   ls /dev/ | grep sd
+   ```
 
-ls /dev/ | grep sd
-
-```
-
-![03. Proxmox 가상머신 생성 이미지 2](/assets/posts/proxmox-create-virtual-machine/image-02.png)
+   ![03. Proxmox 가상머신 생성 이미지 2](/assets/posts/proxmox-create-virtual-machine/image-02.png)
 
 3. 아래 3줄의 명령어를 통해 proxmox에 디스크 추가
 
-```
-
-pvcreate /dev/sdb1[추가할 디스크 장치명]
-vgcreate local2T[원하는 볼륨 그룹명] /dev/sdb1[추가할 디스크 장치명]
-lvcreate -l 100%FREE --thinpool thin-pool local2T[원하는 볼륨 그룹명]
-
-```
+   ```
+   pvcreate /dev/sdb1[추가할 디스크 장치명]
+   vgcreate local2T[원하는 볼륨 그룹명] /dev/sdb1[추가할 디스크 장치명]
+   lvcreate -l 100%FREE --thinpool thin-pool local2T[원하는 볼륨 그룹명]
+   ```
 
 4. 터미널 창 닫고, proxmox \[Datacenter\] - \[Storage\] - \[Add\] - \[LVM-Thin\]
 
