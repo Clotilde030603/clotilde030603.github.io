@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 880" role="img" aria-labelledby="title desc">
+  <title id="title">XZ Utils 백도어 발견 과정</title>
+  <desc id="desc">SSH 로그인 지연을 조사하던 개발자가 liblzma의 이상 동작을 추적해 2024년 3월 29일 백도어를 공개했습니다.</desc>
+  <rect width="720" height="880" rx="20" fill="#f7f8f4"/>
+  <text x="38" y="54" fill="#30352f" font-family="sans-serif" font-size="34" font-weight="700">이상 징후에서 발견까지</text>
+  <g font-family="sans-serif">
+    <rect x="60" y="105" width="620" height="142" rx="15" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="104" cy="151" r="25" fill="#52643c"/>
+    <text x="104" y="160" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle">1</text>
+    <text x="145" y="149" fill="#30352f" font-size="27" font-weight="700">SSH 로그인 지연과 CPU 이상</text>
+    <text x="145" y="191" fill="#676e65" font-size="23">로그인이 실패해도 CPU 사용량이</text>
+    <text x="145" y="221" fill="#676e65" font-size="23">높은 현상을 관찰했습니다.</text>
+    <line x1="370" y1="250" x2="370" y2="271" stroke="#697d4f" stroke-width="4"/>
+    <path d="M360 265 L370 278 L380 265" fill="none" stroke="#697d4f" stroke-width="4"/>
+
+    <rect x="60" y="282" width="620" height="142" rx="15" fill="#e5ebdb"/>
+    <circle cx="104" cy="328" r="25" fill="#52643c"/>
+    <text x="104" y="337" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle">2</text>
+    <text x="145" y="326" fill="#30352f" font-size="27" font-weight="700">오류와 프로세스 동작 조사</text>
+    <text x="145" y="368" fill="#676e65" font-size="23">valgrind 오류와 SSH 서버의</text>
+    <text x="145" y="398" fill="#676e65" font-size="23">라이브러리 사용을 추적했습니다.</text>
+    <line x1="370" y1="427" x2="370" y2="448" stroke="#697d4f" stroke-width="4"/>
+    <path d="M360 442 L370 455 L380 442" fill="none" stroke="#697d4f" stroke-width="4"/>
+
+    <rect x="60" y="459" width="620" height="142" rx="15" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="104" cy="505" r="25" fill="#52643c"/>
+    <text x="104" y="514" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle">3</text>
+    <text x="145" y="503" fill="#30352f" font-size="27" font-weight="700">liblzma의 악성 변경 확인</text>
+    <text x="145" y="545" fill="#676e65" font-size="23">소스와 배포 tarball의 차이를</text>
+    <text x="145" y="575" fill="#676e65" font-size="23">조사하며 백도어를 찾아냈습니다.</text>
+    <line x1="370" y1="604" x2="370" y2="625" stroke="#a2645a" stroke-width="4"/>
+    <path d="M360 619 L370 632 L380 619" fill="none" stroke="#a2645a" stroke-width="4"/>
+
+    <rect x="60" y="636" width="620" height="142" rx="15" fill="#f3e7e4"/>
+    <circle cx="104" cy="682" r="25" fill="#a2645a"/>
+    <text x="104" y="691" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle">4</text>
+    <text x="145" y="680" fill="#a2645a" font-size="27" font-weight="700">2024년 3월 29일 공개</text>
+    <text x="145" y="722" fill="#30352f" font-size="23">oss-security 메일링 리스트에</text>
+    <text x="145" y="752" fill="#30352f" font-size="23">발견 내용과 분석을 알렸습니다.</text>
+  </g>
+</svg>

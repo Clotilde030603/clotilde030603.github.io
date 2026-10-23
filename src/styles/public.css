@@ -259,6 +259,11 @@ main { min-width: 0; }
 .article-prose figure { margin: 28px 0; }
 .image-expand { width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
 .article-prose figure img { width: auto; max-width: 100%; height: auto; margin: 0 auto; }
+.article-prose figure.diagram-figure { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.article-prose figure.diagram-figure .image-expand { width: max-content; max-width: none; }
+.article-prose figure.diagram-figure picture { display: block; }
+.article-prose figure.diagram-figure img { width: 700px; max-width: 100%; }
+.article-prose figure.diagram-figure figcaption { text-align: left; }
 .article-prose .article-link-card { display: grid; grid-template-columns: minmax(120px, 180px) minmax(0, 1fr); gap: 18px; align-items: center; margin: 22px 0; overflow: hidden; border: 1px solid var(--divider); color: inherit; text-decoration: none; transition: border-color .16s ease, background-color .16s ease; }
 .article-prose .article-link-card:hover { border-color: var(--matcha); background: var(--matcha-soft); }
 .article-prose .article-link-card > img { width: 100%; height: 130px; object-fit: cover; }
@@ -339,6 +344,9 @@ main { min-width: 0; }
   .article-byline { align-items: flex-start; flex-direction: column; gap: 8px; }
   .article-tags { justify-content: flex-start; }
   .article-prose { font-size: 16.5px; line-height: 1.82; word-break: normal; }
+  .article-prose figure.diagram-figure { overflow-x: visible; }
+  .article-prose figure.diagram-figure .image-expand { width: 100%; }
+  .article-prose figure.diagram-figure img { width: 100%; max-width: 100%; }
   .article-prose .article-link-card { grid-template-columns: 105px minmax(0, 1fr); gap: 12px; }
   .article-prose .article-link-card > img { height: 108px; }
   .article-link-card-copy { padding-right: 12px; }

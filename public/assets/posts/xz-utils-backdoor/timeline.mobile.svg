@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1030" role="img" aria-labelledby="title desc">
+  <title id="title">XZ Utils 백도어 공개 기록 타임라인</title>
+  <desc id="desc">2021년부터 2024년 3월까지 공개 기록에서 확인되는 주요 시점입니다. 공격 의도를 처음부터 확정하는 타임라인은 아닙니다.</desc>
+  <rect width="720" height="1030" rx="20" fill="#f7f8f4"/>
+  <text x="38" y="54" fill="#30352f" font-family="sans-serif" font-size="34" font-weight="700">XZ Utils 주요 시점</text>
+  <text x="38" y="87" fill="#676e65" font-family="sans-serif" font-size="22">공개된 기여·변경·발견 기록</text>
+  <line x1="64" y1="135" x2="64" y2="895" stroke="#a9b495" stroke-width="5"/>
+  <g font-family="sans-serif">
+    <circle cx="64" cy="190" r="14" fill="#52643c"/>
+    <rect x="98" y="125" width="584" height="130" rx="14" fill="#e5ebdb"/>
+    <text x="124" y="165" fill="#52643c" font-size="28" font-weight="700">2021년 10월</text>
+    <text x="124" y="201" fill="#30352f" font-size="24">XZ 개발 메일링 리스트에</text>
+    <text x="124" y="232" fill="#30352f" font-size="24">첫 공개 기여 기록</text>
+
+    <circle cx="64" cy="338" r="14" fill="#52643c"/>
+    <rect x="98" y="273" width="584" height="130" rx="14" fill="#ffffff"/>
+    <text x="124" y="313" fill="#52643c" font-size="28" font-weight="700">2022년</text>
+    <text x="124" y="349" fill="#30352f" font-size="24">유지관리 역할을 나누자는</text>
+    <text x="124" y="380" fill="#30352f" font-size="24">요구와 권한 확대 정황</text>
+
+    <circle cx="64" cy="486" r="14" fill="#52643c"/>
+    <rect x="98" y="421" width="584" height="130" rx="14" fill="#e5ebdb"/>
+    <text x="124" y="461" fill="#52643c" font-size="28" font-weight="700">2023년</text>
+    <text x="124" y="497" fill="#30352f" font-size="24">빌드·테스트 과정과 관련된</text>
+    <text x="124" y="528" fill="#30352f" font-size="24">코드 변경이 이어짐</text>
+
+    <circle cx="64" cy="634" r="14" fill="#52643c"/>
+    <rect x="98" y="569" width="584" height="130" rx="14" fill="#ffffff"/>
+    <text x="124" y="609" fill="#52643c" font-size="28" font-weight="700">2024년 2–3월</text>
+    <text x="124" y="645" fill="#30352f" font-size="24">테스트 파일과 배포용</text>
+    <text x="124" y="676" fill="#30352f" font-size="24">빌드 경로에 악성 코드 포함</text>
+
+    <circle cx="64" cy="782" r="14" fill="#a2645a"/>
+    <rect x="98" y="717" width="584" height="130" rx="14" fill="#f3e7e4"/>
+    <text x="124" y="757" fill="#a2645a" font-size="28" font-weight="700">2024년 3월 29일</text>
+    <text x="124" y="793" fill="#30352f" font-size="24">SSH 이상 동작을 조사하다</text>
+    <text x="124" y="824" fill="#30352f" font-size="24">백도어를 공개</text>
+  </g>
+  <text x="38" y="905" fill="#676e65" font-family="sans-serif" font-size="19">기록은 공개 자료에 근거합니다. 최초 의도는 확정할 수 없습니다.</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1190" role="img" aria-labelledby="title desc">
+  <title id="title">XZ Utils 백도어의 공격 흐름</title>
+  <desc id="desc">테스트 파일에 숨긴 데이터가 배포 tarball의 빌드 과정에서 liblzma에 삽입되고, 특정 배포판의 SSH 인증 경로에 영향을 주는 흐름입니다.</desc>
+  <rect width="720" height="1190" rx="20" fill="#f7f8f4"/>
+  <text x="38" y="54" fill="#30352f" font-family="sans-serif" font-size="34" font-weight="700">백도어가 들어간 경로</text>
+  <text x="38" y="87" fill="#676e65" font-family="sans-serif" font-size="22">배포·빌드 과정에 숨은 단계가 핵심입니다.</text>
+  <g font-family="sans-serif">
+    <rect x="60" y="125" width="620" height="142" rx="15" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="104" cy="171" r="25" fill="#52643c"/>
+    <text x="104" y="180" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle">1</text>
+    <text x="145" y="169" fill="#30352f" font-size="27" font-weight="700">테스트 파일에 데이터 숨김</text>
+    <text x="145" y="211" fill="#676e65" font-size="23">겉으로는 라이브러리 테스트</text>
+    <text x="145" y="241" fill="#676e65" font-size="23">자료처럼 보였습니다.</text>
+    <line x1="370" y1="270" x2="370" y2="291" stroke="#697d4f" stroke-width="4"/>
+    <path d="M360 285 L370 298 L380 285" fill="none" stroke="#697d4f" stroke-width="4"/>
+
+    <rect x="60" y="302" width="620" height="142" rx="15" fill="#e5ebdb"/>
+    <circle cx="104" cy="348" r="25" fill="#52643c"/>
+    <text x="104" y="357" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle">2</text>
+    <text x="145" y="346" fill="#30352f" font-size="27" font-weight="700">배포 파일에 빌드 스크립트</text>
+    <text x="145" y="388" fill="#676e65" font-size="23">일부 tarball이 Git 저장소와</text>
+    <text x="145" y="418" fill="#676e65" font-size="23">다른 스크립트를 포함했습니다.</text>
+    <line x1="370" y1="447" x2="370" y2="468" stroke="#697d4f" stroke-width="4"/>
+    <path d="M360 462 L370 475 L380 462" fill="none" stroke="#697d4f" stroke-width="4"/>
+
+    <rect x="60" y="479" width="620" height="142" rx="15" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="104" cy="525" r="25" fill="#52643c"/>
+    <text x="104" y="534" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle">3</text>
+    <text x="145" y="523" fill="#30352f" font-size="27" font-weight="700">빌드 중 숨겨진 데이터 추출</text>
+    <text x="145" y="565" fill="#676e65" font-size="23">스크립트가 테스트 파일을</text>
+    <text x="145" y="595" fill="#676e65" font-size="23">가공해 빌드에 연결했습니다.</text>
+    <line x1="370" y1="624" x2="370" y2="645" stroke="#697d4f" stroke-width="4"/>
+    <path d="M360 639 L370 652 L380 639" fill="none" stroke="#697d4f" stroke-width="4"/>
+
+    <rect x="60" y="656" width="620" height="142" rx="15" fill="#e5ebdb"/>
+    <circle cx="104" cy="702" r="25" fill="#52643c"/>
+    <text x="104" y="711" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle">4</text>
+    <text x="145" y="700" fill="#30352f" font-size="27" font-weight="700">liblzma에 악성 변경 반영</text>
+    <text x="145" y="742" fill="#676e65" font-size="23">변조된 라이브러리가</text>
+    <text x="145" y="772" fill="#676e65" font-size="23">패키지에 포함될 수 있습니다.</text>
+    <line x1="370" y1="801" x2="370" y2="822" stroke="#697d4f" stroke-width="4"/>
+    <path d="M360 816 L370 829 L380 816" fill="none" stroke="#697d4f" stroke-width="4"/>
+
+    <rect x="60" y="833" width="620" height="142" rx="15" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="104" cy="879" r="25" fill="#52643c"/>
+    <text x="104" y="888" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle">5</text>
+    <text x="145" y="877" fill="#30352f" font-size="27" font-weight="700">일부 SSH 인증 경로에 영향</text>
+    <text x="145" y="919" fill="#676e65" font-size="23">특정 배포판의 구성·빌드 조건에서</text>
+    <text x="145" y="949" fill="#676e65" font-size="23">인증 처리에 개입할 수 있었습니다.</text>
+
+    <rect x="60" y="1000" width="620" height="126" rx="15" fill="#f3e7e4"/>
+    <text x="84" y="1042" fill="#a2645a" font-size="25" font-weight="700">모든 Linux가 영향받은 것은 아닙니다.</text>
+    <text x="84" y="1080" fill="#30352f" font-size="22">배포판·버전·빌드 조건에 따라 영향이 달랐습니다.</text>
+  </g>
+</svg>

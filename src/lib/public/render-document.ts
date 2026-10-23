@@ -167,7 +167,12 @@ export function renderDocument(document: DoramiDocument): { html: string; headin
       const caption = escapeHtml(String(node.attrs?.caption || node.attrs?.title || ''));
       const width = imageWidth(node.attrs?.width);
       const alignment = ['left', 'center', 'right'].includes(String(node.attrs?.alignment)) ? String(node.attrs?.alignment) : 'center';
-      return `<figure class="image-${alignment}"><button class="image-expand" type="button" data-expand-image aria-label="이미지 크게 보기"><img src="${escapeHtml(src)}" alt="${alt}"${width ? ` style="width:${width}"` : ''} loading="lazy" decoding="async" /></button>${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
+      const diagramClass = src.toLowerCase().endsWith('.svg') ? ' diagram-figure' : '';
+      const image = `<img src="${escapeHtml(src)}" alt="${alt}"${width ? ` style="width:${width}"` : ''} loading="lazy" decoding="async" />`;
+      const picture = diagramClass
+        ? `<picture><source media="(max-width: 760px)" srcset="${escapeHtml(src.replace(/\.svg$/i, '.mobile.svg'))}" />${image}</picture>`
+        : image;
+      return `<figure class="image-${alignment}${diagramClass}"><button class="image-expand" type="button" data-expand-image aria-label="이미지 크게 보기">${picture}</button>${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
     }
     if (node.type === 'table') {
       const columnCount = node.content?.[0]?.content?.length ?? 0;

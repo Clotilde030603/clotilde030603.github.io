@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 800" role="img" aria-labelledby="title desc">
+  <title id="title">XZ Utils 백도어의 공격 흐름</title>
+  <desc id="desc">테스트 파일에 숨겨진 데이터가 배포 tarball 빌드 과정에서 liblzma에 포함되고, 특정 Linux 배포판 구성에서 SSH 인증 경로에 영향을 주는 과정을 설명합니다.</desc>
+  <rect width="840" height="800" rx="18" fill="#f7f8f4"/>
+  <text x="42" y="52" fill="#30352f" font-family="sans-serif" font-size="25" font-weight="700">백도어가 들어간 경로</text>
+  <text x="42" y="82" fill="#676e65" font-family="sans-serif" font-size="15">소스 저장소만 볼 때 놓칠 수 있었던 배포·빌드 단계가 핵심입니다.</text>
+  <g font-family="sans-serif">
+    <rect x="62" y="118" width="716" height="78" rx="13" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="100" cy="157" r="22" fill="#52643c"/>
+    <text x="100" y="164" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">1</text>
+    <text x="138" y="151" fill="#30352f" font-size="18" font-weight="700">테스트 파일에 데이터 숨김</text>
+    <text x="138" y="176" fill="#676e65" font-size="15">겉으로는 라이브러리 테스트에 쓰이는 파일로 보임</text>
+
+    <line x1="420" y1="198" x2="420" y2="220" stroke="#697d4f" stroke-width="3"/>
+    <path d="M412 214 L420 224 L428 214" fill="none" stroke="#697d4f" stroke-width="3"/>
+
+    <rect x="62" y="228" width="716" height="78" rx="13" fill="#e5ebdb"/>
+    <circle cx="100" cy="267" r="22" fill="#52643c"/>
+    <text x="100" y="274" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">2</text>
+    <text x="138" y="261" fill="#30352f" font-size="18" font-weight="700">배포 tarball에 변조된 빌드 스크립트 포함</text>
+    <text x="138" y="286" fill="#676e65" font-size="15">일부 배포용 압축 파일에 Git 저장소와 다른 파일이 들어감</text>
+
+    <line x1="420" y1="308" x2="420" y2="330" stroke="#697d4f" stroke-width="3"/>
+    <path d="M412 324 L420 334 L428 324" fill="none" stroke="#697d4f" stroke-width="3"/>
+
+    <rect x="62" y="338" width="716" height="78" rx="13" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="100" cy="377" r="22" fill="#52643c"/>
+    <text x="100" y="384" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">3</text>
+    <text x="138" y="371" fill="#30352f" font-size="18" font-weight="700">빌드 중 숨겨진 데이터 추출</text>
+    <text x="138" y="396" fill="#676e65" font-size="15">스크립트가 테스트 파일을 가공해 악성 구성요소를 빌드에 연결</text>
+
+    <line x1="420" y1="418" x2="420" y2="440" stroke="#697d4f" stroke-width="3"/>
+    <path d="M412 434 L420 444 L428 434" fill="none" stroke="#697d4f" stroke-width="3"/>
+
+    <rect x="62" y="448" width="716" height="78" rx="13" fill="#e5ebdb"/>
+    <circle cx="100" cy="487" r="22" fill="#52643c"/>
+    <text x="100" y="494" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">4</text>
+    <text x="138" y="481" fill="#30352f" font-size="18" font-weight="700">liblzma 라이브러리에 반영</text>
+    <text x="138" y="506" fill="#676e65" font-size="15">악성 변경이 포함된 라이브러리가 패키지로 배포될 수 있음</text>
+
+    <line x1="420" y1="528" x2="420" y2="550" stroke="#697d4f" stroke-width="3"/>
+    <path d="M412 544 L420 554 L428 544" fill="none" stroke="#697d4f" stroke-width="3"/>
+
+    <rect x="62" y="558" width="716" height="88" rx="13" fill="#ffffff" stroke="#d9ded1" stroke-width="2"/>
+    <circle cx="100" cy="602" r="22" fill="#52643c"/>
+    <text x="100" y="609" fill="#ffffff" font-size="18" font-weight="700" text-anchor="middle">5</text>
+    <text x="138" y="592" fill="#30352f" font-size="18" font-weight="700">특정 배포판 구성에서 SSH 경로에 영향</text>
+    <text x="138" y="618" fill="#676e65" font-size="15">일부 빌드의 systemd·sshd 연동 경로에서 인증 처리에 개입 가능</text>
+
+    <rect x="62" y="672" width="716" height="78" rx="13" fill="#f3e7e4"/>
+    <text x="84" y="704" fill="#a2645a" font-size="16" font-weight="700">중요</text>
+    <text x="84" y="730" fill="#30352f" font-size="15">모든 Linux 시스템이 영향받은 것은 아닙니다. 배포판·버전·빌드 조건에 따라 달랐습니다.</text>
+  </g>
+</svg>
