@@ -37,7 +37,9 @@ export function buildBlogContent(entries: PostEntry[]): BlogContent {
     }
   };
 
-  EMPTY_CATEGORY_PATHS.forEach((path) => addCategoryPath(categoryNames(path)));
+  if (publishedEntries.length > 0) {
+    EMPTY_CATEGORY_PATHS.forEach((path) => addCategoryPath(categoryNames(path)));
+  }
   for (const entry of publishedEntries) {
     addCategoryPath(categoryNames(entry.data.category));
   }
