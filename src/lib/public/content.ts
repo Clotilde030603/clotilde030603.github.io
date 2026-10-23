@@ -10,7 +10,7 @@ export type BlogContent = {
   allTags: string[];
 };
 
-const EMPTY_CATEGORY_PATHS = ['보안/보안 이슈'];
+const EMPTY_CATEGORY_PATHS = ['보안/보안 동향'];
 
 const categorySlugPart = (value: string) =>
   value.normalize('NFC').toLocaleLowerCase('ko').replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-|-$/g, '') || 'category';

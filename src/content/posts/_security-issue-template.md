@@ -2,7 +2,7 @@
 title: "보안 이슈: 제목"
 date: 2026-10-24
 summary: ""
-category: "보안/보안 이슈"
+category: "보안/보안 동향"
 tags:
   - 보안 이슈
 draft: true
