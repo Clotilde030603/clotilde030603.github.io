@@ -12,11 +12,11 @@ draft: false
 
 ![picoCTF: Cookies(Web) 이미지 1](/assets/posts/picoctf-cookies-web/image-01.png)
 
-**{{color:#697d4f}}hint 1 : None{{/color}}**
+**{{color:#52643c}}hint 1 : None{{/color}}**
 
 ---
 
-**{{color:#52643c}}Solution{{/color}}**
+## **{{color:#52643c}}Solution{{/color}}**
 
 **1. 문제 링크 접속**
 

@@ -12,7 +12,7 @@ draft: false
 
 ![picoCTF: where are the robots(Web) 이미지 1](/assets/posts/picoctf-where-are-the-robots-web/image-01.png)
 
-{{color:#697d4f}}hint 1 : What part of the website could tell you where the creator doesn't want you to look?{{/color}}
+{{color:#52643c}}hint 1 : What part of the website could tell you where the creator doesn't want you to look?{{/color}}
 
 ---
 

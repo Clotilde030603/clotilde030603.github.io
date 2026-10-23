@@ -8,7 +8,7 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/2-Proxmox-%EC%84%A4%EC%
 draft: false
 ---
 
-※ {{color:#697d4f}}Bios 진입 및 부팅 시 단축 : F11(브랜드 및 제조사별 상이){{/color}}
+※ {{color:#52643c}}Bios 진입 및 부팅 시 단축 : F11(브랜드 및 제조사별 상이){{/color}}
 
 ---
 
@@ -38,7 +38,7 @@ draft: false
 
 - {{color:#a2645a}}Why? : WIFI 설정을 보니 IP Address Pool(대역)과 할당 받은 IP가 다름{{/color}}
 
-- {{color:#697d4f}}Trouble Shooting : IP Address, Gateway, DNS : 0.0.0.0으로 재설정 → Proxmox 재설치{{/color}}
+- {{color:#52643c}}Trouble Shooting : IP Address, Gateway, DNS : 0.0.0.0으로 재설정 → Proxmox 재설치{{/color}}
 
 ---
 

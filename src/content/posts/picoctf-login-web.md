@@ -12,7 +12,7 @@ draft: false
 
 ![picoCTF: login(Web) 이미지 1](/assets/posts/picoctf-login-web/image-01.png)
 
-{{color:#697d4f}}hint 1 : None{{/color}}
+{{color:#52643c}}hint 1 : None{{/color}}
 
 ---
 

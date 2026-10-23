@@ -12,9 +12,9 @@ draft: false
 
 ![picoCTF: Insp3ct0r(Web) 이미지 1](/assets/posts/picoctf-inspector-web/image-01.png)
 
-{{color:#697d4f}}hint 1 : How do you inspect web code on a browser?{{/color}}
+{{color:#52643c}}hint 1 : How do you inspect web code on a browser?{{/color}}
 
-{{color:#697d4f}}hint 2 : There's 3 parts{{/color}}
+{{color:#52643c}}hint 2 : There's 3 parts{{/color}}
 
 ---
 
@@ -36,7 +36,7 @@ draft: false
 
 ![picoCTF: Insp3ct0r(Web) 이미지 5](/assets/posts/picoctf-inspector-web/image-05.png)
 
-**5. CSS 코드를 보면 번째 flag 값 조각 발견**
+**5. CSS 코드를 보면 두 번째 flag 값 조각 발견**
 
 ![picoCTF: Insp3ct0r(Web) 이미지 6](/assets/posts/picoctf-inspector-web/image-06.png)
 

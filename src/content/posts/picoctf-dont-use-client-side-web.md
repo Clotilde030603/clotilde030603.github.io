@@ -12,7 +12,7 @@ draft: false
 
 ![picoCTF: dont-use-client-side(Web) 이미지 1](/assets/posts/picoctf-dont-use-client-side-web/image-01.png)
 
-{{color:#697d4f}}hint 1 : Never trust the client{{/color}}
+{{color:#52643c}}hint 1 : Never trust the client{{/color}}
 
 ---
 

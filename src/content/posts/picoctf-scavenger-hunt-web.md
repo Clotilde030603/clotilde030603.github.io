@@ -12,7 +12,7 @@ draft: false
 
 ![picoCTF: Scavenger Hunt(Web) 이미지 1](/assets/posts/picoctf-scavenger-hunt-web/image-01.png)
 
-{{color:#697d4f}}hint 1 : You should have enough hints to find the files, don't run a brute forcer.{{/color}}
+{{color:#52643c}}hint 1 : You should have enough hints to find the files, don't run a brute forcer.{{/color}}
 
 ---
 

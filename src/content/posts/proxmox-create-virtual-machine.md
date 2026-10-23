@@ -62,57 +62,57 @@ draft: false
 
 ## **{{color:#697d4f}}Ubuntu-Server 설정 방법{{/color}}**
 
-1. 분투 설치 시 생성한 계정으로 로그인
+1. 우분투 설치 시 생성한 계정으로 로그인
 
 2. 터미널 접속
 
 3. root 비밀번호를 설치하는 아래 명령어 입력
 
-```
+   ```
 
-sudo passwd root
+   sudo passwd root
 
-```
+   ```
 
 4. 명령어 창에 아래 알림 메세지에 맞춰 비밀번호 입력
 
-```
+   ```
 
-1) [sudo] password for es[로그인한계정] :
-2) Enter new UNIX password :
-3) Retype new UNIX password :
+   1) [sudo] password for es[로그인한계정] :
+   2) Enter new UNIX password :
+   3) Retype new UNIX password :
 
-```
+   ```
 
 5. 아래와 같이 root 비밀번호 설정 완료
 
-```
+   ```
 
-passwd: password updated successfully
+   passwd: password updated successfully
 
-```
+   ```
 
 6. 아래 명령어로 vim 설치
 
-```
+   ```
 
-sudo apt-get install vim
+   sudo apt-get install vim
 
-```
+   ```
 
 7. 업데이트 Source를 확인하기 위해 아래의 경로로 들어감
 
-```
+   ```
 
-/etc/apt/sources.list(/etc/apt/sources.list.d/ubuntu.sources)
+   /etc/apt/sources.list(/etc/apt/sources.list.d/ubuntu.sources)
 
-```
+   ```
 
 8. [http://kr.archive.ubuntu.com/ubuntu/](<http://kr.archive.ubuntu.com/ubuntu/>) 를 [https://mirror.kakao.com/ubuntu/](<https://mirror.kakao.com/ubuntu/>) (카카오 미러 사이트)로 변경
 
-{{color:#a2645a}}*{{/color}} 카카오 미러사이트로 변경해주면, 속도가 빨라짐.
+   {{color:#a2645a}}*{{/color}} 카카오 미러사이트로 변경해주면, 속도가 빨라짐.
 
-{{color:#a2645a}}*{{/color}} Ubuntu 24.04 /etc/apt/sources.list가 아닌  /etc/apt/sources.list.d/ubuntu.sources로 경로 변경.
+   {{color:#a2645a}}*{{/color}} Ubuntu 24.04 /etc/apt/sources.list가 아닌  /etc/apt/sources.list.d/ubuntu.sources로 경로 변경.
 
 ---
 

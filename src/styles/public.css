@@ -182,6 +182,15 @@ main { min-width: 0; }
 .article-toc a { display: -webkit-box; overflow: hidden; text-decoration: none; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .article-prose { font-size: 17px; line-height: 1.82; word-break: keep-all; overflow-wrap: anywhere; }
 .article-prose p { margin: 0 0 1.35em; }
+
+.article-prose ul, .article-prose ol { margin: 0 0 1.35em; padding-left: 1.55em; }
+.article-prose li { margin: .3em 0; padding-left: .12em; }
+.article-prose li > p { margin: 0; }
+.article-prose li > p + p { margin-top: .55em; }
+.article-prose li > p:last-child { margin-bottom: 0; }
+.article-prose li > ul, .article-prose li > ol { margin: .45em 0 .65em; }
+.article-prose li > figure { margin: 12px 0; }
+.article-prose li > .code-block, .article-prose li > .article-link-card { margin: 12px 0; }
 .article-prose h1, .article-prose h2, .article-prose h3 { scroll-margin-top: 24px; font-weight: 500; line-height: 1.55; letter-spacing: -.015em; }
 .article-prose h1 { margin: 2.1em 0 .75em; font-size: 22px; }
 .article-prose h2 { margin: 2em 0 .7em; font-size: 21px; }

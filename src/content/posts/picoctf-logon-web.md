@@ -12,7 +12,7 @@ draft: false
 
 ![picoCTF: logon(Web) 이미지 1](/assets/posts/picoctf-logon-web/image-01.png)
 
-{{color:#697d4f}}hint 1 : Hmm it doesn't seem to check anyone's password, except for Joe's?{{/color}}
+{{color:#52643c}}hint 1 : Hmm it doesn't seem to check anyone's password, except for Joe's?{{/color}}
 
 ---
 

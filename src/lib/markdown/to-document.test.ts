@@ -94,4 +94,12 @@ describe('markdownToDocument links', () => {
     expect(rendered).toContain('<ol><li><p>첫 번째 단계</p><figure class="image-center">');
     expect(rendered).toContain('<ol start="3"><li><p>세 번째 단계</p></li></ol>');
   });
+
+  it('renders image titles as attached figure captions', () => {
+    const document = markdownToDocument('![Screenshot](/assets/posts/example/image-01.png "Raspberry Pi setup")');
+    const rendered = renderDocument(document).html;
+
+    expect(rendered).toContain('<figure class="image-center"><button');
+    expect(rendered).toContain('<figcaption>Raspberry Pi setup</figcaption>');
+  });
 });

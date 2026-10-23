@@ -12,7 +12,7 @@ draft: false
 
 이 포스팅으로 저희 팀에서 발간하게 된 가이드라인에 대해서 소개해드리고자합니다.
 
-### **{{bg:#e5ebdb}}배경{{/bg}}**
+## **{{bg:#e5ebdb}}배경{{/bg}}**
 
 최근 금융권에서 망분리 규제완화 움직임이 본격화 되면서, 클라우드 기반 서비스(SaaS)와 생성형 AI (Generative AI)의 도입 가능성이 대두되고 있습니다. 기존에는 보안 우려로 인해 클라우드와 AI 활용이 제한적이었으나, 이번 변화로 인해서 금융 업계의 디지털 혁신을 가속화 하는 데 중요한 전환점이 될 전망입니다.
 
@@ -20,21 +20,17 @@ draft: false
 
 ⬆️ 위 금융위원회 발표 참고
 
-![금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인 이미지 1](/assets/posts/financial-ai-saas-security-guideline/image-01.png)
+![금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인 이미지 1](/assets/posts/financial-ai-saas-security-guideline/image-01.png "규제 완화 이전 사진")
 
-규제 완화 이전 사진
+![금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인 이미지 2](/assets/posts/financial-ai-saas-security-guideline/image-02.png "규제 완화 이후 사진")
 
-![금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인 이미지 2](/assets/posts/financial-ai-saas-security-guideline/image-02.png)
-
-규제 완화 이후 사진
-
-### **{{bg:#e5ebdb}}왜 망분리 규제 완화가 중요한가?{{/bg}}**
+## **{{bg:#e5ebdb}}왜 망분리 규제 완화가 중요한가?{{/bg}}**
 
 망분리 규제는 금융권의 내부망과 외부망을 철저히 분리해 해킹과 데이터 유출 위험을 줄이기 위한 제도입니다. 하지만 이로 인해 최신 IT 기술 도입이 지연되거나 비용이 과도하게 발생하는 한계도 있었습니다.
 
 이번 완화는 **보안과 혁신의 균형**을 맞추기 위한 시도로, 금융업계가 클라우드 기반 솔루션과 AI 기술을 적극 활용할 수 있도록 새로운 기회를 제공합니다.
 
-### **{{bg:#e5ebdb}}가이드라인의 필요성{{/bg}}**
+## **{{bg:#e5ebdb}}가이드라인의 필요성{{/bg}}**
 
 망분리 규제 완화로 인해 기대되는 장점은 많지만, 보안 리스크를 최소화하기 위한 구체적인 가이드라인이 필수적입니다.
 
@@ -56,7 +52,7 @@ draft: false
 
 - SLA(Service Level Agreement)에서 보안 책임과 장애 대응 프로세스 명시.
 
-### **{{bg:#e5ebdb}}금융권 생성형 AI 및 SaaS의 안전한 사용방안 가이드라인{{/bg}}**
+## **{{bg:#e5ebdb}}금융권 생성형 AI 및 SaaS의 안전한 사용방안 가이드라인{{/bg}}**
 
 해당 가이드라인은 금융권이 SaaS와 생성형 AI를 안전하게 도입하고 운영할 수 있는 구체적인 기준과 방향성을 제시합니다.
 
@@ -72,13 +68,9 @@ draft: false
 
 금융의 미래를 안전하게 준비하기 위해 이 가이드라인을 활용해보세요!
 
-![금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인 이미지 3](/assets/posts/financial-ai-saas-security-guideline/image-03.png)
+![금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인 이미지 3](/assets/posts/financial-ai-saas-security-guideline/image-03.png "금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인")
 
-금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인
-
-![금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인 이미지 4](/assets/posts/financial-ai-saas-security-guideline/image-04.png)
-
-금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인 목차
+![금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인 이미지 4](/assets/posts/financial-ai-saas-security-guideline/image-04.png "금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인 목차")
 
 [![Link preview](/assets/posts/financial-ai-saas-security-guideline/link-preview-02.png "dorami-card:%7B%22title%22%3A%20%22%EA%B8%88%EC%9C%B5%EA%B6%8C%20%EC%83%9D%EC%84%B1%ED%98%95%20AI%20%EB%B0%8F%20SaaS%EC%9D%98%20%EC%95%88%EC%A0%84%ED%95%9C%20%EC%82%AC%EC%9A%A9%20%EB%B0%A9%EC%95%88%20%EA%B0%80%EC%9D%B4%EB%93%9C%EB%9D%BC%EC%9D%B8%22%2C%20%22description%22%3A%20%22%EB%B3%B8%20%EA%B0%80%EC%9D%B4%EB%93%9C%EB%9D%BC%EC%9D%B8%EC%9D%80%20%EC%95%84%EB%9E%98%EC%99%80%20%EA%B0%99%EC%9D%80%20%EA%B5%AC%EC%84%B1%EC%9D%84%20%ED%86%B5%ED%95%B4%20%EC%95%88%EB%82%B4%ED%95%9C%EB%8B%A4.%20-%20%28%EA%B0%9C%EC%9A%94%29%20%EA%B8%88%EC%9C%B5%EB%8B%B9%EA%B5%AD%EC%9D%98%20%EB%A7%9D%EB%B6%84%EB%A6%AC%20%EA%B7%9C%EC%A0%9C%EC%99%84%ED%99%94%EC%97%90%20%EB%94%B0%EB%9D%BC%20SaaS%20%EB%B0%8F%20%EC%83%9D%EC%84%B1%ED%98%95%20AI%20%ED%99%9C%EC%9A%A9%20%EA%B7%9C%EC%A0%9C%EA%B0%80%20%EC%99%84%ED%99%94%EB%90%A8%EC%9D%84%20%EA%B8%B0%EC%88%A0%ED%95%9C%EB%8B%A4.%20-%20%E2%80%A6%22%7D")](<https://wikidocs.net/book/16912>)
 

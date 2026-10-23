@@ -12,9 +12,9 @@ draft: false
 
 ![picoCTF: GET aHEAD(Web) 이미지 1](/assets/posts/picoctf-get-ahead-web/image-01.png)
 
-{{color:#697d4f}}hint 1 : Maybe you have more than 2 choices{{/color}}
+{{color:#52643c}}hint 1 : Maybe you have more than 2 choices{{/color}}
 
-{{color:#697d4f}}hint 2 : Check out tools like Burpsuite to modify your requests and look at the responses{{/color}}
+{{color:#52643c}}hint 2 : Check out tools like Burpsuite to modify your requests and look at the responses{{/color}}
 
 ---
 

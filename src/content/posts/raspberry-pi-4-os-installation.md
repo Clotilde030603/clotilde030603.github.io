@@ -24,33 +24,33 @@ draft: false
 
 ## **{{color:#52643c}}설치 방법{{/color}}**
 
-**1. 아래 링크 접속.**
+1. **아래 링크 접속.**
 
-[![Link preview](/assets/posts/raspberry-pi-4-os-installation/link-preview-01.jpg "dorami-card:%7B%22title%22%3A%20%22Teach%2C%20learn%2C%20and%20make%20with%20the%20Raspberry%20Pi%20Foundation%22%2C%20%22description%22%3A%20%22We%20are%20a%20charity%20with%20the%20mission%20to%20enable%20young%20people%20to%20realise%20their%20full%20potential%20through%20the%20power%20of%20computing%20and%20digital%20technologies.%22%7D")](<https://www.raspberrypi.org/>)
+   [![Link preview](/assets/posts/raspberry-pi-4-os-installation/link-preview-01.jpg "dorami-card:%7B%22title%22%3A%20%22Teach%2C%20learn%2C%20and%20make%20with%20the%20Raspberry%20Pi%20Foundation%22%2C%20%22description%22%3A%20%22We%20are%20a%20charity%20with%20the%20mission%20to%20enable%20young%20people%20to%20realise%20their%20full%20potential%20through%20the%20power%20of%20computing%20and%20digital%20technologies.%22%7D")](<https://www.raspberrypi.org/>)
 
-**2. 초기 화면 → Computers → Software 선택.**
+2. **초기 화면 → Computers → Software 선택.**
 
-**3. Raspberry Pi Imager (Download for Windows) 다운.**
+3. **Raspberry Pi Imager (Download for Windows) 다운.**
 
-**4. 다운로드 후, 해당 프로그램 실행.**
+4. **다운로드 후, 해당 프로그램 실행.**
 
-**5. 장치 선택 - Raspberry Pi 4/운영체제 선택 - Raspberry Pi OS(64-bit)/저장소 선택 - SD 카드 선택.**
+5. **장치 선택 - Raspberry Pi 4/운영체제 선택 - Raspberry Pi OS(64-bit)/저장소 선택 - SD 카드 선택.**
 
-**6. Write 실행 전, 설정을 선택하여 기본 값 설정.**
+6. **Write 실행 전, 설정을 선택하여 기본 값 설정.**
 
-1. **SSH 사용 선택.**
+   1. **SSH 사용 선택.**
 
-2. **사용자 이름: ppojjacki(본인 이름 설정), 비밀번호 설정.**
+   2. **사용자 이름: ppojjacki(본인 이름 설정), 비밀번호 설정.**
 
-3. **WIFI 설정 선택(PC의 WIFI가 그대로 이전되어 화면에 보임).**
+   3. **WIFI 설정 선택(PC의 WIFI가 그대로 이전되어 화면에 보임).**
 
-4. **Wireless Lan Country ‘GB’ 선택.**
+   4. **Wireless Lan Country ‘GB’ 선택.**
 
-5. **로컬 선택: 타임 존은 ‘Asia Seoul’ 선택, 키보드는 ‘US’ 선택.**
+   5. **로컬 선택: 타임 존은 ‘Asia Seoul’ 선택, 키보드는 ‘US’ 선택.**
 
-6. **설정 후, Write를 실행하면 OS가 SD카드에 설치 완료.**
+   6. **설정 후, Write를 실행하면 OS가 SD카드에 설치 완료.**
 
-**7. OS가 설치된 SD 메모리 카드를 Raspberry Pi의 SD카드에 끼운 후, 부팅.**
+7. **OS가 설치된 SD 메모리 카드를 Raspberry Pi의 SD카드에 끼운 후, 부팅.**
 
 ---
 

@@ -12,7 +12,7 @@ draft: false
 
 ![picoCTF: Some Assembly Required 1(Web) 이미지 1](/assets/posts/picoctf-some-assembly-required-web/image-01.png)
 
-{{color:#697d4f}}hint : None{{/color}}
+{{color:#52643c}}hint : None{{/color}}
 
 ---
 
