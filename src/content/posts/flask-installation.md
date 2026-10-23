@@ -64,7 +64,7 @@ $ sudo apt-get install vim
 
 ## **{{color:#52643c}}Trouble Shooting{{/color}}**
 
-- {{color:#a2645a}}Problem : 시스템 Python에 패키지를 직접 설치하려 할 때{{/color}} `{{color:#a2645a}}externally-managed-environment{{/color}}` {{color:#a2645a}}오류가 발생할 수 있습니다. 운영체제가 관리하는 Python 환경을 보호하기 위한 안내입니다.{{/color}}
+- {{color:#a2645a}}Problem : 시스템 Python에 패키지를 직접 설치하려 할 때{{/color}} `{{color:#a2645a}}externally-managed-environment{{/color}}` {{color:#a2645a}}오류가 발생할 수 있습니다.{{/color}} {{color:#a2645a}}→ 운영체제가 관리하는 Python 환경을 보호하기 위한 안내입니다.{{/color}}
 
 - {{color:#52643c}}Troubleshooting{{/color}} : `EXTERNALLY-MANAGED` 파일을 삭제하지 말고, 위 설치 방법처럼 프로젝트 가상환경을 만든 뒤 활성화된 상태에서 패키지를 설치합니다. 가상환경을 나갈 때는 다음 명령어를 사용합니다.
 
