@@ -1,7 +1,7 @@
 ---
 title: "picoCTF: Insp3ct0r(Web)"
 date: 2024-11-09
-summary: ""
+summary: "브라우저 개발자 도구에서 HTML·CSS·JavaScript에 나뉜 세 flag 조각을 찾습니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/picoCTF-Insp3ct0rWeb"

@@ -1,7 +1,7 @@
 ---
 title: "03. Proxmox 가상머신 생성"
 date: 2024-06-03
-summary: ""
+summary: "Proxmox에 디스크를 추가해 LVM-Thin 저장소를 구성하고 가상머신과 Ubuntu Server를 설정합니다."
 category: "개발/서버·가상화"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Proxmox-%EA%B0%80%EC%83%81%EB%A8%B8%EC%8B%A0-%EC%83%9D%EC%84%B1"

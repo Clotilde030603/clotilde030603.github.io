@@ -1,7 +1,7 @@
 ---
 title: "Part 1. 개인정보보호의 이해(요약 정리)"
 date: 2026-02-10
-summary: ""
+summary: "개인정보의 정의와 유형, 보호의 중요성, 기업의 사회적 책임 관련 내용을 정리했습니다."
 category: "보안/개인정보 보호"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Part-1-%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EC%9D%98-%EC%9D%B4%ED%95%B4%ED%95%B5%EC%8B%AC-%ED%82%A4%EC%9B%8C%EB%93%9C-%EC%A0%95%EB%A6%AC"

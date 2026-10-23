@@ -1,7 +1,7 @@
 ---
 title: "picoCTF: dont-use-client-side(Web)"
 date: 2025-01-22
-summary: ""
+summary: "클라이언트 JavaScript에 나뉘어 있는 문자열을 찾아 순서대로 조합하는 웹 문제 풀이입니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/picoCTF-dont-use-client-sideWeb"

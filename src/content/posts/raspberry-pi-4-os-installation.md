@@ -1,7 +1,7 @@
 ---
 title: "Raspberry Pi 4 OS 설치"
 date: 2025-01-22
-summary: ""
+summary: "Raspberry Pi Imager로 OS를 설치하고 SSH와 Wi-Fi를 설정해 Raspberry Pi 4를 부팅합니다."
 category: "개발/IoT·Raspberry Pi"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Raspberry-Pi-4-OS-%EC%84%A4%EC%B9%98"

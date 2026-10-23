@@ -1,7 +1,7 @@
 ---
 title: "Flask 설치"
 date: 2025-01-22
-summary: ""
+summary: "Ubuntu에서 가상환경을 만들고 Flask와 Jinja2를 설치하며 패키지 설치 오류를 해결하는 방법입니다."
 category: "개발/IoT·Raspberry Pi"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Flask-%EC%84%A4%EC%B9%98"

@@ -1,7 +1,7 @@
 ---
 title: "Lord of SQLInjection: goblin"
 date: 2025-01-21
-summary: ""
+summary: "고정된 guest 계정과 no 파라미터를 확인하고 SQL 조건을 조작해 goblin 문제를 풀이합니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Lord-of-SQLInjection-goblin"

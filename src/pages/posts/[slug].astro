@@ -46,6 +46,7 @@ const olderPost = postIndex >= 0 && postIndex < content.posts.length - 1 ? conte
     }
     <header class="article-header">
       <h1>{post.title}</h1>
+      {post.summary && <p class="article-summary">{post.summary}</p>}
       <div class="article-meta">
         {post.categoryName && <span>{post.categoryName}</span>}
         <time datetime={post.publishedAt}>작성 {formatDate(post.publishedAt)}</time>
@@ -72,7 +73,6 @@ const olderPost = postIndex >= 0 && postIndex < content.posts.length - 1 ? conte
         )
       }
       <div class="article-body">
-        {post.summary && <p class="article-lead">{post.summary}</p>}
         <DocumentContent document={post.document} />
       </div>
     </div>
