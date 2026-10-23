@@ -30,7 +30,7 @@ draft: false
 
 ![picoCTF: GET aHEAD(Web) 이미지 3](/assets/posts/picoctf-get-ahead-web/image-03.png)
 
-**4. “GET” method > “HEAD” method로 변경하여 보내면 flag 획득**
+**4. “GET” method → “HEAD” method로 변경하여 보내면 flag 획득**
 
 ![picoCTF: GET aHEAD(Web) 이미지 4](/assets/posts/picoctf-get-ahead-web/image-04.png)
 

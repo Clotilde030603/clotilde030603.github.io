@@ -25,18 +25,18 @@ draft: false
 1. [{{color:#c0d1e7}}Rufus 사이트{{/color}}](<https://rufus.ie/ko/#google_vignette>)에서 rufus-4.3.exe를 다운
 (단, Windows 8 이상. 다운로드만 하면 바로 사용할 수 있음)
 
-2. 다운로드한 실행 파일을 설치 > 실행
+2. 다운로드한 실행 파일을 설치 → 실행
 
 3. [{{color:#c0d1e7}}PROXMOX 다운로드 사이트{{/color}}](<https://www.proxmox.com/en/downloads>)에서 `proxmox-ve_8.1-1.iso` 이미지 파일 다운로드\
    {{important}}※ Rufus 버전 1.1.0 이상에서는 ISO 이미지(.iso)로부터 부팅 가능한 USB 드라이브를 만들 수 있음{{/important}}
 
-4. USB를 현재 컴퓨터에 연결 > 설치한 Rufus를 실행
+4. USB를 현재 컴퓨터에 연결 → 설치한 Rufus를 실행
 
 5. 아래 사진에서 선택
 
    ![01. Rufus 설치(부팅용 USB) 및 사용 이미지 1](/assets/posts/rufus-bootable-usb/image-01.png)
 
-6. 앞서 다운로드한 ISO 이미지 파일을 찾아 선택 > 열기
+6. 앞서 다운로드한 ISO 이미지 파일을 찾아 선택 → 열기
 
 7. 이미지 보기 모드 안내 메세지 확인
 

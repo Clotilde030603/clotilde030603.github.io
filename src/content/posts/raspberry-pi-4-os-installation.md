@@ -28,7 +28,7 @@ draft: false
 
 [![Link preview](/assets/posts/raspberry-pi-4-os-installation/link-preview-01.jpg "dorami-card:%7B%22title%22%3A%20%22Teach%2C%20learn%2C%20and%20make%20with%20the%20Raspberry%20Pi%20Foundation%22%2C%20%22description%22%3A%20%22We%20are%20a%20charity%20with%20the%20mission%20to%20enable%20young%20people%20to%20realise%20their%20full%20potential%20through%20the%20power%20of%20computing%20and%20digital%20technologies.%22%7D")](<https://www.raspberrypi.org/>)
 
-**2. 초기 화면 > Computers > Software 선택.**
+**2. 초기 화면 → Computers → Software 선택.**
 
 **3. Raspberry Pi Imager (Download for Windows) 다운.**
 
