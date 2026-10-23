@@ -7,6 +7,16 @@ const textNodes = (text: string, marks: NonNullable<JsonNode['marks']> = []): Js
 const withMark = (marks: NonNullable<JsonNode['marks']>, type: string, attrs?: Record<string, unknown>) =>
   [...marks, { type, ...(attrs ? { attrs } : {}) }];
 
+function markedText(raw: string, marks: NonNullable<JsonNode['marks']>): JsonNode[] {
+  return raw.split(/(\{\{important\}\}[\s\S]*?\{\{\/important\}\})/g).flatMap((part) => {
+    if (part.startsWith('{{important}}') && part.endsWith('{{/important}}')) {
+      const text = part.slice('{{important}}'.length, -'{{/important}}'.length);
+      return textNodes(text, withMark(marks, 'textStyle', { color: '#ef5369' }));
+    }
+    return textNodes(part, marks);
+  });
+}
+
 function safeLink(raw: string): string | null {
   try {
     const value = raw.trim();
@@ -32,7 +42,7 @@ function inline(tokens: any[] = [], marks: NonNullable<JsonNode['marks']> = []):
     switch (token.type) {
       case 'text':
       case 'escape':
-        output.push(...(token.tokens ? inline(token.tokens, marks) : textNodes(token.text ?? '', marks)));
+        output.push(...(token.tokens ? inline(token.tokens, marks) : markedText(token.text ?? '', marks)));
         break;
       case 'strong': output.push(...inline(token.tokens, withMark(marks, 'bold'))); break;
       case 'em': output.push(...inline(token.tokens, withMark(marks, 'italic'))); break;

@@ -41,4 +41,11 @@ describe('markdownToDocument links', () => {
     expect(rendered).toContain('src="/assets/posts/example/link-preview-01.png"');
     expect(rendered).toContain('A short guide description');
   });
+
+  it('keeps a red important note on a new line within its numbered step', () => {
+    const document = markdownToDocument('3. Download the ISO\\\n   {{important}}※ Rufus can create a bootable USB from an ISO image.{{/important}}');
+    const rendered = renderDocument(document).html;
+
+    expect(rendered).toContain('<li><p>Download the ISO<br /><span style="color:#ef5369">※ Rufus can create a bootable USB from an ISO image.</span></p></li>');
+  });
 });
