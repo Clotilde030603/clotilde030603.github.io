@@ -134,7 +134,6 @@ sudo apt-get install vim
 
 [우분투 24 apt 저장소 (소스) 변경하기](<https://wiki.doda.dev/ubuntu/24-change-apt-source>)
 
-> 우분투 24.04를 처음 사용해보고 있는데, 나는 항상 카카오 미러로 apt 저장소를 옮겨주는 편이라 평소처럼 /etc/apt/sources.list 파일을 열었더니… # Ubuntu sources have moved to the /etc/apt/sources.list.d/ubuntu.so
 
 [![Link preview](/assets/posts/proxmox-create-virtual-machine/link-preview-06.png "dorami-card:%7B%22title%22%3A%20%22%5Bubuntu%5D%20%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%20%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0%21%20%28%EC%B9%B4%EC%B9%B4%EC%98%A4%20%EB%AF%B8%EB%9F%AC%EC%82%AC%EC%9D%B4%ED%8A%B8%EB%A1%9C%20%EB%B3%80%EA%B2%BD%29%22%2C%20%22description%22%3A%20%22ubuntu%EC%97%90%EC%84%9C%20%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%EB%A5%BC%20%ED%95%A0%EB%95%8C%20%EA%B0%80%EB%81%94%20%EB%8A%90%EB%A6%B4%EB%95%8C%EA%B0%80%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.%20%EC%96%B4%EB%96%A8%EB%95%90%20%EB%AD%94%EA%B0%80%20update%EA%B0%80%20%EC%95%88%EB%90%98%EC%96%B4%20error%EA%B0%80%20%EB%9C%B0%EB%95%8C%EA%B0%80%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.%20%28%ED%95%9C%EA%B5%AD%ED%8C%90%20%EC%9A%B0%EB%B6%84%ED%88%AC%EB%9E%91%20%EC%B6%A9%EB%8F%8C%EC%9D%B4%20%EC%9E%88%EC%9D%84%EC%88%98%EA%B0%80%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4.%29%20%ED%95%B4%EA%B2%B0%EB%B0%A9%EB%B2%95%21%21%EC%9D%84%20%EA%B0%84%EB%8B%A8%ED%95%98%EA%B2%8C%20%EC%A0%95%EB%A6%AC%ED%95%B4%EB%B3%B4%EB%8F%84%EB%A1%9D%20%ED%95%98%22%7D")](<https://mopipe.tistory.com/120>)
 
