@@ -10,7 +10,7 @@ draft: false
 
 ## **설치 방법**
 
-**1. 리눅스 update, upgrade 실행(순서대로).**
+**1. 리눅스 패키지 목록을 갱신하고 설치된 패키지를 업데이트합니다.**
 
 ```
 
@@ -19,39 +19,44 @@ $ sudo apt-get upgrade
 
 ```
 
-**2. Python 버전 확인.**
+**2. Python 버전을 확인합니다.**
 
 ```
 
-$ python --version
+$ python3 --version
 
 ```
 
-**3. flask 패키지 설치.**
+**3. 프로젝트 폴더에서 가상환경을 만들고 활성화합니다.**
 
 ```
 
-$ pip install flask
+$ python3 -m venv .venv
+$ source .venv/bin/activate
 
 ```
 
-**4. flask 설치 완료.**
-
-**5. vim 설치(편리성을 위해).**
+**4. 가상환경 안에 Flask와 Jinja2를 설치합니다.**
 
 ```
 
-$ apt-get update
-$ apt-get upgrade
-$ apt-get install vim
+$ python -m pip install Flask Jinja2
 
 ```
 
-**6. jinja2 설치.**
+**5. 설치된 패키지를 확인합니다.**
 
 ```
 
-$ pip3 install jinja2
+$ python -m pip show Flask Jinja2
+
+```
+
+**6. vim을 설치합니다(편리성을 위해).**
+
+```
+
+$ sudo apt-get install vim
 
 ```
 
@@ -59,16 +64,15 @@ $ pip3 install jinja2
 
 ## **Trouble Shooting**
 
-- Problem : flask 설치 시,  error: externally-managed-environment 발생. → 이 오류는 pip가 가상 환경 외부에 설치되고 마커 파일 EXTERNALLY-MANAGED가 Python의 stdlib 디렉터리에 존재할 때 발생.
+- Problem : 시스템 Python에 패키지를 직접 설치하려 할 때 `externally-managed-environment` 오류가 발생할 수 있습니다. 운영체제가 관리하는 Python 환경을 보호하기 위한 안내입니다.
 
-- Troubleshooting : 아래 명령어로 해결
-
-```
-
-$ sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+- Troubleshooting : `EXTERNALLY-MANAGED` 파일을 삭제하지 말고, 위 설치 방법처럼 프로젝트 가상환경을 만든 뒤 활성화된 상태에서 패키지를 설치합니다. 가상환경을 나갈 때는 다음 명령어를 사용합니다.
 
 ```
 
+$ deactivate
+
+```
 ---
 
 ## **참고 자료**
