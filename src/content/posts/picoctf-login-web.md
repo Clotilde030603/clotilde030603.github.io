@@ -8,15 +8,15 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/picoCTF-loginWeb"
 draft: false
 ---
 
-## **{{color:#ee2323}}Problem{{/color}}**
+## **{{color:#52643c}}Problem{{/color}}**
 
 ![picoCTF: login(Web) 이미지 1](/assets/posts/picoctf-login-web/image-01.png)
 
-{{color:#448361}}hint 1 : None{{/color}}
+{{color:#697d4f}}hint 1 : None{{/color}}
 
 ---
 
-## **{{color:#337ea9}}Solution{{/color}}**
+## **{{color:#52643c}}Solution{{/color}}**
 
 **1. 문제 사이트 접속.**
 
@@ -32,6 +32,6 @@ draft: false
 
 ---
 
-## **{{color:#ef6f53}}결론{{/color}}**
+## **{{color:#697d4f}}결론{{/color}}**
 
 - 소스 코드 분석 후, Base64 디코딩을 통해 문제 해결

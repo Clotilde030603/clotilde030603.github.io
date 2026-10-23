@@ -15,7 +15,7 @@ function markedText(raw: string, marks: NonNullable<JsonNode['marks']>): JsonNod
   for (const match of raw.matchAll(marker)) {
     const index = match.index ?? 0;
     const [, kind, requestedColor, content] = match;
-    const color = kind === 'important' ? '#ef5369' : requestedColor;
+    const color = kind === 'important' ? '#a2645a' : requestedColor;
     if (index > cursor) output.push(...textNodes(raw.slice(cursor, index), marks));
     if (!color) output.push(...textNodes(match[0], marks));
     else {

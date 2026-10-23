@@ -8,7 +8,7 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Proxmox-%EA%B0%80%EC%83
 draft: false
 ---
 
-## **{{color:#d9730d}}생성 방법{{/color}}**
+## **{{color:#52643c}}생성 방법{{/color}}**
 
 1. Proxmox에 접속하여 로그인한 후, \[노드\] - \[우측 상단 shell\] - \[xterms.js\]
 
@@ -64,7 +64,7 @@ lvcreate -l 100%FREE --thinpool thin-pool local2T[원하는 볼륨 그룹명]
 
 ---
 
-## **{{color:#448361}}Ubuntu-Server 설정 방법{{/color}}**
+## **{{color:#697d4f}}Ubuntu-Server 설정 방법{{/color}}**
 
 1. 분투 설치 시 생성한 계정으로 로그인
 
@@ -114,13 +114,13 @@ sudo apt-get install vim
 
 8. [http://kr.archive.ubuntu.com/ubuntu/](<http://kr.archive.ubuntu.com/ubuntu/>) 를 [https://mirror.kakao.com/ubuntu/](<https://mirror.kakao.com/ubuntu/>) (카카오 미러 사이트)로 변경
 
-{{color:#d44c47}}*{{/color}} 카카오 미러사이트로 변경해주면, 속도가 빨라짐.
+{{color:#a2645a}}*{{/color}} 카카오 미러사이트로 변경해주면, 속도가 빨라짐.
 
-{{color:#d44c47}}*{{/color}} Ubuntu 24.04 /etc/apt/sources.list가 아닌  /etc/apt/sources.list.d/ubuntu.sources로 경로 변경.
+{{color:#a2645a}}*{{/color}} Ubuntu 24.04 /etc/apt/sources.list가 아닌  /etc/apt/sources.list.d/ubuntu.sources로 경로 변경.
 
 ---
 
-## **{{color:#337ea9}}참고 자료{{/color}}**
+## **{{color:#52643c}}참고 자료{{/color}}**
 
 [![Link preview](/assets/posts/proxmox-create-virtual-machine/link-preview-01.png "dorami-card:%7B%22title%22%3A%20%22%EB%A6%AC%EB%88%85%EC%8A%A4%2FLinux%20%28%EC%9A%B0%EB%B6%84%ED%88%AC%2FUbuntu%29%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0%22%2C%20%22description%22%3A%20%22%EC%9A%B0%EC%84%A0%20%EB%A6%AC%EB%88%85%EC%8A%A4%EB%A5%BC%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0%EC%A0%84%EC%97%90%20%EB%A6%AC%EB%88%85%EC%8A%A4%EA%B0%80%20%EB%AD%94%EC%A7%80%EB%8A%94%20%EC%95%8C%EC%95%84%EC%95%BC%ED%95%9C%EB%8B%A4.%20%EB%A6%AC%EB%88%85%EC%8A%A4%EB%8A%94%20%EA%B3%A0%EA%B8%89%EC%96%B8%EC%96%B4%28%EC%82%AC%EC%9A%A9%EC%9E%90%EA%B0%80%20%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0%20%EC%89%AC%EC%9A%B4%20%EC%96%B8%EC%96%B4%29%20%EB%A1%9C%20%EA%B0%9C%EB%B0%9C%EB%90%9C%20%EC%B5%9C%EC%B4%88%EC%9D%98%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C%28OS%29%EC%9D%B4%EB%8B%A4.%20%EA%B2%8C%EB%8B%A4%EA%B0%80%20%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4%20%28%EB%B0%A9%EB%8C%80%ED%95%9C%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%29%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%22%7D")](<https://taehoung0102.tistory.com/171>)
 

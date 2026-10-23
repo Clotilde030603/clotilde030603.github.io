@@ -8,15 +8,15 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Lord-of-SQLInjection-co
 draft: false
 ---
 
-## **{{color:#ee2323}}Problem{{/color}}**
+## **{{color:#52643c}}Problem{{/color}}**
 
 ![Lord of SQLInjection: cobolt 이미지 1](/assets/posts/los-cobolt/image-01.png)
 
 ---
 
-## **{{color:#337ea9}}Solve{{/color}}**
+## **{{color:#52643c}}Solve{{/color}}**
 
-- **기존 구문 → {{bg:#f6e199}}GET 방식, id = admin{{/bg}}**
+- **기존 구문 → {{bg:#e5ebdb}}GET 방식, id = admin{{/bg}}**
 
 ```
 

@@ -8,15 +8,15 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/picoCTF-logonWeb"
 draft: false
 ---
 
-## **{{color:#ee2323}}Problem{{/color}}**
+## **{{color:#52643c}}Problem{{/color}}**
 
 ![picoCTF: logon(Web) 이미지 1](/assets/posts/picoctf-logon-web/image-01.png)
 
-{{color:#448361}}hint 1 : Hmm it doesn't seem to check anyone's password, except for Joe's?{{/color}}
+{{color:#697d4f}}hint 1 : Hmm it doesn't seem to check anyone's password, except for Joe's?{{/color}}
 
 ---
 
-## **{{color:#337ea9}}Solution{{/color}}**
+## **{{color:#52643c}}Solution{{/color}}**
 
 **1. 문제 사이트 접속.**
 
@@ -42,6 +42,6 @@ draft: false
 
 ---
 
-## **{{color:#ef6f53}}결론{{/color}}**
+## **{{color:#697d4f}}결론{{/color}}**
 
 - Cookies 값 변경을 통해 문제 해결

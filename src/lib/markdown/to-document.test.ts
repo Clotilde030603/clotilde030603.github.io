@@ -46,25 +46,25 @@ describe('markdownToDocument links', () => {
     const document = markdownToDocument('3. Download the ISO\\\n   {{important}}※ Rufus can create a bootable USB from an ISO image.{{/important}}');
     const rendered = renderDocument(document).html;
 
-    expect(rendered).toContain('<li><p>Download the ISO<br /><span style="color:#ef5369">※ Rufus can create a bootable USB from an ISO image.</span></p></li>');
+    expect(rendered).toContain('<li><p>Download the ISO<br /><span style="color:#a2645a">※ Rufus can create a bootable USB from an ISO image.</span></p></li>');
   });
 
   it('preserves source text colors and soft background highlights', () => {
     const document = markdownToDocument([
-      '## **{{color:#ee2323}}Problem{{/color}}**',
-      '### **{{bg:#c0d1e7}}배경{{/bg}}**',
+      '## **{{color:#52643c}}Problem{{/color}}**',
+      '### **{{bg:#e5ebdb}}배경{{/bg}}**',
     ].join('\n\n'));
     const rendered = renderDocument(document).html;
 
-    expect(rendered).toContain('<span style="color:#ee2323"><strong>Problem</strong></span>');
-    expect(rendered).toContain('<span style="background-color:#c0d1e7;padding:0.02em 0.12em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone"><strong>배경</strong></span>');
+    expect(rendered).toContain('<span style="color:#52643c"><strong>Problem</strong></span>');
+    expect(rendered).toContain('<span style="background-color:#e5ebdb;padding:0.02em 0.12em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone"><strong>배경</strong></span>');
   });
 
   it('allows a colored term to keep its inline-code treatment', () => {
-    const document = markdownToDocument('`{{color:#d44c47}}externally-managed-environment{{/color}}`');
+    const document = markdownToDocument('`{{color:#a2645a}}externally-managed-environment{{/color}}`');
     const rendered = renderDocument(document).html;
 
-    expect(rendered).toContain('<span style="color:#d44c47"><code>externally-managed-environment</code></span>');
+    expect(rendered).toContain('<span style="color:#a2645a"><code>externally-managed-environment</code></span>');
   });
 
   it('does not expose color markers inside code containing brackets', () => {

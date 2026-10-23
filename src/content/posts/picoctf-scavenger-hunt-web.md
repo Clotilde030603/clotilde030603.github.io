@@ -8,15 +8,15 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/picoCTF-Scavenger-Hunt"
 draft: false
 ---
 
-## **{{color:#ee2323}}Problem{{/color}}**
+## **{{color:#52643c}}Problem{{/color}}**
 
 ![picoCTF: Scavenger Hunt(Web) 이미지 1](/assets/posts/picoctf-scavenger-hunt-web/image-01.png)
 
-{{color:#448361}}hint 1 : You should have enough hints to find the files, don't run a brute forcer.{{/color}}
+{{color:#697d4f}}hint 1 : You should have enough hints to find the files, don't run a brute forcer.{{/color}}
 
 ---
 
-## **{{color:#337ea9}}Solution{{/color}}**
+## **{{color:#52643c}}Solution{{/color}}**
 
 **1. 문제 링크 접속.**
 
@@ -64,6 +64,6 @@ draft: false
 
 ---
 
-## **{{color:#ef6f53}}결론{{/color}}**
+## **{{color:#697d4f}}결론{{/color}}**
 
 - 소스 코드 분석으로 문제 해결

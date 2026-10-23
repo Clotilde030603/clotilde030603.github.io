@@ -8,7 +8,7 @@ sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Flask-%EC%84%9C%EB%B2%8
 draft: false
 ---
 
-## **{{color:#f89009}}실행 방법{{/color}}**
+## **{{color:#52643c}}실행 방법{{/color}}**
 
 **1. flask 폴더 생성.**
 
@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
 ```
 
-**{{color:#9d9d9d}}@app.route() 안에 작성하는 url과 url 별 함수명은 모두 달라야 함.{{/color}}**
+**{{color:#676e65}}@app.route() 안에 작성하는 url과 url 별 함수명은 모두 달라야 함.{{/color}}**
 
 **6. templates 폴더 안 idex.html 생성.**
 
@@ -106,7 +106,7 @@ if __name__ == '__main__':
 
 ```
 
-**{{color:#9d9d9d}}render_template를 import하고 index.html을 입력하면 해당 url에 접속했을 때 지정한 html 파일이 렌더됨.{{/color}}**
+**{{color:#676e65}}render_template를 import하고 index.html을 입력하면 해당 url에 접속했을 때 지정한 html 파일이 렌더됨.{{/color}}**
 
 **8. static 폴더에 이미지, css 파일 등을 담아둠.**
 
@@ -124,7 +124,7 @@ $ scp 쿼카2.jpeg ppojjacki@192.168.0.166:/home/ppojjacki/flask/static
 
 ```
 
-`{{color:#9d9d9d}}scp [옵션] [파일명] [원격지_id]@[원격지_ip]:[받는 위치]{{/color}}`
+`{{color:#676e65}}scp [옵션] [파일명] [원격지_id]@[원격지_ip]:[받는 위치]{{/color}}`
 
 **9. index.html 내용(index.html 파일 내 이미지 불러오기) 작성.**
 
@@ -149,7 +149,7 @@ $ scp 쿼카2.jpeg ppojjacki@192.168.0.166:/home/ppojjacki/flask/static
 
 ```
 
-**{{color:#9d9d9d}}flask에서는 static 안의 이미지, css 파일 등의 경로를 지정할 때는 아래와 같이 지정해야 함.{{/color}}**
+**{{color:#676e65}}flask에서는 static 안의 이미지, css 파일 등의 경로를 지정할 때는 아래와 같이 지정해야 함.{{/color}}**
 
 ```
 
@@ -173,7 +173,7 @@ $ python app.py
 
 ---
 
-## **{{color:#337ea9}}참고 자료{{/color}}**
+## **{{color:#52643c}}참고 자료{{/color}}**
 
 [![Link preview](/assets/posts/flask-run-server/link-preview-01.png "dorami-card:%7B%22title%22%3A%20%22%5BRocky%20Linux%5D%2015%EA%B0%80%EC%A7%80%20%EB%A6%AC%EB%88%85%EC%8A%A4%20%EA%B8%B0%EB%B3%B8%20%EB%AA%85%EB%A0%B9%EC%96%B4%20%EC%A0%95%EB%A6%AC%22%2C%20%22description%22%3A%20%22%EB%A6%AC%EB%88%85%EC%8A%A4%20%EB%AA%85%EB%A0%B9%EC%9D%80%20%EC%98%B5%EC%85%98%EA%B9%8C%EC%A7%80%20%EB%AA%A8%EB%91%90%20%ED%8F%AC%ED%95%A8%ED%95%B4%EC%84%9C%20%EC%88%98%EC%B2%9C%20%EA%B0%9C%EA%B0%80%20%EB%84%98%EC%9D%84%20%EC%A0%95%EB%8F%84%EB%A1%9C%20%EB%A7%8E%EC%8A%B5%EB%8B%88%EB%8B%A4.%20%EB%AA%85%EB%A0%B9%EC%9D%84%20%EB%8B%A4%20%EC%99%B8%EC%9A%B4%EB%8B%A4%EB%8A%94%20%EA%B2%83%EC%9D%80%20%EA%B1%B0%EC%9D%98%20%EB%B6%88%EA%B0%80%EB%8A%A5%ED%95%98%EA%B3%A0%20%EC%99%B8%EC%9A%B8%20%ED%95%84%EC%9A%94%EB%8F%84%20%EC%97%86%EC%A7%80%EB%A7%8C%2C%20%EB%A6%AC%EB%88%85%EC%8A%A4%EB%A5%BC%20%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%20%EB%8D%B0%20%ED%95%84%EC%9A%94%ED%95%9C%20%EA%B8%B0%EB%B3%B8%20%EB%AA%85%EB%A0%B9%2015%EA%B0%80%EC%A7%80%EB%8A%94%20%ED%95%84%EC%88%98%22%7D")](<https://www.hanbit.co.kr/channel/category/category_view.html?cms_code=CMS6390061632>)
 
