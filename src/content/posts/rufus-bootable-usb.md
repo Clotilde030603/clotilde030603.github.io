@@ -34,7 +34,7 @@ draft: false
 
 5. 아래 사진에서 선택
 
-![01. Rufus 설치(부팅용 USB) 및 사용 이미지 1](/assets/posts/rufus-bootable-usb/image-01.png)
+   ![01. Rufus 설치(부팅용 USB) 및 사용 이미지 1](/assets/posts/rufus-bootable-usb/image-01.png)
 
 6. 앞서 다운로드한 ISO 이미지 파일을 찾아 선택 → 열기
 
