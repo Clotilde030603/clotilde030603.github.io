@@ -32,13 +32,13 @@ SSH는 원격 컴퓨터에 안전하게 접속할 때 사용하는 통신 방식
 
 2024년 2월에는 백도어의 일부가 테스트용 파일에 숨겨졌습니다. 이어 배포용 소스 tarball에 포함된 빌드 스크립트가 그 데이터를 꺼내 빌드에 반영하도록 수정됐습니다. 이 악성 빌드 스크립트는 공개 Git 저장소의 일반 소스와 달리 배포 tarball에 들어 있었습니다. 저장소만 확인해서는 실제 배포 파일의 차이를 놓칠 수 있었던 이유입니다.
 
-악성 코드가 모든 빌드에서 작동한 것은 아닙니다. Red Hat은 x86_64 아키텍처와 systemd·sshd를 사용하는 특정 환경을 설명했고, OpenSSF도 배포 패키지와 빌드 조건에 따라 영향이 달라졌다고 안내했습니다. 따라서 “XZ Utils를 사용하는 모든 Linux 시스템이 영향을 받았다”고 일반화할 수 없습니다.
+악성 코드가 모든 빌드에서 작동한 것은 아닙니다. 공개 당시 Red Hat은 Fedora Rawhide에 영향 버전이 포함됐을 수 있다고 공지했고, Debian unstable(Sid)에서도 악성 코드가 빌드됐다는 보고가 나왔습니다. Fedora 40 베타에는 영향을 받는 5.6.0 라이브러리가 포함됐지만, Red Hat은 실제 악성 익스플로잇이 작동한 것으로 보이지 않는다고 별도로 업데이트했습니다. RHEL은 영향받지 않았다고 밝혔습니다. Red Hat은 악성 코드가 x86_64와 systemd·sshd 등을 사용하는 특정 환경을 겨냥했다고 설명했고, OpenSSF도 패키지 형식과 빌드 조건에 따라 결과가 달랐다고 안내했습니다. 따라서 영향받는 라이브러리가 포함된 것과 실제 악성 동작이 확인된 것을 구분하고, “XZ Utils를 사용하는 모든 Linux 시스템이 영향을 받았다”고 일반화하지 않아야 합니다.
 
 ![테스트 파일에서 시작해 특정 SSH 인증 경로에 영향을 주는 백도어의 흐름](/assets/posts/xz-utils-backdoor/attack-flow.svg "XZ Utils 백도어의 빌드 및 실행 흐름")
 
 ## 어떻게 발견됐나
 
-Andres Freund는 개발 환경에서 SSH 로그인의 지연과 CPU 사용량이 평소와 다른 점, `valgrind` 오류를 조사했습니다. `valgrind`는 프로그램의 메모리 사용 문제를 확인하는 도구입니다. OpenSSH가 `liblzma`를 직접 사용하는 것은 아닙니다. 다만 Debian 등 일부 배포판은 `sshd`에 systemd 알림 연동 패치를 적용했고, `libsystemd`가 `liblzma`에 의존했습니다. 이 간접 의존 경로를 따라가며 악성 동작을 확인한 Freund는 2024년 3월 29일 [oss-security 메일링 리스트에 발견 내용을 공개](https://www.openwall.com/lists/oss-security/2024/03/29/4)했습니다.
+Andres Freund는 Debian sid 시스템에서 SSH 로그인의 지연과 CPU 사용량이 평소와 다른 점, `valgrind` 오류를 조사했습니다. `valgrind`는 프로그램의 메모리 사용 문제를 확인하는 도구입니다. OpenSSH가 `liblzma`를 직접 사용하는 것은 아닙니다. 다만 Debian 등 일부 배포판은 `sshd`에 systemd 알림 연동 패치를 적용했고, `libsystemd`가 `liblzma`에 의존했습니다. 이 간접 의존 경로를 따라가며 악성 동작을 확인한 Freund는 2024년 3월 29일 [oss-security 메일링 리스트에 발견 내용을 공개](https://www.openwall.com/lists/oss-security/2024/03/29/4)했습니다.
 
 SSH 지연이라는 작은 이상 징후에서 시작해, 프로세스 동작과 라이브러리, 배포 파일의 빌드 과정을 차례로 확인하면서 백도어가 발견됐습니다.
 
@@ -60,7 +60,8 @@ SSH 지연이라는 작은 이상 징후에서 시작해, 프로세스 동작과
 
 - [보안뉴스: XZ Utils 백도어 악성코드, 2021년부터 공들여 준비해온 공급망 공격이었다](https://www.boannews.com/news/articleView.html?idxno=128372)
 - [Andres Freund의 최초 공개 보고](https://www.openwall.com/lists/oss-security/2024/03/29/4)
-- [Red Hat: XZ 보안 사고 대응 과정](https://www.redhat.com/de/blog/understanding-red-hats-response-xz-security-incident)
+- [Red Hat: XZ 보안 사고 대응 과정](https://www.redhat.com/en/blog/understanding-red-hats-response-xz-security-incident)
+- [Red Hat: Fedora 40 베타·Rawhide 보안 공지와 업데이트](https://www.redhat.com/en/blog/urgent-security-alert-fedora-40-and-rawhide-users)
 - [OpenSSF: XZ Utils 백도어와 공급망 보안](https://openssf.org/blog/2024/03/30/xz-backdoor-cve-2024-3094/)
 - [Ars Technica: XZ Utils 백도어의 공격 흐름과 영향](https://arstechnica.com/security/2024/04/what-we-know-about-the-xz-utils-backdoor-that-almost-infected-the-world/)
 - [Russ Cox: XZ 공급망 공격 타임라인](https://research.swtch.com/xz-timeline)

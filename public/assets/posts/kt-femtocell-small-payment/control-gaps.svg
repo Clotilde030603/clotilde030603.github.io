@@ -16,6 +16,6 @@
     <rect x="42" y="430" width="352" height="104" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="62" y="462" fill="#30352f" font-size="17" font-weight="700">장비 식별·이상 탐지</text><text x="62" y="490" fill="#676e65" font-size="14">셀 ID 관리와 비인가 접속 탐지 미흡</text><text x="62" y="514" fill="#676e65" font-size="14">등록정보와 실제 장비 대조 부족</text>
     <path d="M405 482 H432 M425 474 L433 482 L425 490" fill="none" stroke="#697d4f" stroke-width="3"/>
     <rect x="446" y="430" width="352" height="104" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="466" y="462" fill="#30352f" font-size="17" font-weight="700">하드웨어·설치정보 확인</text><text x="466" y="490" fill="#676e65" font-size="14">접속 때 장비 식별값과 설치정보 확인</text><text x="466" y="514" fill="#676e65" font-size="14">접속 승인 과정의 보완 조치 발표</text>
-    <text x="42" y="578" fill="#676e65" font-size="14">조치 내용은 과기정통부 2025년 11월 중간 발표 기준이며, 현재 운영 상태를 뜻하지 않습니다.</text>
+    <text x="42" y="578" fill="#676e65" font-size="14">중간 발표의 조치를 관련 통제 영역별로 배치했으며, 각 취약점의 1:1 해결을 뜻하지는 않습니다.</text>
   </g>
 </svg>

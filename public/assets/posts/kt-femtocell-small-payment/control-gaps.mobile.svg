@@ -12,6 +12,6 @@
     <rect x="32" y="526" width="656" height="148" rx="14" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="56" y="562" fill="#30352f" font-size="22" font-weight="700">망 접속과 장비 식별</text><text x="56" y="600" fill="#676e65" font-size="19">IP 제한, 관리 우회 경로, 셀 ID 관리 미흡</text><text x="56" y="632" fill="#676e65" font-size="19">장비 식별값·설치정보 대조 부족</text>
     <path d="M360 680 V706 M350 696 L360 708 L370 696" fill="none" stroke="#697d4f" stroke-width="3"/>
     <rect x="32" y="716" width="656" height="132" rx="14" fill="#e5ebdb"/><text x="56" y="756" fill="#30352f" font-size="22" font-weight="700">보완 조치 발표</text><text x="56" y="794" fill="#676e65" font-size="19">비 KT IP 차단 · 하드웨어·설치정보 확인</text><text x="56" y="826" fill="#676e65" font-size="19">접속 승인 과정 보완</text>
-    <rect x="32" y="872" width="656" height="118" rx="14" fill="#f3e7e4"/><text x="56" y="912" fill="#a2645a" font-size="20" font-weight="700">읽을 때 기준 시점 확인</text><text x="56" y="950" fill="#30352f" font-size="18">중간 발표의 조치가 현재 운영 상태를 뜻하지는 않습니다.</text>
+    <rect x="32" y="872" width="656" height="140" rx="14" fill="#f3e7e4"/><text x="56" y="912" fill="#a2645a" font-size="20" font-weight="700">읽을 때 기준 시점 확인</text><text x="56" y="950" fill="#30352f" font-size="18">중간 발표의 조치이며, 현재 운영 상태를 뜻하지 않습니다.</text><text x="56" y="980" fill="#676e65" font-size="17">행별로 취약점과 조치가 1:1 대응하지는 않습니다.</text>
   </g>
 </svg>
