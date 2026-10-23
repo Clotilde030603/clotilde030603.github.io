@@ -1,7 +1,7 @@
 ---
 title: "01. Rufus 설치(부팅용 USB) 및 사용"
 date: 2024-05-20
-summary: "Rufus를 설치하고 부팅용 USB를 만드는 과정을 정리합니다."
+summary: ""
 category: "개발/서버·가상화"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/1-Rufus-%EC%84%A4%EC%B9%98%EB%B6%80%ED%8C%85%EC%9A%A9-USB-%EB%B0%8F-%EC%82%AC%EC%9A%A9"
