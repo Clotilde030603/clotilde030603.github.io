@@ -10,6 +10,8 @@ export type BlogContent = {
   allTags: string[];
 };
 
+const EMPTY_CATEGORY_PATHS = ['보안/보안 이슈'];
+
 const categorySlugPart = (value: string) =>
   value.normalize('NFC').toLocaleLowerCase('ko').replace(/[^\p{Letter}\p{Number}]+/gu, '-').replace(/^-|-$/g, '') || 'category';
 
@@ -20,8 +22,7 @@ function categoryNames(value: string | undefined): string[] {
 export function buildBlogContent(entries: PostEntry[]): BlogContent {
   const publishedEntries = entries.filter((entry) => !entry.data.draft);
   const categoryByPath = new Map<string, Omit<Category, 'position'>>();
-  for (const entry of publishedEntries) {
-    const parts = categoryNames(entry.data.category);
+  const addCategoryPath = (parts: string[]) => {
     for (let index = 0; index < parts.length; index += 1) {
       const path = parts.slice(0, index + 1);
       const id = path.join('/');
@@ -34,6 +35,11 @@ export function buildBlogContent(entries: PostEntry[]): BlogContent {
         });
       }
     }
+  };
+
+  EMPTY_CATEGORY_PATHS.forEach((path) => addCategoryPath(categoryNames(path)));
+  for (const entry of publishedEntries) {
+    addCategoryPath(categoryNames(entry.data.category));
   }
 
   const categories = [...categoryByPath.values()]
