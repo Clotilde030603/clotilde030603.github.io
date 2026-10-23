@@ -16,19 +16,19 @@ draft: false
 
 1. 부팅 USB를 PC에 꽂고 부팅
 
-2. "Install Proxmox VE" 선택 → Enter
+2. "Install Proxmox VE" 선택 > Enter
 
-3. END USER LICENSE AGREEMENT(EULA) → "I agree"
+3. END USER LICENSE AGREEMENT(EULA) > "I agree"
 
-4. Proxmox Virtualization Environment(PPVE) → Target Harddisk : /dev/sda(50GB, VMware Virtual S), Options → Next
+4. Proxmox Virtualization Environment(PPVE) > Target Harddisk : /dev/sda(50GB, VMware Virtual S), Options > Next
 
-5. Country : Korea(South), Time zone: Asia/Seoul, Keyboard Layout: U.S. English → Next
+5. Country : Korea(South), Time zone: Asia/Seoul, Keyboard Layout: U.S. English > Next
 
-6. 사용할 Password와 E-Mail 입력 → Next
+6. 사용할 Password와 E-Mail 입력 > Next
 
-7. 사용할 네트워크 어댑터와 IP 설정(Management interface : ens33 - 00:0c:29:95:dd:b3(e10000), Hostname(FQDN), IP Address, Netmask, Gateway, DNS Server) → Next
+7. 사용할 네트워크 어댑터와 IP 설정(Management interface : ens33 - 00:0c:29:95:dd:b3(e10000), Hostname(FQDN), IP Address, Netmask, Gateway, DNS Server) > Next
 
-8. 설치 → 설치 완료 시 Reboot
+8. 설치 > 설치 완료 시 Reboot
 
 ---
 
@@ -38,7 +38,7 @@ draft: false
 
 - {{color:#ef5369}}Why? : WIFI 설정을 보니 IP Address Pool(대역)과 할당 받은 IP가 다름{{/color}}
 
-- {{color:#99cefa}}Trouble Shooting : IP Address, Gateway, DNS : 0.0.0.0으로 재설정 → Proxmox 재설치{{/color}}
+- {{color:#99cefa}}Trouble Shooting : IP Address, Gateway, DNS : 0.0.0.0으로 재설정 > Proxmox 재설치{{/color}}
 
 ---
 

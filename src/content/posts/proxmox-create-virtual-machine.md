@@ -14,7 +14,7 @@ draft: false
 
 ![03. Proxmox 가상머신 생성 이미지 1](/assets/posts/proxmox-create-virtual-machine/image-01.png)
 
-2. 아래 명령어 실행 → 현재 proxmox 시스템에 인식된 디스크 확인
+2. 아래 명령어 실행 > 현재 proxmox 시스템에 인식된 디스크 확인
 
 ```
 
@@ -36,7 +36,7 @@ lvcreate -l 100%FREE --thinpool thin-pool local2T[원하는 볼륨 그룹명]
 
 4. 터미널 창 닫고, proxmox \[Datacenter\] - \[Storage\] - \[Add\] - \[LVM-Thin\]
 
-5. ID에는 원하는 볼륨 명 입력 → Volume group에서는 생성한 볼륨 그룹명 선택 → Thin pool에서는 thin-pool 선택
+5. ID에는 원하는 볼륨 명 입력 > Volume group에서는 생성한 볼륨 그룹명 선택 > Thin pool에서는 thin-pool 선택
 
 6. 모두 입력 후, \[Add\]
 
@@ -50,13 +50,13 @@ lvcreate -l 100%FREE --thinpool thin-pool local2T[원하는 볼륨 그룹명]
 
 11. 설치할 가상머신 OS 유형 선택
 
-12. 설치할 부팅이미지 ISO파일 선택 후 → \[다음\]
+12. 설치할 부팅이미지 ISO파일 선택 후 > \[다음\]
 
-13. 시스템, 디스크, CPU, 메모리, 네트워크 설정 → \[다음\]
+13. 시스템, 디스크, CPU, 메모리, 네트워크 설정 > \[다음\]
 
-14. 설정 요약내용 확인 후 → \[마침\]
+14. 설정 요약내용 확인 후 > \[마침\]
 
-15. 가상머신 시작은 해당 가상머신 선택 → \[시작\]
+15. 가상머신 시작은 해당 가상머신 선택 > \[시작\]
 
 16. 가상머신 화면은 가상머신 선택 후, \[콘솔\] - \[출력 방식 선택\] or 가상머신 우클릭 \[콘솔\].
 

@@ -28,11 +28,11 @@ draft: false
 
 **3. 로그인은 되었지만 flag 값은 X**
 
-**4. 개발자도구 Cookie 값 확인 → “admin” 값이 “False”**
+**4. 개발자도구 Cookie 값 확인 > “admin” 값이 “False”**
 
 ![picoCTF: logon(Web) 이미지 4](/assets/posts/picoctf-logon-web/image-04.png)
 
-**5. “admin” 값 “False” → ”True”로 변경**
+**5. “admin” 값 “False” > ”True”로 변경**
 
 ![picoCTF: logon(Web) 이미지 5](/assets/posts/picoctf-logon-web/image-05.png)
 

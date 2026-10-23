@@ -16,7 +16,7 @@ draft: false
 
 ## **{{color:#337ea9}}Solve{{/color}}**
 
-- **기존 구문 → {{bg:#f6e199}}GET 방식, id = admin{{/bg}}**
+- **기존 구문 > {{bg:#f6e199}}GET 방식, id = admin{{/bg}}**
 
 ```
 
