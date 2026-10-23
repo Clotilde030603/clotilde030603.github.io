@@ -169,7 +169,12 @@ export function renderDocument(document: DoramiDocument): { html: string; headin
       const alignment = ['left', 'center', 'right'].includes(String(node.attrs?.alignment)) ? String(node.attrs?.alignment) : 'center';
       return `<figure class="image-${alignment}"><button class="image-expand" type="button" data-expand-image aria-label="이미지 크게 보기"><img src="${escapeHtml(src)}" alt="${alt}"${width ? ` style="width:${width}"` : ''} loading="lazy" decoding="async" /></button>${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`;
     }
-    if (node.type === 'table') return `<div class="table-scroll"><table>${children()}</table></div>`;
+    if (node.type === 'table') {
+      const columnCount = node.content?.[0]?.content?.length ?? 0;
+      const tableClass = columnCount > 1 ? ' class="table-wide"' : '';
+      const scrollHint = columnCount > 1 ? '<p class="table-scroll-hint">표를 좌우로 움직여 내용을 확인할 수 있습니다.</p>' : '';
+      return `<div class="table-scroll">${scrollHint}<table${tableClass}>${children()}</table></div>`;
+    }
     if (node.type === 'tableRow') return `<tr>${children()}</tr>`;
     if (node.type === 'tableHeader') return `<th>${children()}</th>`;
     if (node.type === 'tableCell') return `<td>${children()}</td>`;
