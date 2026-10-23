@@ -47,16 +47,18 @@ const olderPost = postIndex >= 0 && postIndex < content.posts.length - 1 ? conte
     <header class="article-header">
       <h1>{post.title}</h1>
       {post.summary && <p class="article-summary">{post.summary}</p>}
-      <div class="article-meta">
-        {post.categoryName && <span>{post.categoryName}</span>}
-        <time datetime={post.publishedAt}>작성 {formatDate(post.publishedAt)}</time>
-        {post.updatedAt && <time datetime={post.updatedAt}>수정 {formatDate(post.updatedAt)}</time>}
-      </div>
-      {post.tags.length > 0 && (
-        <div class="article-tags" aria-label="태그">
-          {post.tags.map((tag) => <a href={`/tag/${encodeURIComponent(tag)}/`}>#{tag}</a>)}
+      <div class="article-byline">
+        <div class="article-meta">
+          {post.categoryName && <span>{post.categoryName}</span>}
+          <time datetime={post.publishedAt}>작성 {formatDate(post.publishedAt)}</time>
+          {post.updatedAt && <time datetime={post.updatedAt}>수정 {formatDate(post.updatedAt)}</time>}
         </div>
-      )}
+        {post.tags.length > 0 && (
+          <div class="article-tags" aria-label="태그">
+            {post.tags.map((tag) => <a href={`/tag/${encodeURIComponent(tag)}/`}>#{tag}</a>)}
+          </div>
+        )}
+      </div>
     </header>
 
     <div class="article-layout">
