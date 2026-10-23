@@ -88,11 +88,18 @@ function renderMarks(text: string, node: JsonNode): string {
       if (href) rendered = `<a href="${escapeHtml(href)}" rel="noreferrer">${rendered}</a>`;
     } else if (mark.type === 'textStyle') {
       const styles: string[] = [];
-      if (typeof mark.attrs?.color === 'string' && /^#[0-9a-f]{6}$/i.test(mark.attrs.color)) {
-        styles.push(`color:${mark.attrs.color}`);
+      const textColors: Record<string, string> = {
+        '#52643c': 'var(--matcha-strong)',
+        '#697d4f': 'var(--matcha)',
+        '#676e65': 'var(--muted)',
+        '#a2645a': 'var(--warning)',
+      };
+      if (typeof mark.attrs?.color === 'string' && textColors[mark.attrs.color.toLowerCase()]) {
+        styles.push(`color:${textColors[mark.attrs.color.toLowerCase()]}`);
       }
-      if (typeof mark.attrs?.backgroundColor === 'string' && /^#[0-9a-f]{6}$/i.test(mark.attrs.backgroundColor)) {
-        styles.push(`background-color:${mark.attrs.backgroundColor};padding:0.02em 0.12em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone`);
+      const backgroundColors: Record<string, string> = { '#e5ebdb': 'var(--matcha-highlight)' };
+      if (typeof mark.attrs?.backgroundColor === 'string' && backgroundColors[mark.attrs.backgroundColor.toLowerCase()]) {
+        styles.push(`background-color:${backgroundColors[mark.attrs.backgroundColor.toLowerCase()]};padding:0.02em 0.12em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone`);
       }
       if (styles.length) rendered = `<span style="${styles.join(';')}">${rendered}</span>`;
     } else if (mark.type === 'highlight') {

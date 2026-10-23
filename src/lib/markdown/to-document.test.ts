@@ -46,7 +46,7 @@ describe('markdownToDocument links', () => {
     const document = markdownToDocument('3. Download the ISO\\\n   {{important}}※ Rufus can create a bootable USB from an ISO image.{{/important}}');
     const rendered = renderDocument(document).html;
 
-    expect(rendered).toContain('<li><p>Download the ISO<br /><span style="color:#a2645a">※ Rufus can create a bootable USB from an ISO image.</span></p></li>');
+    expect(rendered).toContain('<li><p>Download the ISO<br /><span style="color:var(--warning)">※ Rufus can create a bootable USB from an ISO image.</span></p></li>');
   });
 
   it('preserves source text colors and soft background highlights', () => {
@@ -56,15 +56,15 @@ describe('markdownToDocument links', () => {
     ].join('\n\n'));
     const rendered = renderDocument(document).html;
 
-    expect(rendered).toContain('<span style="color:#52643c"><strong>Problem</strong></span>');
-    expect(rendered).toContain('<span style="background-color:#e5ebdb;padding:0.02em 0.12em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone"><strong>배경</strong></span>');
+    expect(rendered).toContain('<span style="color:var(--matcha-strong)"><strong>Problem</strong></span>');
+    expect(rendered).toContain('<span style="background-color:var(--matcha-highlight);padding:0.02em 0.12em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone"><strong>배경</strong></span>');
   });
 
   it('allows a colored term to keep its inline-code treatment', () => {
     const document = markdownToDocument('`{{color:#a2645a}}externally-managed-environment{{/color}}`');
     const rendered = renderDocument(document).html;
 
-    expect(rendered).toContain('<span style="color:#a2645a"><code>externally-managed-environment</code></span>');
+    expect(rendered).toContain('<span style="color:var(--warning)"><code>externally-managed-environment</code></span>');
   });
 
   it('does not expose color markers inside code containing brackets', () => {
