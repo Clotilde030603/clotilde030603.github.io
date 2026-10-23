@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 790" role="img" aria-labelledby="title desc">
+  <title id="title">쿠팡 개인정보 유출 공격과 신고 타임라인</title>
+  <desc id="desc">2025년 1월 시험 접근부터 4월부터 11월의 대규모 조회, 고객 제보와 신고, 자료 보전 명령까지의 시간 순서입니다.</desc>
+  <rect width="840" height="790" rx="18" fill="#f7f8f4"/>
+  <text x="42" y="52" fill="#30352f" font-family="sans-serif" font-size="25" font-weight="700">공격과 사고 대응 타임라인</text>
+  <text x="42" y="82" fill="#676e65" font-family="sans-serif" font-size="15">날짜는 과기정통부 민관합동조사단 발표 기준</text>
+  <line x1="92" y1="130" x2="92" y2="670" stroke="#c7d0bc" stroke-width="4"/>
+  <g font-family="sans-serif">
+    <circle cx="92" cy="150" r="13" fill="#52643c"/><rect x="128" y="112" width="650" height="80" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="150" y="143" fill="#52643c" font-size="16" font-weight="700">2025.01.05–20</text><text x="150" y="170" fill="#30352f" font-size="16">로그에 시험 접근 기록이 남음</text>
+    <circle cx="92" cy="245" r="13" fill="#52643c"/><rect x="128" y="207" width="650" height="80" rx="12" fill="#e5ebdb"/><text x="150" y="238" fill="#52643c" font-size="16" font-weight="700">2025.04.14–11.08</text><text x="150" y="265" fill="#30352f" font-size="16">자동화 도구를 이용한 대규모 정보 조회 기간</text>
+    <circle cx="92" cy="340" r="13" fill="#52643c"/><rect x="128" y="302" width="650" height="80" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="150" y="333" fill="#52643c" font-size="16" font-weight="700">2025.11.16</text><text x="150" y="360" fill="#30352f" font-size="16">고객이 개인정보 유출 의심 이메일을 제보</text>
+    <circle cx="92" cy="435" r="13" fill="#52643c"/><rect x="128" y="397" width="650" height="80" rx="12" fill="#e5ebdb"/><text x="150" y="428" fill="#52643c" font-size="16" font-weight="700">2025.11.17 16:00</text><text x="150" y="455" fill="#30352f" font-size="16">CISO가 사고를 인지한 시각으로 조사단이 판단</text>
+    <circle cx="92" cy="530" r="13" fill="#a2645a"/><rect x="128" y="492" width="650" height="80" rx="12" fill="#f3e7e4"/><text x="150" y="523" fill="#a2645a" font-size="16" font-weight="700">2025.11.19 21:35</text><text x="150" y="550" fill="#30352f" font-size="16">KISA 신고 · 법정 24시간 신고 기한을 넘김</text>
+    <circle cx="92" cy="625" r="13" fill="#a2645a"/><rect x="128" y="587" width="650" height="80" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="150" y="618" fill="#a2645a" font-size="16" font-weight="700">2025.11.19 22:34</text><text x="150" y="645" fill="#30352f" font-size="16">자료 보전 명령 후에도 일부 로그가 삭제됨</text>
+    <text x="42" y="720" fill="#676e65" font-size="14">로그 삭제는 자동 보존 설정을 조정하지 않아 발생했다고 조사단이 발표했으며, 관련 위반은 수사기관에 회부됐습니다.</text>
+  </g>
+</svg>

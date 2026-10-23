@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 680" role="img" aria-labelledby="title desc">
+  <title id="title">쿠팡 개인정보 접근기록의 종류와 수치</title>
+  <desc id="desc">과기정통부가 발표한 이름·이메일 기록 건수와 배송지·주문 페이지 접근 횟수를 구분해 보여줍니다. 접근 횟수는 피해자 수가 아닙니다.</desc>
+  <rect width="840" height="680" rx="18" fill="#f7f8f4"/>
+  <text x="42" y="52" fill="#30352f" font-family="sans-serif" font-size="25" font-weight="700">조회된 정보와 수치의 단위</text>
+  <text x="42" y="82" fill="#676e65" font-family="sans-serif" font-size="15">과기정통부 민관합동조사단 2026년 2월 발표 기준</text>
+  <g font-family="sans-serif">
+    <rect x="42" y="112" width="368" height="190" rx="14" fill="#e5ebdb"/>
+    <text x="66" y="151" fill="#52643c" font-size="15" font-weight="700">내 정보 수정 페이지</text><text x="66" y="190" fill="#30352f" font-size="26" font-weight="700">33,673,817건</text><text x="66" y="224" fill="#676e65" font-size="15">이름·이메일 기록이 유출된 것으로 확인</text><text x="66" y="258" fill="#676e65" font-size="14">집계 단위: 기록 건수</text>
+    <rect x="430" y="112" width="368" height="190" rx="14" fill="#fff" stroke="#d9ded1" stroke-width="2"/>
+    <text x="454" y="151" fill="#52643c" font-size="15" font-weight="700">배송지 목록 페이지</text><text x="454" y="190" fill="#30352f" font-size="26" font-weight="700">148,056,502회</text><text x="454" y="224" fill="#676e65" font-size="15">이름·전화번호·주소, 마스킹된 출입정보</text><text x="454" y="258" fill="#676e65" font-size="14">집계 단위: 페이지 접근 횟수</text>
+    <rect x="42" y="322" width="368" height="190" rx="14" fill="#fff" stroke="#d9ded1" stroke-width="2"/>
+    <text x="66" y="361" fill="#52643c" font-size="15" font-weight="700">배송지 수정 페이지</text><text x="66" y="400" fill="#30352f" font-size="26" font-weight="700">50,474회</text><text x="66" y="434" fill="#676e65" font-size="15">전화번호·주소·공동현관 출입정보</text><text x="66" y="468" fill="#676e65" font-size="14">집계 단위: 페이지 접근 횟수</text>
+    <rect x="430" y="322" width="368" height="190" rx="14" fill="#e5ebdb"/>
+    <text x="454" y="361" fill="#52643c" font-size="15" font-weight="700">주문 내역 페이지</text><text x="454" y="400" fill="#30352f" font-size="26" font-weight="700">102,682회</text><text x="454" y="434" fill="#676e65" font-size="15">최근 주문 상품 정보</text><text x="454" y="468" fill="#676e65" font-size="14">집계 단위: 페이지 접근 횟수</text>
+    <rect x="42" y="534" width="756" height="92" rx="14" fill="#f3e7e4"/><text x="66" y="570" fill="#a2645a" font-size="16" font-weight="700">건수와 횟수를 피해자 수로 바꿔 읽지 않기</text><text x="66" y="598" fill="#30352f" font-size="15">개인정보위의 약 3,755만 명은 별도 후속 집계이므로 같은 단위의 수치가 아닙니다.</text>
+  </g>
+</svg>

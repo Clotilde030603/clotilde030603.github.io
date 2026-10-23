@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1120" role="img" aria-labelledby="title desc">
+  <title id="title">쿠팡 개인정보 접근기록의 종류와 수치</title>
+  <desc id="desc">과기정통부가 발표한 이름·이메일 기록 건수와 배송지·주문 페이지 접근 횟수를 구분해 보여줍니다. 접근 횟수는 피해자 수가 아닙니다.</desc>
+  <rect width="720" height="1120" rx="18" fill="#f7f8f4"/>
+  <text x="32" y="52" fill="#30352f" font-family="sans-serif" font-size="29" font-weight="700">조회된 정보와 집계 단위</text>
+  <text x="32" y="86" fill="#676e65" font-family="sans-serif" font-size="19">과기정통부 2026년 2월 발표 기준</text>
+  <g font-family="sans-serif">
+    <rect x="32" y="120" width="656" height="174" rx="14" fill="#e5ebdb"/><text x="58" y="158" fill="#52643c" font-size="19" font-weight="700">내 정보 수정 페이지</text><text x="58" y="204" fill="#30352f" font-size="29" font-weight="700">33,673,817건</text><text x="58" y="242" fill="#676e65" font-size="18">이름·이메일 기록 · 기록 건수</text>
+    <rect x="32" y="312" width="656" height="174" rx="14" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="58" y="350" fill="#52643c" font-size="19" font-weight="700">배송지 목록 페이지</text><text x="58" y="396" fill="#30352f" font-size="29" font-weight="700">148,056,502회</text><text x="58" y="434" fill="#676e65" font-size="18">이름·주소 등 · 페이지 접근 횟수</text>
+    <rect x="32" y="504" width="656" height="174" rx="14" fill="#e5ebdb"/><text x="58" y="542" fill="#52643c" font-size="19" font-weight="700">배송지 수정 페이지</text><text x="58" y="588" fill="#30352f" font-size="29" font-weight="700">50,474회</text><text x="58" y="626" fill="#676e65" font-size="18">출입정보 포함 · 페이지 접근 횟수</text>
+    <rect x="32" y="696" width="656" height="174" rx="14" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="58" y="734" fill="#52643c" font-size="19" font-weight="700">주문 내역 페이지</text><text x="58" y="780" fill="#30352f" font-size="29" font-weight="700">102,682회</text><text x="58" y="818" fill="#676e65" font-size="18">최근 주문 상품 · 페이지 접근 횟수</text>
+    <rect x="32" y="888" width="656" height="150" rx="14" fill="#f3e7e4"/><text x="58" y="930" fill="#a2645a" font-size="21" font-weight="700">주의: 횟수 ≠ 피해자 수</text><text x="58" y="970" fill="#30352f" font-size="18">개인정보위의 약 3,755만 명은 후속 조사 수치이며</text><text x="58" y="1002" fill="#30352f" font-size="18">위 페이지 접근 횟수와 같은 단위가 아닙니다.</text>
+  </g>
+</svg>

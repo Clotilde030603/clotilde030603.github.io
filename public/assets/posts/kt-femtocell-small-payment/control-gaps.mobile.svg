@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1070" role="img" aria-labelledby="title desc">
+  <title id="title">KT 펨토셀 접속 통제 실패와 조사 발표 시점의 보완 조치</title>
+  <desc id="desc">공통 인증서와 10년 유효기간, 제한되지 않은 IP 접속, 장비 식별 및 이상 탐지 미흡을 조사단 발표 시점의 보완 조치와 연결합니다.</desc>
+  <rect width="720" height="1070" rx="18" fill="#f7f8f4"/>
+  <text x="32" y="52" fill="#30352f" font-family="sans-serif" font-size="28" font-weight="700">접속 통제의 빈틈과 보완</text>
+  <text x="32" y="86" fill="#676e65" font-family="sans-serif" font-size="19">2025년 11월 중간 발표 시점 기준</text>
+  <g font-family="sans-serif">
+    <rect x="32" y="116" width="656" height="52" rx="12" fill="#f3e7e4"/><text x="54" y="149" fill="#a2645a" font-size="20" font-weight="700">사고 당시 확인된 문제</text>
+    <rect x="32" y="184" width="656" height="148" rx="14" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="56" y="220" fill="#30352f" font-size="22" font-weight="700">장비 인증서</text><text x="56" y="258" fill="#676e65" font-size="19">여러 장비가 공통 인증서를 사용</text><text x="56" y="290" fill="#676e65" font-size="19">유효기간은 10년, 분실 장비에서 복제</text>
+    <path d="M360 338 V364 M350 354 L360 366 L370 354" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="32" y="374" width="656" height="132" rx="14" fill="#e5ebdb"/><text x="56" y="414" fill="#30352f" font-size="22" font-weight="700">보완 조치 발표</text><text x="56" y="452" fill="#676e65" font-size="19">장비별 인증서 발급 · 유효기간 1개월</text><text x="56" y="484" fill="#676e65" font-size="17">※ 발표 시점의 조치 내용</text>
+    <rect x="32" y="526" width="656" height="148" rx="14" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="56" y="562" fill="#30352f" font-size="22" font-weight="700">망 접속과 장비 식별</text><text x="56" y="600" fill="#676e65" font-size="19">IP 제한, 관리 우회 경로, 셀 ID 관리 미흡</text><text x="56" y="632" fill="#676e65" font-size="19">장비 식별값·설치정보 대조 부족</text>
+    <path d="M360 680 V706 M350 696 L360 708 L370 696" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="32" y="716" width="656" height="132" rx="14" fill="#e5ebdb"/><text x="56" y="756" fill="#30352f" font-size="22" font-weight="700">보완 조치 발표</text><text x="56" y="794" fill="#676e65" font-size="19">비 KT IP 차단 · 하드웨어·설치정보 확인</text><text x="56" y="826" fill="#676e65" font-size="19">접속 승인 과정 보완</text>
+    <rect x="32" y="872" width="656" height="118" rx="14" fill="#f3e7e4"/><text x="56" y="912" fill="#a2645a" font-size="20" font-weight="700">읽을 때 기준 시점 확인</text><text x="56" y="950" fill="#30352f" font-size="18">중간 발표의 조치가 현재 운영 상태를 뜻하지는 않습니다.</text>
+  </g>
+</svg>

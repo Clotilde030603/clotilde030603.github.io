@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 620" role="img" aria-labelledby="title desc">
+  <title id="title">KT 펨토셀 접속 통제 실패와 조사 발표 시점의 보완 조치</title>
+  <desc id="desc">공통 인증서와 10년 유효기간, 제한되지 않은 IP 접속, 장비 식별 및 이상 탐지 미흡을 조사단 발표 시점의 보완 조치와 연결합니다.</desc>
+  <rect width="840" height="620" rx="18" fill="#f7f8f4"/>
+  <text x="42" y="52" fill="#30352f" font-family="sans-serif" font-size="25" font-weight="700">접속 통제의 어디가 비어 있었나</text>
+  <text x="42" y="82" fill="#676e65" font-family="sans-serif" font-size="15">사고 당시 확인된 취약점과 2025년 11월 중간 발표 시점의 보완 조치</text>
+  <g font-family="sans-serif">
+    <rect x="42" y="112" width="352" height="62" rx="12" fill="#f3e7e4"/><text x="62" y="138" fill="#a2645a" font-size="15" font-weight="700">사고 당시 확인된 문제</text><text x="62" y="160" fill="#30352f" font-size="14">위험이 생긴 지점</text>
+    <rect x="446" y="112" width="352" height="62" rx="12" fill="#e5ebdb"/><text x="466" y="138" fill="#52643c" font-size="15" font-weight="700">조사 발표 시점의 조치</text><text x="466" y="160" fill="#30352f" font-size="14">발표된 보완 내용</text>
+    <rect x="42" y="190" width="352" height="104" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="62" y="222" fill="#30352f" font-size="17" font-weight="700">장비 자격증명</text><text x="62" y="250" fill="#676e65" font-size="14">공통 인증서 · 유효기간 10년</text><text x="62" y="274" fill="#676e65" font-size="14">분실 장비에서 인증서 복제</text>
+    <path d="M405 242 H432 M425 234 L433 242 L425 250" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="446" y="190" width="352" height="104" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="466" y="222" fill="#30352f" font-size="17" font-weight="700">장비별 인증서로 전환</text><text x="466" y="250" fill="#676e65" font-size="14">유효기간 1개월로 단축</text><text x="466" y="274" fill="#676e65" font-size="14">※ 중간 발표에 적힌 조치 시점 기준</text>
+    <rect x="42" y="310" width="352" height="104" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="62" y="342" fill="#30352f" font-size="17" font-weight="700">망 접속 승인</text><text x="62" y="370" fill="#676e65" font-size="14">타사·해외 IP 제한 미흡</text><text x="62" y="394" fill="#676e65" font-size="14">관리 서버 우회 경로 확인</text>
+    <path d="M405 362 H432 M425 354 L433 362 L425 370" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="446" y="310" width="352" height="104" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="466" y="342" fill="#30352f" font-size="17" font-weight="700">접속 IP 확인·제한</text><text x="466" y="370" fill="#676e65" font-size="14">KT가 아닌 IP의 접속 차단</text><text x="466" y="394" fill="#676e65" font-size="14">접속 통제 보완을 발표</text>
+    <rect x="42" y="430" width="352" height="104" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="62" y="462" fill="#30352f" font-size="17" font-weight="700">장비 식별·이상 탐지</text><text x="62" y="490" fill="#676e65" font-size="14">셀 ID 관리와 비인가 접속 탐지 미흡</text><text x="62" y="514" fill="#676e65" font-size="14">등록정보와 실제 장비 대조 부족</text>
+    <path d="M405 482 H432 M425 474 L433 482 L425 490" fill="none" stroke="#697d4f" stroke-width="3"/>
+    <rect x="446" y="430" width="352" height="104" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="466" y="462" fill="#30352f" font-size="17" font-weight="700">하드웨어·설치정보 확인</text><text x="466" y="490" fill="#676e65" font-size="14">접속 때 장비 식별값과 설치정보 확인</text><text x="466" y="514" fill="#676e65" font-size="14">접속 승인 과정의 보완 조치 발표</text>
+    <text x="42" y="578" fill="#676e65" font-size="14">조치 내용은 과기정통부 2025년 11월 중간 발표 기준이며, 현재 운영 상태를 뜻하지 않습니다.</text>
+  </g>
+</svg>
