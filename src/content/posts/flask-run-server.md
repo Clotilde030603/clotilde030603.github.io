@@ -1,7 +1,7 @@
 ---
 title: "Flask 서버 실행"
 date: 2025-01-24
-summary: "Flask 앱 실행과 라우팅, 템플릿 및 정적 파일 연결 과정을 정리합니다."
+summary: ""
 category: "개발/IoT·Raspberry Pi"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Flask-%EC%84%9C%EB%B2%84-%EC%8B%A4%ED%96%89"

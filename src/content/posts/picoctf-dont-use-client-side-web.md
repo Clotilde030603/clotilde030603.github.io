@@ -1,7 +1,7 @@
 ---
 title: "picoCTF: dont-use-client-side(Web)"
 date: 2025-01-22
-summary: "picoCTF: dont-use-client-side(Web)에 관한 공부 기록과 풀이 과정을 정리합니다."
+summary: ""
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/picoCTF-dont-use-client-sideWeb"

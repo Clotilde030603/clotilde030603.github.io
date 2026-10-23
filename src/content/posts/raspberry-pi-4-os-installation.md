@@ -1,7 +1,7 @@
 ---
 title: "Raspberry Pi 4 OS 설치"
 date: 2025-01-22
-summary: "Raspberry Pi 4 운영체제 설치와 초기 설정 과정을 정리합니다."
+summary: ""
 category: "개발/IoT·Raspberry Pi"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Raspberry-Pi-4-OS-%EC%84%A4%EC%B9%98"

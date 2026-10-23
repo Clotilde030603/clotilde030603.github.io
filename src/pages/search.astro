@@ -53,9 +53,12 @@ const searchIndex = posts.map((post) => ({
       link.href = `/posts/${encodeURIComponent(post.slug)}/`;
       link.textContent = post.title;
       heading.append(link);
-      const summary = document.createElement('p');
-      summary.textContent = post.summary;
-      item.append(meta, heading, summary);
+      item.append(meta, heading);
+      if (post.summary) {
+        const summary = document.createElement('p');
+        summary.textContent = post.summary;
+        item.append(summary);
+      }
       results.append(item);
     }
     status.textContent = !normalized

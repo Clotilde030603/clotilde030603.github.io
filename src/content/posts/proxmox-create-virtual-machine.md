@@ -1,7 +1,7 @@
 ---
 title: "03. Proxmox 가상머신 생성"
 date: 2024-06-03
-summary: "Proxmox에서 가상머신을 생성하고 기본 설정을 진행하는 과정을 정리합니다."
+summary: ""
 category: "개발/서버·가상화"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/Proxmox-%EA%B0%80%EC%83%81%EB%A8%B8%EC%8B%A0-%EC%83%9D%EC%84%B1"

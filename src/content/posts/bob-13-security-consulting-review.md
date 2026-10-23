@@ -1,7 +1,7 @@
 ---
 title: "조금 늦었지만, BoB 13기 보안컨설팅 수료 후기"
 date: 2025-07-24
-summary: "BoB 13기 보안컨설팅 트랙에 도전하고 수료하기까지의 경험과 배운 점을 돌아봅니다."
+summary: ""
 category: "교육·회고"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/%EC%A1%B0%EA%B8%88-%EB%8A%A6%EC%97%88%EC%A7%80%EB%A7%8C-BoB-13%EA%B8%B0-%EB%B3%B4%EC%95%88%EC%BB%A8%EC%84%A4%ED%8C%85-%EC%88%98%EB%A3%8C-%ED%9B%84%EA%B8%B0%F0%9F%98%86"

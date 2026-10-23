@@ -1,7 +1,7 @@
 ---
 title: "금융권 생성형 AI 및 SaaS의 안전한 사용 방안 가이드라인"
 date: 2024-12-12
-summary: "금융권 생성형 AI·SaaS 활용을 위한 안전한 사용 방안 가이드라인 프로젝트를 소개합니다."
+summary: ""
 category: "프로젝트"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/%EA%B8%88%EC%9C%B5%EA%B6%8C-%EC%83%9D%EC%84%B1%ED%98%95-AI-%EB%B0%8F-SaaS%EC%9D%98-%EC%95%88%EC%A0%84%ED%95%9C-%EC%82%AC%EC%9A%A9-%EB%B0%A9%EC%95%88-%EA%B0%80%EC%9D%B4%EB%93%9C%EB%9D%BC%EC%9D%B8"

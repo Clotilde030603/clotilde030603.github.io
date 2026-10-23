@@ -1,7 +1,7 @@
 ---
 title: "02. Proxmox 설치 및 실행"
 date: 2024-05-20
-summary: "Proxmox 설치 매체를 준비하고 설치·실행하는 과정을 정리합니다."
+summary: ""
 category: "개발/서버·가상화"
 tags: []
 sourceUrl: "https://learntoflyclotilde.tistory.com/entry/2-Proxmox-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%8B%A4%ED%96%89"
