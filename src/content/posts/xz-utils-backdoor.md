@@ -9,7 +9,7 @@ draft: false
 
 2024년 3월, XZ Utils 5.6.0과 5.6.1에서 백도어가 발견됐습니다. XZ Utils는 파일을 압축·해제하는 프로그램이고, `liblzma`는 그 기능을 다른 프로그램에서도 쓸 수 있게 제공하는 라이브러리입니다. 백도어는 이 라이브러리를 빌드하는 과정에 숨겨져 있었습니다.
 
-SSH는 원격 컴퓨터에 안전하게 접속할 때 사용하는 통신 방식이며, `sshd`는 접속을 받는 서버 프로그램입니다. 이번 사건에서는 특정 Linux 배포판의 구성에 따라 변조된 `liblzma`가 SSH 인증 처리 경로에 영향을 줄 수 있었습니다.
+SSH는 원격 컴퓨터에 안전하게 접속할 때 사용하는 통신 방식이며, `sshd`는 접속을 받는 서버 프로그램입니다. 이번 사건에서는 특정 Linux 배포판의 구성에서 변조된 `liblzma`가 SSH 서버 프로세스의 간접 의존 경로에 포함되어, 조건이 맞으면 인증 처리에 개입하고 인증 전 원격 코드 실행으로 이어질 수 있었습니다.
 
 보안뉴스의 [첫 번째 기사](https://www.boannews.com/news/articleView.html?idxno=128372)를 출발점으로 삼고, 오픈소스 생태계에 미친 영향을 다룬 [두 번째 기사](https://www.boannews.com/news/articleView.html?idxno=128442)도 함께 참고했습니다. 공격 흐름과 영향 범위는 Andres Freund의 최초 공개 보고, Red Hat과 OpenSSF의 설명을 대조해 정리했습니다.
 
@@ -38,7 +38,7 @@ SSH는 원격 컴퓨터에 안전하게 접속할 때 사용하는 통신 방식
 
 ## 어떻게 발견됐나
 
-Andres Freund는 개발 환경에서 SSH 로그인의 지연과 CPU 사용량이 평소와 다른 점, `valgrind` 오류를 조사했습니다. `valgrind`는 프로그램의 메모리 사용 문제를 확인하는 도구입니다. 추적 과정에서 SSH 서버 프로세스가 `liblzma`와 함께 동작하는 점을 확인했고, 2024년 3월 29일 [oss-security 메일링 리스트에 발견 내용을 공개](https://www.openwall.com/lists/oss-security/2024/03/29/4)했습니다.
+Andres Freund는 개발 환경에서 SSH 로그인의 지연과 CPU 사용량이 평소와 다른 점, `valgrind` 오류를 조사했습니다. `valgrind`는 프로그램의 메모리 사용 문제를 확인하는 도구입니다. OpenSSH가 `liblzma`를 직접 사용하는 것은 아닙니다. 다만 Debian 등 일부 배포판은 `sshd`에 systemd 알림 연동 패치를 적용했고, `libsystemd`가 `liblzma`에 의존했습니다. 이 간접 의존 경로를 따라가며 악성 동작을 확인한 Freund는 2024년 3월 29일 [oss-security 메일링 리스트에 발견 내용을 공개](https://www.openwall.com/lists/oss-security/2024/03/29/4)했습니다.
 
 SSH 지연이라는 작은 이상 징후에서 시작해, 프로세스 동작과 라이브러리, 배포 파일의 빌드 과정을 차례로 확인하면서 백도어가 발견됐습니다.
 
