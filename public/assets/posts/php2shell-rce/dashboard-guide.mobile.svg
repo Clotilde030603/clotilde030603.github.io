@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 890" role="img" aria-labelledby="title desc">
+  <title id="title">PHP2Shell 외부 확인 도구와 서버 내부 점검</title>
+  <desc id="desc">Censys는 전체 서비스 추이를, SOCRadar는 한 도메인의 공개된 PHP 버전 단서를 확인합니다. 서버의 실제 패치 상태는 운영자가 설치 패키지와 공급자 공지로 확인해야 합니다.</desc>
+  <rect width="320" height="890" rx="16" fill="#f7f8f4"/>
+  <text x="16" y="30" fill="#30352f" font-family="sans-serif" font-size="18" font-weight="700">두 외부 도구의 차이</text>
+  <text x="16" y="52" fill="#676e65" font-family="sans-serif" font-size="11">둘 다 서버 내부 패치까지 확인하진 못함</text>
+  <g font-family="sans-serif">
+    <rect x="16" y="72" width="288" height="246" rx="11" fill="#e5ebdb"/>
+    <text x="30" y="101" fill="#52643c" font-size="15" font-weight="700">Censys · 전체 추이</text>
+    <text x="30" y="126" fill="#30352f" font-size="11">공개 인터넷에서 관측한 PHP 서비스</text>
+    <rect x="30" y="146" width="76" height="27" rx="7" fill="#52643c"/><text x="39" y="164" fill="#fff" font-size="10">Affected</text>
+    <rect x="113" y="146" width="76" height="27" rx="7" fill="#fff"/><text x="126" y="164" fill="#52643c" font-size="10">Patched</text>
+    <rect x="196" y="146" width="92" height="27" rx="7" fill="#fff"/><text x="209" y="164" fill="#52643c" font-size="10">All PHP</text>
+    <text x="30" y="202" fill="#30352f" font-size="11">브랜치별 분포와 패치 추이를 보여줌</text>
+    <text x="30" y="226" fill="#30352f" font-size="11">특정 도메인 취약 여부는 판정하지 않음</text>
+    <text x="30" y="290" fill="#a2645a" font-size="11" font-weight="700">전체 현황판</text>
+
+    <rect x="16" y="338" width="288" height="246" rx="11" fill="#fff" stroke="#d9ded1" stroke-width="1.5"/>
+    <text x="30" y="367" fill="#52643c" font-size="15" font-weight="700">SOCRadar · 한 도메인</text>
+    <text x="30" y="392" fill="#30352f" font-size="11">외부에 공개된 PHP 버전을 확인</text>
+    <rect x="30" y="412" width="260" height="42" rx="8" fill="#f7f8f4" stroke="#d9ded1"/><text x="44" y="438" fill="#676e65" font-size="11">example.com</text>
+    <text x="30" y="483" fill="#30352f" font-size="11">기본 확인은 익스플로잇을 시도하지 않음</text>
+    <text x="30" y="507" fill="#30352f" font-size="11">버전 숨김 시 inconclusive일 수 있음</text>
+    <text x="30" y="555" fill="#a2645a" font-size="11" font-weight="700">승인받은 도메인만 확인</text>
+
+    <path d="M160 590v20m-6-7 6 7 6-7" fill="none" stroke="#697d4f" stroke-width="2.5"/>
+    <rect x="16" y="622" width="288" height="222" rx="11" fill="#fff" stroke="#d9ded1" stroke-width="1.5"/>
+    <rect x="16" y="622" width="7" height="222" rx="3" fill="#697d4f"/>
+    <text x="34" y="653" fill="#52643c" font-size="14" font-weight="700">내 서버는 직접 확인</text>
+    <text x="34" y="685" fill="#30352f" font-size="11">1. 웹 요청을 받는 PHP 런타임 찾기</text>
+    <text x="34" y="710" fill="#30352f" font-size="11">2. 패키지를 공급자 공지와 대조</text>
+    <text x="34" y="735" fill="#30352f" font-size="11">3. 수정 후 PHP 워커 재시작</text>
+    <text x="34" y="760" fill="#30352f" font-size="11">4. 로그에서 이상 동작 확인</text>
+    <text x="34" y="805" fill="#676e65" font-size="10">CLI의 php -v만으로 웹 PHP를 단정하지 않기</text>
+  </g>
+</svg>
