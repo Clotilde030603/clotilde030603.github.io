@@ -352,6 +352,8 @@ main { min-width: 0; }
   .about-resume-item { grid-template-columns: 1fr; gap: 3px; padding: 6px 0; }
   .home-page { grid-template-columns: minmax(0, 1fr); gap: 4px; min-height: auto; padding: 12px 0 32px; }
   .home-character { width: min(100%, 380px); }
+  /* The wide animation rests at x=320 in its 560px canvas; center that pose on phones. */
+  .home-character dorami-rabbit[wide] { transform: translateX(-7.14%); }
   .home-copy { text-align: center; }
   .home-description { margin-inline: auto; }
   .post-list-item { padding: 20px 0; }
