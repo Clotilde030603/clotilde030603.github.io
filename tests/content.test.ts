@@ -26,13 +26,14 @@ describe('Markdown blog content', () => {
     const content = buildBlogContent([post('first-post', '보안/웹 해킹')]);
     const postEntry = content.posts[0];
 
-    expect(content.categories.map((category) => category.name)).toEqual(['보안', '보안 동향', '웹 해킹']);
+    expect(content.categories.map((category) => category.name)).toEqual(['교육·회고', '대회 후기', '보안', '보안 동향', '웹 해킹']);
     expect(postEntry.slug).toBe('first-post');
     expect(postEntry.categorySlug).toBe('보안--웹-해킹');
     expect(postEntry.tags).toEqual(['보안']);
     expect(content.allTags).toEqual(['보안']);
     expect(postsInCategory('보안', content.categories, content.posts)).toHaveLength(1);
     expect(postsInCategory('보안/보안 동향', content.categories, content.posts)).toEqual([]);
+    expect(postsInCategory('교육·회고/대회 후기', content.categories, content.posts)).toEqual([]);
   });
 
   it('omits draft files from the public pages', () => {
