@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 800" role="img" aria-labelledby="title desc">
+  <title id="title">PHP2Shell 공개, 패치, 추가 공지 타임라인</title>
+  <desc id="desc">2026년 10월 20일 취약점 정보가 공개 전 유출되고, 10월 21일 PHP가 CVE 두 건의 패치를 공개했으며, 10월 23일 별도의 후속 CVE를 안내한 과정입니다.</desc>
+  <rect width="840" height="800" rx="18" fill="#f7f8f4"/>
+  <text x="42" y="52" fill="#30352f" font-family="sans-serif" font-size="25" font-weight="700">공개부터 패치, 후속 공지까지</text>
+  <text x="42" y="82" fill="#676e65" font-family="sans-serif" font-size="15">날짜는 PHP 프로젝트·Censys 공개 기록 기준</text>
+  <line x1="82" y1="132" x2="82" y2="668" stroke="#a9b495" stroke-width="4"/>
+  <g font-family="sans-serif">
+    <circle cx="82" cy="160" r="12" fill="#a2645a"/><rect x="116" y="122" width="682" height="88" rx="12" fill="#f3e7e4"/><text x="140" y="155" fill="#a2645a" font-size="16" font-weight="700">2026.10.20</text><text x="140" y="183" fill="#30352f" font-size="16">공개 전 취약점 정보가 유출되어 공개 일정이 앞당겨짐</text>
+    <circle cx="82" cy="268" r="12" fill="#52643c"/><rect x="116" y="230" width="682" height="88" rx="12" fill="#e5ebdb"/><text x="140" y="263" fill="#52643c" font-size="16" font-weight="700">2026.10.21</text><text x="140" y="291" fill="#30352f" font-size="16">PHP가 CVE-2026-109618·109619 패치 공개</text>
+    <circle cx="82" cy="376" r="12" fill="#52643c"/><rect x="116" y="338" width="682" height="88" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="2"/><text x="140" y="371" fill="#52643c" font-size="16" font-weight="700">2026.10.21–23</text><text x="140" y="399" fill="#30352f" font-size="16">센서에서 악용 시도가 관측됐으나 성공·규모 평가는 엇갈림</text>
+    <circle cx="82" cy="484" r="12" fill="#52643c"/><rect x="116" y="446" width="682" height="88" rx="12" fill="#e5ebdb"/><text x="140" y="479" fill="#52643c" font-size="16" font-weight="700">패치 버전</text><text x="140" y="507" fill="#30352f" font-size="16">PHP 8.5.12 · 8.4.27 · 8.3.36 · 8.2.35</text>
+    <circle cx="82" cy="592" r="12" fill="#a2645a"/><rect x="116" y="554" width="682" height="88" rx="12" fill="#f3e7e4"/><text x="140" y="587" fill="#a2645a" font-size="16" font-weight="700">2026.10.23</text><text x="140" y="615" fill="#30352f" font-size="16">PHP가 별도 CVE-2026-115560 후속 위험을 공지</text>
+  </g>
+  <text x="42" y="700" fill="#676e65" font-family="sans-serif" font-size="14">10월 23일 발표의 CVE-2026-115560은 PHP2Shell의 두 CVE와 별개입니다.</text>
+  <text x="42" y="727" fill="#676e65" font-family="sans-serif" font-size="14">악용 시도 관측과 실제 침해 확인은 구분해야 합니다.</text>
+</svg>

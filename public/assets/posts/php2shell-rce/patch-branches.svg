@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 620" role="img" aria-labelledby="title desc">
+  <title id="title">PHP2Shell 브랜치별 수정 버전과 오래된 브랜치 확인</title>
+  <desc id="desc">PHP 8.2부터 8.5까지의 수정 버전과 PHP 7.4, 8.0, 8.1의 소스 전용 백포트, 오래된 지원 종료 브랜치에 대한 안내입니다.</desc>
+  <rect width="840" height="620" rx="18" fill="#f7f8f4"/>
+  <text x="42" y="52" fill="#30352f" font-family="sans-serif" font-size="25" font-weight="700">브랜치별 패치 버전</text>
+  <text x="42" y="82" fill="#676e65" font-family="sans-serif" font-size="15">업스트림 버전 예시 · 배포판은 패치를 백포트해 다른 버전 문자열을 쓸 수 있습니다.</text>
+  <g font-family="sans-serif">
+    <rect x="42" y="112" width="756" height="60" rx="12" fill="#e5ebdb"/><text x="66" y="150" fill="#52643c" font-size="18" font-weight="700">PHP 8.5</text><text x="268" y="150" fill="#30352f" font-size="18">8.5.12 이상으로 업데이트</text><text x="674" y="150" fill="#52643c" font-size="15" font-weight="700">수정됨</text>
+    <rect x="42" y="184" width="756" height="60" rx="12" fill="#ffffff" stroke="#d9ded1" stroke-width="1.5"/><text x="66" y="222" fill="#52643c" font-size="18" font-weight="700">PHP 8.4</text><text x="268" y="222" fill="#30352f" font-size="18">8.4.27 이상으로 업데이트</text><text x="674" y="222" fill="#52643c" font-size="15" font-weight="700">수정됨</text>
+    <rect x="42" y="256" width="756" height="60" rx="12" fill="#e5ebdb"/><text x="66" y="294" fill="#52643c" font-size="18" font-weight="700">PHP 8.3</text><text x="268" y="294" fill="#30352f" font-size="18">8.3.36 이상으로 업데이트</text><text x="674" y="294" fill="#52643c" font-size="15" font-weight="700">수정됨</text>
+    <rect x="42" y="328" width="756" height="60" rx="12" fill="#ffffff" stroke="#d9ded1" stroke-width="1.5"/><text x="66" y="366" fill="#52643c" font-size="18" font-weight="700">PHP 8.2</text><text x="268" y="366" fill="#30352f" font-size="18">8.2.35 이상으로 업데이트</text><text x="674" y="366" fill="#52643c" font-size="15" font-weight="700">수정됨</text>
+    <rect x="42" y="412" width="756" height="74" rx="12" fill="#fff" stroke="#d9ded1" stroke-width="1.5"/><text x="66" y="442" fill="#a2645a" font-size="17" font-weight="700">PHP 7.4 · 8.0 · 8.1</text><text x="66" y="468" fill="#676e65" font-size="14">업스트림 소스 백포트가 제공됐습니다. 직접 빌드하거나 배포판·LTS 공급자의 패치 여부를 확인하세요.</text>
+    <rect x="42" y="500" width="756" height="74" rx="12" fill="#f3e7e4"/><text x="66" y="530" fill="#a2645a" font-size="17" font-weight="700">PHP 5.4–7.3</text><text x="66" y="556" fill="#30352f" font-size="14">업스트림 지원 종료 브랜치입니다. 현재 공급자가 보안 수정본을 제공하는지 확인하거나 지원 브랜치로 이전하세요.</text>
+  </g>
+</svg>

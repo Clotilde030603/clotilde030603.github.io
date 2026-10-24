@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 810" role="img" aria-labelledby="title desc">
+  <title id="title">PHP2Shell 공개, 패치, 추가 공지 타임라인</title>
+  <desc id="desc">2026년 10월 20일 취약점 정보 유출, 10월 21일 두 CVE의 패치 공개, 10월 23일 별도 후속 CVE 공지를 나타냅니다.</desc>
+  <rect width="320" height="810" rx="16" fill="#f7f8f4"/>
+  <text x="16" y="29" fill="#30352f" font-family="sans-serif" font-size="18" font-weight="700">공개와 패치 타임라인</text>
+  <text x="16" y="50" fill="#676e65" font-family="sans-serif" font-size="11">PHP 프로젝트·Censys 발표 기준</text>
+  <line x1="31" y1="76" x2="31" y2="623" stroke="#a9b495" stroke-width="3"/>
+  <g font-family="sans-serif">
+    <circle cx="31" cy="96" r="7" fill="#a2645a"/><rect x="50" y="76" width="254" height="78" rx="9" fill="#f3e7e4"/><text x="62" y="98" fill="#a2645a" font-size="12" font-weight="700">2026.10.20</text><text x="62" y="120" fill="#30352f" font-size="11">취약점 정보 유출로</text><text x="62" y="137" fill="#30352f" font-size="11">공개 일정 앞당김</text>
+    <circle cx="31" cy="185" r="7" fill="#52643c"/><rect x="50" y="165" width="254" height="70" rx="9" fill="#e5ebdb"/><text x="62" y="188" fill="#52643c" font-size="12" font-weight="700">2026.10.21</text><text x="62" y="214" fill="#30352f" font-size="11">PHP가 두 CVE 패치 공개</text>
+    <circle cx="31" cy="266" r="7" fill="#52643c"/><rect x="50" y="246" width="254" height="88" rx="9" fill="#fff" stroke="#d9ded1" stroke-width="1.5"/><text x="62" y="269" fill="#52643c" font-size="12" font-weight="700">2026.10.21–23</text><text x="62" y="291" fill="#30352f" font-size="11">센서에 악용 시도 관측,</text><text x="62" y="308" fill="#30352f" font-size="11">침해 규모 평가는 엇갈림</text>
+    <circle cx="31" cy="365" r="7" fill="#52643c"/><rect x="50" y="345" width="254" height="88" rx="9" fill="#e5ebdb"/><text x="62" y="368" fill="#52643c" font-size="12" font-weight="700">수정 버전</text><text x="62" y="390" fill="#30352f" font-size="11">8.5.12 · 8.4.27</text><text x="62" y="407" fill="#30352f" font-size="11">8.3.36 · 8.2.35</text>
+    <circle cx="31" cy="464" r="7" fill="#a2645a"/><rect x="50" y="444" width="254" height="88" rx="9" fill="#f3e7e4"/><text x="62" y="467" fill="#a2645a" font-size="12" font-weight="700">2026.10.23</text><text x="62" y="489" fill="#30352f" font-size="11">별도 CVE-2026-115560</text><text x="62" y="506" fill="#30352f" font-size="11">후속 위험 공지</text>
+    <rect x="16" y="562" width="288" height="142" rx="10" fill="#fff" stroke="#d9ded1" stroke-width="1.5"/><text x="30" y="591" fill="#30352f" font-size="13" font-weight="700">구분해서 읽기</text><text x="30" y="619" fill="#676e65" font-size="11">후속 CVE는 PHP2Shell의 두 CVE와</text><text x="30" y="638" fill="#676e65" font-size="11">별개입니다. 악용 시도 관측과</text><text x="30" y="657" fill="#676e65" font-size="11">실제 침해 확인도 다른 단계입니다.</text>
+    <text x="16" y="745" fill="#676e65" font-size="10">출처: PHP 프로젝트·Censys 공지</text>
+  </g>
+</svg>
