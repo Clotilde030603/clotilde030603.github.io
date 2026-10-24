@@ -102,8 +102,10 @@ img { display: block; max-width: 100%; }
 :root[data-theme='dark'] .theme-icon-moon { display: none; }
 :root[data-theme='dark'] .theme-icon-sun { display: block; }
 @media (min-width: 761px) {
-  .theme-toggle { width: 32px; height: 32px; transform: translateY(1px); }
+  .brand-group { gap: 2px; }
+  .theme-toggle { width: 32px; height: 32px; transform: translateY(-1px); }
   .theme-icon { width: 20px; height: 20px; }
+  .theme-icon-moon { transform: translateY(-1px); }
 }
 .search-link { width: 28px; height: 28px; display: grid; place-items: center; }
 .search-link svg { width: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; }
