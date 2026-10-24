@@ -374,22 +374,20 @@ main { min-width: 0; }
 }
 
 @media (max-width: 420px) {
+  .site-header { height: auto; }
+  .header-inner { height: auto; min-height: 68px; flex-direction: column; justify-content: center; gap: 4px; padding-block: 8px; }
   .header-inner, .public-shell, .site-footer, .mobile-categories { width: calc(100% - 32px); }
-  .top-nav { gap: 8px; font-size: 12px; }
+  .brand-group { gap: 12px; }
+  .brand img { width: 44px; height: 44px; }
+  .brand span { font-size: 22px; }
+  .top-nav { width: 100%; justify-content: center; gap: clamp(10px, 3.4vw, 14px); font-size: 12px; }
   .search-link { width: 22px; }
   .sort-control select { max-width: 110px; }
   .search-form > div { display: grid; grid-template-columns: 1fr auto; }
 }
 
 @media (max-width: 380px) {
-  .header-inner { width: calc(100% - 20px); }
-  .brand { gap: 5px; }
-  .brand img { width: 32px; height: 32px; }
-  .brand span { font-size: 17px; }
-  .top-nav { gap: 5px; font-size: 10px; }
-  .theme-toggle { width: 23px; height: 23px; padding: 3px; }
-  .theme-icon { width: 16px; height: 16px; }
-  .search-link { width: 22px; height: 24px; }
+  .search-link { height: 24px; }
   .search-link svg { width: 16px; }
 }
 
