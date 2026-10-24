@@ -104,7 +104,7 @@ img { display: block; max-width: 100%; }
 :root[data-theme='dark'] .theme-icon-moon { display: none; }
 :root[data-theme='dark'] .theme-icon-sun { display: block; }
 @media (min-width: 761px) {
-  .brand-group { gap: 10px; }
+  .brand-group { gap: 8px; }
   .theme-toggle { width: 32px; height: 32px; transform: translateY(-1px); }
   .theme-icon { width: 20px; height: 20px; }
   .theme-icon-moon { transform: translateY(-1px); }
