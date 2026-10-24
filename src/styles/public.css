@@ -96,7 +96,9 @@ img { display: block; max-width: 100%; }
 .top-nav { display: flex; align-items: center; gap: 28px; font-size: 14px; }
 .top-nav a { text-decoration: none; }
 .theme-toggle { display: grid; place-items: center; width: 30px; height: 30px; padding: 4px; border: 1px solid transparent; border-radius: 50%; background: transparent; color: var(--foreground); }
-.theme-toggle:hover { border-color: var(--divider); background: var(--sidebar); }
+@media (hover: hover) and (pointer: fine) {
+  .theme-toggle:hover { border-color: var(--divider); background: var(--sidebar); }
+}
 .theme-icon { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .theme-icon-sun { display: none; }
 :root[data-theme='dark'] .theme-icon-moon { display: none; }
