@@ -109,6 +109,8 @@ img { display: block; max-width: 100%; }
   display: grid; grid-template-columns: 196px minmax(0, 1fr); gap: 42px; padding: 42px 0 56px;
 }
 .public-shell.sidebar-hidden { display: block; }
+.public-shell.home-shell { display: flex; flex-direction: column; }
+.public-shell.home-shell > main { display: flex; flex: 1; align-items: center; }
 .public-sidebar { border-right: 1px solid var(--divider); padding-right: 28px; display: flex; flex-direction: column; }
 .category-nav h2 { margin: 0 0 12px; font-size: 14px; font-weight: 500; }
 .category-row { display: grid; grid-template-columns: 16px minmax(0, 1fr); align-items: center; }
@@ -142,7 +144,7 @@ img { display: block; max-width: 100%; }
 .category-clover { width: 16px; height: 16px; fill: var(--matcha); flex: none; }
 .mobile-rabbit { display: none; }
 main { min-width: 0; }
-.home-page { display: grid; grid-template-columns: minmax(360px, 520px) minmax(0, 1fr); align-items: center; gap: clamp(24px, 4vw, 56px); max-width: 1060px; min-height: 430px; padding: 38px 0 54px; }
+.home-page { display: grid; grid-template-columns: minmax(360px, 520px) minmax(0, 1fr); align-items: center; gap: clamp(24px, 4vw, 56px); width: 100%; max-width: 1060px; min-height: 430px; margin-inline: auto; padding: 38px 0 54px; }
 .home-character { width: 100%; max-width: 520px; margin-inline: auto; }
 .home-character dorami-rabbit { display: block; width: 100%; }
 .home-copy { min-width: 0; }
@@ -152,6 +154,10 @@ main { min-width: 0; }
 .home-posts-link { display: inline-flex; align-items: center; gap: 10px; color: var(--matcha-strong); font-size: 14px; font-weight: 500; text-decoration: none; }
 .home-posts-link span { font-size: 18px; transition: transform .16s ease; }
 .home-posts-link:hover span { transform: translateX(3px); }
+@media (min-width: 761px) and (max-width: 980px) {
+  .home-page { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(20px, 3vw, 32px); min-height: 390px; padding-block: 28px; }
+  .home-character { max-width: 420px; }
+}
 .listing { max-width: 780px; }
 .listing-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--divider); }
 .listing-heading h1, .about-page h1, .search-page h1 { margin: 0; font-size: 22px; font-weight: 500; line-height: 1.4; letter-spacing: -.02em; }
@@ -329,6 +335,7 @@ main { min-width: 0; }
   .theme-toggle { width: 26px; height: 26px; }
   .public-shell { display: block; padding-top: 26px; }
   .public-shell.home-shell { padding-top: 22px; }
+  .public-shell.home-shell > main { display: block; flex: none; }
   .public-sidebar { display: none; }
   .mobile-rabbit { display: block; width: 180px; margin: 42px auto 0; text-align: center; }
   .mobile-rabbit .rabbit-companion { padding-top: 0; }
