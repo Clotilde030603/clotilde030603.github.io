@@ -1,6 +1,6 @@
 ---
 title: "picoCTF: logon(Web)"
-date: 2025-01-22
+date: 2025-01-22T15:52:41+09:00
 summary: "로그인 후 admin 쿠키 값을 확인하고 False에서 True로 바꿔 flag를 찾습니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]

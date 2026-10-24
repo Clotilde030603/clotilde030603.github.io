@@ -1,6 +1,6 @@
 ---
 title: "picoCTF: where are the robots(Web)"
-date: 2025-01-22
+date: 2025-01-22T15:23:46+09:00
 summary: "robots.txt에 공개된 경로를 확인해 숨겨진 페이지에서 flag를 찾는 picoCTF 풀이입니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]

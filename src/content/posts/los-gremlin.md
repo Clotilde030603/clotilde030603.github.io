@@ -1,6 +1,6 @@
 ---
 title: "Lord of SQLInjection: gremlin"
-date: 2025-01-21
+date: 2025-01-21T13:36:38+09:00
 summary: "GET으로 전달되는 id와 pw 값을 이용해 SQL 조건을 우회하는 gremlin 문제 풀이입니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]

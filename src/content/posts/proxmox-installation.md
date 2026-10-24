@@ -1,6 +1,6 @@
 ---
 title: "02. Proxmox 설치 및 실행"
-date: 2024-05-20
+date: 2024-05-20T13:00:27+09:00
 summary: "부팅 USB로 Proxmox VE를 설치하고 네트워크를 설정한 뒤 외부 접속 문제를 점검합니다."
 category: "개발/서버·가상화"
 tags: ["Proxmox", "가상화"]

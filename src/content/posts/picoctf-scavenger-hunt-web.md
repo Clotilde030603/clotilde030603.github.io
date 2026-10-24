@@ -1,6 +1,6 @@
 ---
 title: "picoCTF: Scavenger Hunt(Web)"
-date: 2025-01-22
+date: 2025-01-22T15:15:52+09:00
 summary: "HTML·CSS·JavaScript와 robots.txt, 숨겨진 파일을 차례로 확인해 flag 조각을 찾습니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]

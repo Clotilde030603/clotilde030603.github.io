@@ -1,6 +1,6 @@
 ---
 title: "Lord of SQLInjection: cobolt"
-date: 2025-01-21
+date: 2025-01-21T13:42:40+09:00
 summary: "GET 파라미터의 SQL 구문을 조작해 Lord of SQLInjection cobolt 문제를 풀이합니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]

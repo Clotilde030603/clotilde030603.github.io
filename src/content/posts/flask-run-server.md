@@ -1,6 +1,6 @@
 ---
 title: "Flask 서버 실행"
-date: 2025-01-24
+date: 2025-01-24T09:44:10+09:00
 summary: "Raspberry Pi에서 Flask 앱을 구성하고 HTML·정적 파일을 연결해 서버를 실행하는 과정입니다."
 category: "개발/IoT·Raspberry Pi"
 tags: ["Flask", "Raspberry Pi"]

@@ -1,6 +1,6 @@
 ---
 title: "picoCTF: GET aHEAD(Web)"
-date: 2024-07-08
+date: 2024-07-08T11:33:26+09:00
 summary: "Burp Suite Repeater에서 요청 메서드를 GET에서 HEAD로 바꿔 picoCTF 문제를 풀이합니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]

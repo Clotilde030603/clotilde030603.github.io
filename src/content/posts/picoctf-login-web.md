@@ -1,6 +1,6 @@
 ---
 title: "picoCTF: login(Web)"
-date: 2025-01-22
+date: 2025-01-22T16:01:34+09:00
 summary: "페이지 소스에 포함된 Base64 인코딩 값을 디코딩해 picoCTF login 문제를 풀이합니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]

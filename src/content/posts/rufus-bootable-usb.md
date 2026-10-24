@@ -1,6 +1,6 @@
 ---
 title: "01. Rufus 설치(부팅용 USB) 및 사용"
-date: 2024-05-20
+date: 2024-05-20T00:17:39+09:00
 summary: "Rufus를 사용해 Proxmox 설치 ISO 파일을 부팅 가능한 USB 드라이브로 만듭니다."
 category: "개발/서버·가상화"
 tags: ["Rufus", "부팅 USB"]

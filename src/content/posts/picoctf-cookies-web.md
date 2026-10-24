@@ -1,6 +1,6 @@
 ---
 title: "picoCTF: Cookies(Web)"
-date: 2024-11-09
+date: 2024-11-09T21:42:21+09:00
 summary: "검색 결과와 쿠키 값을 확인하고 값을 바꿔가며 picoCTF Cookies 문제의 flag를 찾습니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]

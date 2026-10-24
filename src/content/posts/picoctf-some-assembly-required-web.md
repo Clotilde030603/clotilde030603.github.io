@@ -1,6 +1,6 @@
 ---
 title: "picoCTF: Some Assembly Required 1(Web)"
-date: 2025-01-22
+date: 2025-01-22T15:44:41+09:00
 summary: "JavaScript에서 확인한 경로의 파일을 내려받아 010 Editor로 분석하는 문제 풀이입니다."
 category: "보안/CTF 풀이"
 tags: ["CTF", "웹 보안"]
