@@ -339,11 +339,12 @@ main { min-width: 0; }
   .article-privacy-overview .toc-primary,
   .article-privacy-overview .toc-subsections ol { columns: 1; }
   .article-privacy-overview .table-scroll-hint { display: none; }
-  .article-privacy-law-2026 .article-prose .table-scroll ~ .table-scroll .table-scroll-hint { display: none; }
+  .article-privacy-law-2026 .table-scroll-hint { display: none; }
 }
 
 @media (max-width: 703px) {
-  .article-privacy-overview .article-prose > .table-scroll:first-of-type .table-scroll-hint { display: block; }
+  .article-privacy-overview .article-prose > .table-scroll:first-of-type .table-scroll-hint,
+  .article-privacy-law-2026 .article-prose > .table-scroll:first-of-type .table-scroll-hint { display: block; }
 }
 
 @media (max-width: 760px) {

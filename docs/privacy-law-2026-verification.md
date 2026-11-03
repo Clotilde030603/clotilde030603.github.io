@@ -16,14 +16,14 @@
 | 시행령 번호와 시행일 | [대통령령 제36671호 개정문·부칙](https://www.law.go.kr/lsRvsDocListP.do?lsId=011468) | 2026-09-10 공포, 2026-09-11 시행. |
 | 같은 해의 별도 시행령 변경 | [시행령 개정 연혁](https://law.go.kr/LSW/lsRvsRsnListP.do?chrClsCd=010102&lsId=011468) | 대통령령 제36340호(2026-05-19 시행)의 과징금 산정 기준 변경, 제36121호(2026-08-20 시행)의 본인 전송요구 범위 확대를 9월 개정과 구분. |
 | 유출등과 가능성 통지 | [법 제23조제2항·제34조 개정문](https://www.law.go.kr/lsRvsDocListP.do?lsId=011357), [영 제39조의2·제39조의3](https://www.law.go.kr/lsRvsDocListP.do?lsId=011468) | 위조·변조·훼손 포함. 가능성 통지는 시행령상 두 유형에 한함. 법정 시점부터 72시간. 실제 유출이 확인되지 않았을 때 후속 통지도 규정. |
-| 확정 유출 통지와 신고 | [법 제34조](https://law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1034293201), [영 제39조·제40조](https://law.go.kr/lsLinkCommonInfo.do?lspttninfSeq=67073), [개인정보위 신고 안내](https://pipc.go.kr/np/default/page.do?mCode=D030040000) | 정보주체 통지와 관계기관 신고를 구분. 신고는 1천 명 이상, 민감·고유식별정보, 외부 불법 접근 중 하나가 해당될 때. 홈페이지 30일 게시 방식은 정당한 사유가 있는 경우의 통지 대체. |
+| 확정 유출 통지와 신고 | [법 제34조](https://law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1034293201), [영 제39조·제40조](https://law.go.kr/lsLinkCommonInfo.do?lspttninfSeq=67073), [개인정보위 신고 안내](https://pipc.go.kr/np/default/page.do?mCode=D030040000) | 정보주체 통지와 관계기관 신고를 구분. 신고는 1천 명 이상, 민감·고유식별정보, 외부 불법 접근 중 하나에 해당할 때 검토하며, 영 제40조제1항 단서의 회수·삭제 등에 따른 신고 예외도 확인. 홈페이지 30일 게시 방식은 정당한 사유가 있는 경우의 통지 대체. |
 | CEO·CPO | [법 제30조의3·제31조 개정문](https://www.law.go.kr/lsRvsDocListP.do?lsId=011357), [종전 영 제32조](https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=0&chrClsCd=010202&efYd=20260820&lsiSeq=283503), [현행 영 제32조](https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=201813), [부칙 제2조](https://www.law.go.kr/lsRvsDocListP.do?lsId=011468) | 일반 CPO 지정과 소상공인 예외, 종전부터 있던 자격요건 지정 대상의 민간 매출액등 기준 1,500억 원 **이상**에서 현행 1,800억 원 **초과**로의 변경을 구분. 현행 대상의 이사회 의결·신고는 새 의무. 처리인원 기준 및 신고 6개월·기존 지정자 경과조치 확인. |
 | 과징금·투자감경 | [법 제64조의2](https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1029334897), [영 제60조의2](https://law.go.kr/LSW/lsInfoP.do?ancYnChk=0&lsId=011468), [고시 제2026-12호](https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284968&chrClsCd=010201) | 일반 상한 3%, 법정 세 경로에 해당할 때 10% 특례. 매출액이 없거나 산정 곤란한 시행령상 경우의 일반 20억 원 상한은 종전부터 있었고, 강화 50억 원 상한은 제2항 신설과 함께 도입. 투자감경은 기준금액 40% 범위, 고의·중과실 제외. 자료 제출 거부·거짓 제출에 따른 매출 추정은 금액 상한 요건과 구분. |
 | 과태료 | [영 제36671호 개정이유](https://law.go.kr/LSW/lsRvsRsnListP.do?chrClsCd=010102&lsId=011468), [고시 제2026-14호](https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000285028) | 안전성 확보조치 위반 개별 기준 900/1,800/3,000만 원(1/2/3회 이상). 과징금과 분리. |
 | 신규 인증 의무 | [법 제32조의2·부칙](https://www.law.go.kr/lsRvsDocListP.do?lsId=011357), [개인정보위 시행 안내](https://pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=12459) | 2027-07-01 시행 예정. 2026-09-11 시행령에는 새로운 의무대상 기준이 포함되지 않음. |
 | AI 처리 특례 | [법률 제21910호 개정문·부칙](https://www.law.go.kr/lsRvsDocListP.do?lsId=011357) | 2026-09-08 공포, 2027-03-09 시행 예정. 법 제28조의12~15와 조건·심의 절차 확인. |
 | 공식 안내서 | [개인정보위 유출등 대응 안내서](https://pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&nttId=12465), [CPO 매뉴얼](https://pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&nttId=12501), [투자감경 안내서](https://pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&nttId=12468) | 2026-09-11~15에 게시된 현행 안내서 존재 확인. |
-| 관련 고시 | [고시 제2026-11호](https://law.go.kr/joStmdInfoP.do?joBrNo=00&joNo=0030&lsiSeq=254693), [제2026-12호](https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284968&chrClsCd=010201), [제2026-14호](https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000285028) | CPO 지정·경력, 과징금, 과태료와 직접 연결된 고시의 시행 확인. |
+| 관련 고시 | [고시 제2026-11호](https://law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000285062), [제2026-12호](https://www.law.go.kr/LSW/admRulInfoP.do?admRulSeq=2100000284968&chrClsCd=010201), [제2026-14호](https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000285028) | CPO 지정·경력, 과징금, 과태료와 직접 연결된 고시의 시행 확인. |
 
 ## 제공된 참고 사이트와 공식 근거 비교
 
@@ -73,4 +73,17 @@ UI 점검: 데스크톱에서 목차 12개 항목의 앵커가 모두 연결됨.
 
 - [법 제64조의2제1항·제2항](https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1029334897)과 [영 제60조의2제2항](https://law.go.kr/LSW/lsInfoP.do?ancYnChk=0&lsId=011468)을 대조해 일반 20억 원·강화 50억 원의 **조건부 금액 상한**을 본문과 CPPG 표에 추가했다. 20억 원은 [2025년 개인정보위 공식 자료](https://pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS074&mCode=C020010000&nttId=11658)의 당시 법령 인용과도 일치한다.
 - [종전 시행령](https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=0&chrClsCd=010202&efYd=20260820&lsiSeq=283503)과 [현행 시행령 제32조](https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=201813)를 대조해 전문 자격 CPO 지정은 기존 의무이고, 지정 절차의 이사회 의결·신고가 신설됐음을 분리했다. 일반 지정 및 소상공인 예외도 추가했다.
-- 기존 제목·요약·URL·카테고리·게시일을 유지했다. 모바일의 표 안내는 첫 표에서만 보이도록 이 글에 한해 줄였다.
+- 이 단계에서는 기존 제목·요약·URL·카테고리·게시일을 유지했다. 모바일의 표 안내는 첫 표에서만 보이도록 이 글에 한해 줄였다.
+
+## 2026-11-03 최종 정확성·UI 점검
+
+| 항목 | 공식 근거 | 점검 결과 |
+| --- | --- | --- |
+| 유출등 통지·신고 | [법 제34조](https://law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1034293201), [영 제39조·제40조](https://law.go.kr/lsLinkCommonInfo.do?lspttninfSeq=67073), [영 제39조의2](https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=201819) | 확정·가능성 통지의 기산점과 신고 대상·수신자 구분은 유지. 영 제40조제1항 단서의 신고 예외를 본문·복습 문제에 추가. |
+| CPO | [법 제31조](https://www.law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1033214941), [영 제32조·부칙 제2조](https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=201813) | 매출액등 1,800억 원 **초과**와 민감·고유식별정보 5만 명 **이상** 또는 개인정보 100만 명 **이상**의 AND/OR 관계 확인. 대학·상급종합병원·공공시스템운영기관은 별도 경로. 자격 CPO·이사회 의결(법인)·신고의 적용 범위를 유지. |
+| 과징금·과태료 | [법 제64조의2](https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1029334897), [영 제60조의2·별표 1의5·별표 2](https://www.law.go.kr/lsInfoP.do?ancYnChk=0&chrClsCd=010202&efYd=20260911&lsiSeq=289537&urlMode=lsEfInfoR&viewCls=lsRvsDocInfoR) | 3%/10%, 조건부 20억/50억, 40% 투자감경, 안전성 확보조치 과태료 수치 및 OX 해설 유지. 자동 부과액으로 표현하지 않음. |
+| 시행일·경과조치 | [법률 제21445호·제21910호](https://www.law.go.kr/lsRvsDocListP.do?lsId=011357), [시행령 제36121호·제36671호](https://www.law.go.kr/lsRvsDocListP.do?lsId=011468) | 제36121호의 2026-02-19 공포와 2026-08-20 시행을 구분하도록 본문 표현 수정. CPO 신고 특례 6개월, 신규 인증 2027-07-01 및 AI 특례 2027-03-09 시행 예정 유지. |
+
+이번 단계에서 요청한 제목 아래 요약문을 반영했다. 제목·URL·카테고리·태그·최초 게시일, 기존 비교표와 사례·체크리스트의 구조는 유지했다. 새 CPO 도식은 기존 대상 목록을 대체하며 법정 대상·의무를 추가하지 않는다. 모바일에서 표가 실제로 넘치는 폭에서만 첫 표에 안내를 표시하고, 나머지 표는 기존 스크롤을 유지하도록 했다.
+
+미확인 상태를 유지하는 항목: 신규 ISMS-P 인증 의무의 확정된 하위법령상 대상·이행기간, AI 특례의 세부 시행령·고시, 실제 CPPG 시험별 법령 적용 기준일. 입법예고안 또는 추정 수치로 채우지 않는다.
