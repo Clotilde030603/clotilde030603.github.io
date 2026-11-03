@@ -376,7 +376,8 @@ main { min-width: 0; }
   .article-prose .article-link-card > img { height: 108px; }
   .article-link-card-copy { padding-right: 12px; }
   .article-toc ol { columns: 1; }
-  .article-privacy-overview .article-toc .toc-level-3 { display: none; }
+  .article-privacy-overview .article-toc .toc-level-3,
+  .article-privacy-law-2026 .article-toc .toc-level-3 { display: none; }
   .post-neighbors { grid-template-columns: 1fr; gap: 12px; }
   .post-neighbors a.next { text-align: left; }
   .site-footer { margin-top: 12px; }
