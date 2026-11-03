@@ -17,6 +17,20 @@ interface Props { post: PublishedPost; content: BlogContent }
 const { post, content } = Astro.props;
 const breadcrumbs = categoryPath(post.categoryId, content.categories);
 const { headings } = renderDocument(post.document);
+const isPrivacyOverview = post.slug === 'privacy-protection-overview';
+const overviewSections = isPrivacyOverview
+  ? headings.flatMap((heading, index) => {
+      if (heading.level !== 2) return [];
+      const nextSectionIndex = headings.findIndex((candidate, candidateIndex) => candidateIndex > index && candidate.level === 2);
+      const children = headings
+        .slice(index + 1, nextSectionIndex === -1 ? undefined : nextSectionIndex)
+        .filter((candidate) => candidate.level === 3 && candidate.text !== '확인한 공식 자료와 수정 기록');
+      return [{ heading, children }];
+    })
+  : [];
+const overviewReferences = isPrivacyOverview
+  ? headings.find((heading) => heading.text === '확인한 공식 자료와 수정 기록')
+  : undefined;
 const postIndex = content.posts.findIndex((item) => item.id === post.id);
 const newerPost = postIndex > 0 ? content.posts[postIndex - 1] : null;
 const olderPost = postIndex >= 0 && postIndex < content.posts.length - 1 ? content.posts[postIndex + 1] : null;
@@ -66,11 +80,37 @@ const olderPost = postIndex >= 0 && postIndex < content.posts.length - 1 ? conte
         headings.length > 1 && (
           <aside class="article-toc" aria-label="목차">
             <p>목차</p>
-            <ol>
-              {headings.map((heading) => (
-                <li class={`toc-level-${heading.level}`}><a href={`#${heading.id}`} title={heading.text}>{heading.text}</a></li>
-              ))}
-            </ol>
+            {isPrivacyOverview ? (
+              <>
+                <ol class="toc-primary">
+                  {overviewSections.map(({ heading }) => (
+                    <li><a href={`#${heading.id}`}>{heading.text}</a></li>
+                  ))}
+                  {overviewReferences && <li><a href={`#${overviewReferences.id}`}>{overviewReferences.text}</a></li>}
+                </ol>
+                <details class="toc-subsections">
+                  <summary>세부 목차 보기</summary>
+                  {overviewSections.map(({ heading, children }) => (
+                    children.length > 0 && (
+                      <div class="toc-subsection-group">
+                        <p>{heading.text}</p>
+                        <ol>
+                          {children.map((child) => (
+                            <li><a href={`#${child.id}`}>{child.text}</a></li>
+                          ))}
+                        </ol>
+                      </div>
+                    )
+                  ))}
+                </details>
+              </>
+            ) : (
+              <ol>
+                {headings.map((heading) => (
+                  <li class={`toc-level-${heading.level}`}><a href={`#${heading.id}`} title={heading.text}>{heading.text}</a></li>
+                ))}
+              </ol>
+            )}
           </aside>
         )
       }

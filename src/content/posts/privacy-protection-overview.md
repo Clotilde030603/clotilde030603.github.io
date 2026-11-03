@@ -154,6 +154,6 @@ EU에서 미국으로 개인정보를 이전할 때 사용해 온 적정성 결�
 
 - 국내법: [개인정보 보호법](https://law.go.kr/LSW/lsInfoP.do?lsId=011357), [시행령](https://law.go.kr/lsInfoP.do?lsId=011468), [2026년 법률 개정문](https://www.law.go.kr/lsRvsDocListP.do?lsId=011357)
 - EU: [GDPR 원문](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng), [EU 집행위의 DPF 현황](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/eu-us-data-transfers_lt), [EDPB DPO 안내](https://www.edpb.europa.eu/sme/be-compliant/data-protection-officer_en)
-- 2026. 11. 3. — 개인정보의 식별 가능성, 가치평가 설명, 미국·EU 비교와 이전 제도, GDPR의 250명 기준·DPIA·DPO, 유출 대응, CPO·대표자 역할 및 표준 판본을 공식 자료에 맞춰 수정했습니다. 최초 게시일과 URL은 유지했습니다.
+- 2026\. 11\. 3\. — 개인정보의 식별 가능성, 가치평가 설명, 미국·EU 비교와 이전 제도, GDPR의 250명 기준·DPIA·DPO, 유출 대응, CPO·대표자 역할 및 표준 판본을 공식 자료에 맞춰 수정했습니다. 최초 게시일과 URL은 유지했습니다.
 
 이 글은 개념 학습용입니다. 개별 사고의 통지·신고 여부나 손해배상액은 해당 사건의 사실관계와 적용 법령으로 다시 판단해야 합니다.

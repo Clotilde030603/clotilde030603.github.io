@@ -237,6 +237,11 @@ main { min-width: 0; }
 .article-toc li { margin: 7px 0; }
 .article-toc .toc-level-3 { padding-left: 8px; }
 .article-toc a { display: -webkit-box; overflow: hidden; text-decoration: none; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.article-privacy-overview .article-toc { max-height: calc(100vh - 48px); overflow-y: auto; }
+.article-privacy-overview .toc-subsections { margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--divider); }
+.article-privacy-overview .toc-subsections summary { cursor: pointer; color: var(--foreground); }
+.article-privacy-overview .toc-subsection-group > p { margin: 14px 0 5px; color: var(--muted); font-size: 11px; }
+.article-privacy-overview .toc-subsection-group ol { padding-left: 8px; }
 .article-prose { font-size: 17px; line-height: 1.82; word-break: keep-all; overflow-wrap: anywhere; }
 .article-prose p { margin: 0 0 1.35em; }
 
@@ -329,8 +334,16 @@ main { min-width: 0; }
   .article-layout { display: block; }
   .article-toc { position: static; max-width: 740px; margin: 0 0 28px; padding: 12px 16px; border: 1px solid var(--divider); }
   .article-toc ol { columns: 2; }
+  .article-privacy-overview .article-toc { max-height: none; overflow: visible; }
   .table-scroll-hint { display: block; margin: 0 0 6px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+  .article-privacy-overview .toc-primary,
+  .article-privacy-overview .toc-subsections ol { columns: 1; }
+  .article-privacy-overview .table-scroll-hint { display: none; }
   .article-privacy-law-2026 .article-prose .table-scroll ~ .table-scroll .table-scroll-hint { display: none; }
+}
+
+@media (max-width: 703px) {
+  .article-privacy-overview .article-prose > .table-scroll:first-of-type .table-scroll-hint { display: block; }
 }
 
 @media (max-width: 760px) {
@@ -377,7 +390,6 @@ main { min-width: 0; }
   .article-prose .article-link-card > img { height: 108px; }
   .article-link-card-copy { padding-right: 12px; }
   .article-toc ol { columns: 1; }
-  .article-privacy-overview .article-toc .toc-level-3,
   .article-privacy-law-2026 .article-toc .toc-level-3 { display: none; }
   .post-neighbors { grid-template-columns: 1fr; gap: 12px; }
   .post-neighbors a.next { text-align: left; }
