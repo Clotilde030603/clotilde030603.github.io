@@ -330,6 +330,7 @@ main { min-width: 0; }
   .article-toc { position: static; max-width: 740px; margin: 0 0 28px; padding: 12px 16px; border: 1px solid var(--divider); }
   .article-toc ol { columns: 2; }
   .table-scroll-hint { display: block; margin: 0 0 6px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+  .article-privacy-law-2026 .article-prose .table-scroll ~ .table-scroll .table-scroll-hint { display: none; }
 }
 
 @media (max-width: 760px) {
