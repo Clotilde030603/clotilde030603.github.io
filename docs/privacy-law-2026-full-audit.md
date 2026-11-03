@@ -10,6 +10,8 @@
 
 이 SHA의 GitHub API 원본 Markdown과 로컬 Markdown의 SHA-256은 모두 `fce579f904a5c883980d7e229a75b56d7230c83641c95273a8089fb58a80917f`였다. 캐시 우회 쿼리와 `Cache-Control: no-cache`로 직접 받은 공개 HTML은 HTTP 200, `x-cache: MISS`였고, 로컬 빌드 HTML과 SHA-256 `e02457688791f6e90443b509d9f534152ddd4551344b821c8c566c0f93d0ef55`로 **바이트 단위까지 일치**했다. 응답의 `last-modified`는 `2026-11-03 12:57:23 UTC`였다.
 
+부칙 보완을 게시한 커밋 `2ba5c0444e63173022cc36943b2865d32a58dc2a`에서도 [Deploy Dorami 실행](https://github.com/Clotilde030603/clotilde030603.github.io/actions/runs/41642864694)과 Pages 배포 기록 `7519749373`이 성공했다. 이 시점의 원격·로컬 Markdown SHA-256은 `962bcaa90e021e78251f5d45795e19f93c8fac8d0127782c60cfa955db90ca65`, 로컬 빌드·캐시 우회 공개 HTML SHA-256은 `d990a8658c9c764a4c9d79a2ce1fa5c8312c9e363f5fc88e367216ca71f0a05d`로 각각 일치했다. 공개 HTML은 새 부칙 문단을 포함했고 HTTP 200, `x-cache: MISS`, `last-modified: 2026-11-03 13:17:57 UTC`였다. 이 문단은 **게시글 보완 커밋의 배포 증거**이며, 보고서 기록만 추가하는 후속 커밋에서 게시글 원문은 바뀌지 않는다.
+
 따라서 감사 시작 시점에 보고된 세 차이(요약의 `쉽게`, 제40조 신고 예외 누락, CPPG 6번 예외 누락)는 최신 공개 HTML에서 재현되지 않았다. 이전 관찰의 원인은 현재 자료만으로 특정할 수 없다. 외부 수집 캐시 가능성은 **추정**이며 확인된 배포 오류로 기록하지 않는다. 이 감사에서 새로 확인한 부칙 보완은 아래 D에 적었다.
 
 ## B. 게시글 주장별 공식 근거
