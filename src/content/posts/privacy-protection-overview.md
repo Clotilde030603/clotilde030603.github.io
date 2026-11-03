@@ -57,7 +57,7 @@ draft: false
 | 사업자 의무 | 적용되는 연방·주·분야별 법을 따로 확인 | GDPR의 처리 근거·투명성·권리 보장·안전조치 등을 확인 |
 | 국외 이전 | 이전 국가와 수신 조직에 따라 별도 규율 검토 | GDPR 제44조 이하의 적정성 결정, 적절한 보호조치, 제한적 예외 등 |
 
-기존에 적었던 **Safe Harbor 7원칙**은 현재 적용되는 국제 이전 제도가 아니라 과거 제도의 설명입니다. EU·미국 이전 틀은 다음처럼 바뀌었습니다.
+EU에서 미국으로 개인정보를 이전할 때 사용해 온 적정성 결정은 두 차례 무효 판결을 거쳤습니다. **Safe Harbor 7원칙은 과거 제도의 내용**으로 읽어야 합니다.
 
 | 시점 | 제도와 현재 상태 |
 | --- | --- |
@@ -65,7 +65,7 @@ draft: false
 | 2016~2020 | EU-US Privacy Shield. 2020년 Schrems II 판결로 적정성 결정 무효 |
 | 2023년 이후 | EU-US Data Privacy Framework(DPF). EU 집행위의 적정성 결정에 따라 **참여 인증을 받은 미국 조직**으로의 이전에 활용 |
 
-2026년 11월 3일 확인 시점에는 DPF 적정성 결정이 운영 중입니다. 2025년 EU 일반법원은 이를 취소해 달라는 소송을 기각했지만, **항소 사건 C-703/25 P는 계류 중**입니다. 따라서 “최종적으로 유효성이 확정됐다”거나 “이미 무효화됐다”고 쓰지 않습니다. [Safe Harbor 판결](https://curia.europa.eu/jcms/jcms/P_180250/) · [EU 집행위의 Privacy Shield 설명](https://commission.europa.eu/news-and-media/news/joint-press-statement-european-commissioner-justice-didier-reynders-and-us-secretary-commerce-wilbur-2020-08-10_en) · [DPF 안내](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/eu-us-data-transfers_lt) · [2025년 판결](https://curia.europa.eu/site/upload/docs/application/pdf/2025-09/cp250106en.pdf) · [계류 중인 항소](https://infocuria.curia.europa.eu/tabs/affair?lang=EN&publishedId=C-703%2F25+P&searchTerm=%22T-553%2F23%22)
+2026년 11월 3일 현재 **DPF 적정성 결정은 운영 중**입니다. 2025년 EU 일반법원은 결정 취소 청구를 기각했고, 그 판결에 대한 **항소 사건 C-703/25 P는 계류 중**입니다. 참여 인증을 받은 미국 조직으로의 이전에 DPF를 활용할 수 있지만, 이 항소의 최종 결과까지 확정된 것은 아닙니다. [Safe Harbor 판결](https://curia.europa.eu/jcms/jcms/P_180250/) · [EU 집행위의 Privacy Shield 설명](https://commission.europa.eu/news-and-media/news/joint-press-statement-european-commissioner-justice-didier-reynders-and-us-secretary-commerce-wilbur-2020-08-10_en) · [DPF 안내](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/eu-us-data-transfers_lt) · [2025년 판결](https://curia.europa.eu/site/upload/docs/application/pdf/2025-09/cp250106en.pdf) · [항소 진행 현황](https://infocuria.curia.europa.eu/tabs/redirect/juris/liste.jsf?num=C-703%2F25+P)
 
 ### (6) GDPR에서 자주 헷갈리는 기준
 
@@ -75,7 +75,7 @@ draft: false
 
 **DPO 지정.** 모든 기업에 일률적으로 의무인 것은 아닙니다. 제37조는 공공기관의 처리(사법활동을 하는 법원 제외), 핵심 활동이 대규모의 정기적·체계적 모니터링인 경우, 핵심 활동이 특별범주 정보나 범죄 관련 정보를 대규모 처리하는 경우 등을 정합니다. 제38·39조는 DPO의 지위와 업무를 다룹니다. [GDPR 제37~39조](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng) · [EDPB DPO 안내](https://www.edpb.europa.eu/sme/be-compliant/data-protection-officer_en)
 
-**처리활동 기록.** 제30조의 원칙은 처리활동의 기록입니다. 제30조제5항의 규모 기준은 **240명이 아니라 250명 미만**입니다. 다만 250명 미만이어도 처리에 정보주체의 권리·자유에 대한 위험이 있거나, 처리가 일회성이 아니거나, 특별범주·범죄 관련 정보가 포함되면 예외가 적용되지 않습니다. [GDPR 제30조](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng)
+**처리활동 기록.** GDPR 제30조는 처리자가 자신의 처리활동을 기록하도록 합니다. 제30조제5항은 **고용 인원이 250명 미만인 기업·조직**에 예외를 두지만, 처리로 인해 정보주체의 권리와 자유에 위험이 생길 가능성이 있거나, 처리가 일회성에 그치지 않거나, 특별범주 또는 형사범죄·유죄판결 관련 개인정보를 처리하면 예외가 적용되지 않습니다. 규모만으로 기록 의무를 판단할 수 없는 이유입니다. [GDPR 제30조](https://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1680253036157&uri=CELEX%3A32016R0679)
 
 **DPIA와 사전 협의.** 개인정보 영향평가(DPIA)는 처리로 인해 높은 위험이 예상될 때 처리 전에 위험을 평가하는 절차(제35조)입니다. 평가 후에도 완화되지 않은 높은 위험이 남는 경우 감독기관과 **사전 협의**합니다(제36조). 모든 개인정보 수집을 감독기관에 미리 신고하거나 허가받는 일반 의무와는 다릅니다. 설계·기본설정에 의한 보호(제25조), 적절한 보안조치(제32조)도 별도의 의무입니다. [GDPR 제25·32·35·36조](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng) · [EU 집행위 안내](https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/obligations_en)
 
@@ -119,15 +119,27 @@ draft: false
 
 ### (2) 대표자, CPO와 현업 부서
 
-| 구분 | 현행법상 핵심 역할 | 조직 운영에서 살펴볼 일 |
-| --- | --- | --- |
-| 사업주·대표자 | 개인정보의 안전한 처리와 정보주체 권리 보호의 최종 책임자로서 전문 인력·예산 지원 등 총괄 관리 | 보호 현황을 보고받고 인력·예산·개선 조치를 지원 |
-| 개인정보 보호책임자(CPO) | 보호 계획 수립, 인력 관리·예산 확보, 실태 조사·개선, 주요 사항의 대표자·이사회 보고 등 | 독립적으로 일할 수 있는 보고 경로와 권한 확인 |
-| 현업·보안·IT 부서 | 각 부서의 처리 행위에 적용되는 법령·내부 절차 준수 | 접근권한, 로그, 위탁 관리, 사고 대응을 협업 |
+법 제30조의3은 **사업주·대표자**를 개인정보의 안전한 처리와 정보주체 권리 보호에 대한 최종 책임자로 정합니다. 전문 인력과 예산을 지원하는 총괄 관리 역할입니다. **CPO**는 보호 계획, 인력·예산 확보, 실태 조사·개선 등을 수행하고 주요 사항을 대표자와 이사회에 보고합니다. 개인정보처리자는 CPO가 독립적으로 일할 수 있도록 보장해야 합니다. 두 역할은 연결되지만 동일하지 않습니다. [법 제30조의3·제31조](https://law.go.kr/LSW/lsInfoP.do?lsId=011357)
 
-모든 기업이 반드시 **임원급 CISO와 CPO를 각각 임명해야 한다**는 뜻은 아닙니다. CPO 일반 지정 의무와, 일정 규모 이상의 처리자에게 추가로 적용되는 **CPO 지정·변경·해제 시 이사회 의결 및 개인정보위 신고**를 구분해야 합니다. 시행령의 기준에는 연 매출액등 **1,800억 원 초과**와 처리 인원 요건, 일정 규모 대학·상급종합병원·공공시스템운영기관 등이 포함됩니다. 신고는 원칙적으로 사유 발생일부터 **6개월 이내**입니다. [법 제30조의3·제31조](https://law.go.kr/LSW/lsInfoP.do?lsId=011357) · [영 제32조·부칙](https://www.law.go.kr/lsRvsDocListP.do?lsId=011468)
+| 구분 | 적용 대상 | 주요 의무 | 근거 |
+| --- | --- | --- | --- |
+| 일반 CPO 지정 | 개인정보처리자가 원칙. 시행령상 소상공인은 별도 지정을 생략할 수 있으며, 이때 사업주·대표자가 CPO가 됨 | 처리·보호 업무 총괄자 지정 | 법 제31조제1·2항, 영 제32조제1·2항 |
+| 자격요건을 갖춘 CPO 지정 | 아래의 영 제32조제3항에 해당하는 처리자 | 영 별표 1의 자격을 갖춘 사람을 지정 | 영 제32조제2·3항, 별표 1 |
+| 이사회 의결 | 같은 제32조제3항 대상 중 **법인** | CPO 지정·변경·해제 때 의결 | 법 제31조제3항제1호 |
+| 개인정보위 신고 | 제32조제3항 대상 | 지정·변경·해제 사유 발생 후 원칙적으로 **6개월 이내** 신고 | 법 제31조제3항제2호, 영 제32조제4항 |
 
-예를 들어 CPO가 접근권한 점검의 필요성을 보고하고 예산을 요청하는 일과, 대표자가 인력·예산 지원을 포함한 총괄 관리 조치를 하는 일은 연결되지만 같은 역할은 아닙니다. 내부 역할표와 보고 절차를 정리하는 것은 이 의무를 실제 업무에 반영하는 방법입니다.
+전문 CPO의 **자격요건**은 2026년 개정 이전에도 있었습니다. 이번에 같은 대상 처리자의 지정·변경·해제 절차에 이사회 의결과 신고가 추가됐습니다. 영 제32조제3항의 대상은 다음 네 갈래입니다.
+
+1. 학교와 의료기관을 제외하고, **연간 매출액등이 1,800억 원을 초과**하면서 **민감정보·고유식별정보를 5만 명 이상** 처리하거나 **개인정보를 100만 명 이상** 처리하는 자
+2. 전년도 말 재학생이 대학원생을 포함해 **2만 명 이상**인 대학
+3. 「의료법」상 **상급종합병원**
+4. **공공시스템운영기관**
+
+첫째 유형은 **매출액 요건과 처리 인원 요건을 함께** 충족해야 합니다. 둘째부터 넷째는 별도의 대상 유형입니다. 공공기관에는 시행령 제32조제3항 괄호에 적힌 기관 범위 제한도 적용됩니다. CPO 후보 직위도 별도로 정해져 있습니다. 민간 처리자는 사업주·대표자 또는 임원 중에서 지정하고, 임원이 없으면 개인정보 처리 관련 부서의 장이 해당됩니다. 공공기관은 기관 종류에 따라 영 제32조제2항의 직위 기준을 따릅니다. [현행 시행령 제32조](https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=201813) · [개정 전 시행령 제32조](https://www.law.go.kr/LSW/lsInfoP.do?ancYnChk=0&efYd=20260519&joNo=001800&lsiSeq=286175&urlMode=lsInfoP)
+
+시행 전에 이미 CPO를 지정한 대상 처리자는 **시행일부터 6개월 이내** 개인정보위에 신고해야 합니다. 새 지정·변경·해제의 신고도 사유 발생일부터 6개월 이내가 원칙이고, 개인정보위가 인정한 부득이한 사유에는 요청에 따라 1년 범위에서 연장할 수 있습니다. 행정상의 계도기간은 이 **법정 신고기한**과 구분합니다. [시행령 제36671호 부칙 제2조](https://www.law.go.kr/lsRvsDocListP.do?lsId=011468) · [개인정보위 CPO 실무 매뉴얼](https://pipc.go.kr/np/cop/bbs/selectBoardArticle.do?bbsId=BS217&nttId=12501)
+
+실무에서는 CPO의 직접 보고 경로, 현업·보안·IT 부서의 업무 분담, 이사회 의결과 신고가 필요한 인사 절차를 함께 점검할 수 있습니다. 이는 위 법정 의무를 조직 안에서 실행하기 위한 방법입니다.
 
 ### (3) 국제표준은 법률과 구분하기
 

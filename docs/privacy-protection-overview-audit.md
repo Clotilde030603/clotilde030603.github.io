@@ -64,3 +64,12 @@
 - GDPR 부분은 제2~4·9~10·25·30·32·35~39·44~49조 및 EDPB·EU 집행위 자료와 재대조했다. DPF는 현재 운영 사실과 항소 계류 상태를 함께 표시했다.
 - 원문에서 근거가 불분명한 일반화·주관적 장단점·개인정보의 고정 식별등급·`ISO 27552` 단정은 게시 문장에서 제거했다. 학습용 프라이버시 구분은 출처를 붙이고 법정 분류가 아니라고 명시했다.
 - 이 문서는 공개 블로그가 아니라 저장소의 검증 기록이다. 한국·EU 법령의 향후 개정과 DPF 항소 결과는 게시 기준일 이후 재확인해야 한다.
+
+## 최종 보완: GDPR 문장과 CPO 적용 대상
+
+- GDPR 기록 기준은 [제30조제5항](https://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1680253036157&uri=CELEX%3A32016R0679)의 **고용 인원 250명 미만**과 위험·일회성 여부·특별범주·형사범죄 관련 정보 예외를 다시 확인했다. 공개 글에서 이전 오기 “240명” 언급을 제거했다.
+- DPF는 [EU 집행위 안내](https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/eu-us-data-transfers_lt)의 운영 상태와 [C-703/25 P 사건](https://infocuria.curia.europa.eu/tabs/redirect/juris/liste.jsf?num=C-703%2F25+P)의 항소 계류를 구분했다. Safe Harbor·Privacy Shield의 과거 상태는 유지했다.
+- DPIA와 사전 협의는 [GDPR 제35·36조](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng) 및 [EU 집행위 설명](https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/obligations_en)과 재대조했다.
+- CPO 일반 지정은 [법 제31조제1·2항](https://law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsId=011357&lsJoLnkSeq=900079324&print=print)과 [영 제32조제1·2항](https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=201813), 전문자격은 영 제32조제2항·별표 1, 의결·신고 대상은 영 제32조제3항, 6개월 신고기한은 제4항과 시행령 부칙 제2조로 확인했다.
+- CPO 대상의 **1,800억 원 초과 AND (5만 명 민감·고유식별정보 OR 100만 명 개인정보)**, 대학 2만 명, 상급종합병원, 공공시스템운영기관을 [영 제32조제3항 원문](https://www.law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=201813)대로 분리했다. 공공기관 범위 제한과 학교·의료기관의 매출액 경로 제외를 본문에 표시했다.
+- 계도기간의 정확한 종료일은 직접 확인한 법령 조문만으로 확정하지 않았다. 공개 글에는 **법정 신고기한과 행정 안내를 구분**한다는 설명만 남겼다.
